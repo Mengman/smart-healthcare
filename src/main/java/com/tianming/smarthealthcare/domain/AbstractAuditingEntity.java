@@ -27,22 +27,22 @@ public abstract class AbstractAuditingEntity implements Serializable {
 
     @CreatedBy
     @Column(name = "created_by", nullable = false, length = 50, updatable = false)
-    @JsonIgnore
+//    @JsonIgnore
     private String createdBy;
 
     @CreatedDate
     @Column(name = "created_date", nullable = false)
-    @JsonIgnore
+//    @JsonIgnore
     private Instant createdDate = Instant.now();
 
     @LastModifiedBy
     @Column(name = "last_modified_by", length = 50)
-    @JsonIgnore
+//    @JsonIgnore
     private String lastModifiedBy;
 
     @LastModifiedDate
     @Column(name = "last_modified_date")
-    @JsonIgnore
+//    @JsonIgnore
     private Instant lastModifiedDate = Instant.now();
 
     public String getCreatedBy() {
