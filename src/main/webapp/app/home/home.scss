@@ -11,6 +11,47 @@ Main page styles
     background-size: contain;
 }
 
+.home-banner {
+    padding: 5% 0;
+    text-align: center;
+    color: #fff;
+    background: url("../../content/images/header.jpg") no-repeat center top;
+    background-size: 100% 100%;
+}
+
+.jh-btn-box {
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    color: #000;
+    border-radius: 4px;
+    height: 120px;
+    width: 250px;
+}
+
+.btn-box-title {
+    span {
+        font-weight: 400;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.bg-cases {
+    width: 32px; height: 32px;
+    background: url('../../content/images/icons.png') -10px -10px;
+}
+
+.bg-report {
+    width: 32px; height: 32px;
+    background: url('../../content/images/icons.png') -62px -10px;
+}
+
+.bg-search {
+    width: 32px; height: 32px;
+    background: url('../../content/images/icons.png') -10px -62px;
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
