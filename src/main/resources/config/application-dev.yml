@@ -70,6 +70,10 @@ spring:
         locator:
             discovery:
                 enabled: true
+    http:
+        multipart:
+          max-file-size: 50MB
+          max-request-size: 50MB
 
 liquibase:
     contexts: dev
@@ -152,3 +156,4 @@ jhipster:
 # ===================================================================
 
 application:
+    uploadDir: "C:/Users/yxin/Desktop/tmp"

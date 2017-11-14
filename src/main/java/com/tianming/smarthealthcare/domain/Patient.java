@@ -30,6 +30,9 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
     private Integer workDuration;
     private String workType;
 
+    public Patient() {
+    }
+
     public Long getId() {
         return id;
     }

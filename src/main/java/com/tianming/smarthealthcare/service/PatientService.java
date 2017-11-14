@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class PatientService {
@@ -18,5 +20,13 @@ public class PatientService {
 
     public Patient createPatient(Patient patient) {
         return patientRepository.save(patient);
+    }
+
+    public List<Patient> getPatients(String username) {
+        return patientRepository.findByCreatedBy(username);
+    }
+
+    public Patient getPatient(Long patientId) {
+        return patientRepository.findOne(patientId);
     }
 }
