@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2Webstorage } from 'ng2-webstorage';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SmarthealthcareSharedModule, UserRouteAccessService } from './shared';
 import { SmarthealthcareHomeModule } from './home/home.module';
@@ -11,6 +12,7 @@ import { SmarthealthcareAdminModule } from './admin/admin.module';
 import { SmarthealthcareAccountModule } from './account/account.module';
 import { SmarthealthcareEntityModule } from './entities/entity.module';
 import { SmarthealthcareCaseModule } from './case/case.module';
+import { SmarthealthcareLoginModule } from './login/login.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -33,8 +35,10 @@ import {
         BrowserModule,
         BrowserAnimationsModule,
         LayoutRoutingModule,
+        NgbModule.forRoot(),
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
         SmarthealthcareSharedModule,
+        SmarthealthcareLoginModule,
         SmarthealthcareHomeModule,
         SmarthealthcareAdminModule,
         SmarthealthcareAccountModule,

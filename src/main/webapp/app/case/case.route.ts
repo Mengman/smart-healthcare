@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { listRoute, detailRoute } from './';
+import { listRoute, detailRoute, caseNewRoute } from './';
 
 const CASE_ROUTES = [
     listRoute,
+    caseNewRoute,
     detailRoute
 ]
 

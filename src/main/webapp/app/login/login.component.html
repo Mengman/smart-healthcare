@@ -1,0 +1,43 @@
+<div class="auth-main">
+
+    <div id="content">
+        <div class="login-background">
+            <img src="../../content/images/background.png" width="100%" height="100%" />
+        </div>
+
+        <div class="platform-desc">
+            <h1>粉尘作业人员职业健康智能监测平台</h1>
+            <p class="sm">精确客观、高效率，低成本的智能化职业健康体检筛查系统</p>
+        </div>
+
+        <div id="LoginPart">
+            <form (ngSubmit)="login()">
+                <div class="user-type">
+                    <nav>
+                        <li>个人用户</li>
+                        <li class="doctor">机构用户</li>
+                    </nav>
+                </div>
+                <div class="input-content">
+                    <div class="input-group" id="username">
+                        <span class="input-addon" id="basic-addon1">
+                            <i class="fa fa-user fa-x" aria-hidden="true"></i>
+                        </span>
+                        <input name="username" id="username" type="text" class="sh-form-control"
+                        [(ngModel)]="username" placeholder="请输入您的账号" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group" id="password">
+                        <span class="input-addon" id="basic-addon2">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        </span>
+                        <input name="password" id="password"  type="password" class="sh-form-control"
+                        [(ngModel)]="password" placeholder="请输入您的密码" aria-describedby="basic-addon2">
+                    </div>
+                </div>
+                <div class="handle">
+                    <button type="submit" id="login">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

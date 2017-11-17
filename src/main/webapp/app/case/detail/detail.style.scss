@@ -1,0 +1,62 @@
+.actual-title-con {
+    text-align: center;
+}
+
+.sick-people-info{
+    margin: 40px 0;
+    border: 1px solid #eeeeee;
+    .ch-row{
+      margin: 20px 0;
+    }
+  }
+  
+  .review-full-btn{
+    text-align: right;
+    color: #ffffff;
+    position: absolute;
+    bottom: 1px;
+    right: 20px;
+  }
+  
+  .basic-info{
+    .name{
+      text-decoration:underline;
+      text-decoration-color: #5bc0de;
+    }
+    .basic-info-detail{
+      margin-top: 20px;
+    }
+    .row{
+      border-bottom: 1px solid #eeeeee;
+    }
+    .margin-row{
+      margin-bottom: 20px;
+    }
+  }
+  
+  .dicom-fullscreen{
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right: 0;
+    overflow: hidden;
+    //background: #000;
+    color:#fff;
+    .back{
+      position: absolute;
+      left:0;
+      top:0;
+      color: #fff;
+      z-index: 1
+    }
+    .dcm-detail{
+      position: absolute;
+      right: 90px;
+      top:50px;
+      z-index: 1;
+      font-size: 18px;
+    }
+  }
+  
+  

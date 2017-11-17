@@ -1,0 +1,224 @@
+.platform-desc{
+    position: absolute;
+    top: 229px;
+    left: 132px;
+    text-align: center;
+    p{
+      color: #b3b3b3;
+    }
+    .sm{
+      margin-top: 30px;
+    }
+  }
+  
+  .input-addon {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+  }
+  .sh-form-control{
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 0px solid rgba(0, 0, 0, 0.15);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    border-left: 1px solid rgba(0,0,0,0.15);
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    outline-offset: 0px;
+  }
+  :focus {
+    outline: -webkit-focus-ring-color auto 0px;
+  }
+  
+  #username:hover > .input-addon{
+    color: #1d68b3;
+  }
+  #username:hover > .sh-form-control{
+    border-left:1px solid #1d68b3;
+  }
+  #username:hover{
+    border-bottom:1px solid #1d68b3;
+  }
+  
+  #password:hover > .input-addon{
+    color: #1d68b3;
+  }
+  #password:hover > .sh-form-control{
+    border-left:1px solid #1d68b3;
+  }
+  #password:hover{
+    border-bottom:1px solid #1d68b3;
+  }
+  
+  .input-content{
+    margin:60px 40px 30px 40px;
+  }
+  #LoginPart {
+    width: 350px;
+    position: absolute;
+    top: 255px;
+    right: 218px;
+    .input-group {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .auth-main {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  #content {
+    margin: auto;
+    position: relative;
+    //background: url("../../../assets/img/app/login&register/background.png");
+  }
+  
+  /*Login Part*/
+  
+  #us, #pw {
+    width: 265px;
+    height: 30px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #us {
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+  
+  #pw {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .us-Img {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 7px;
+    left: 3px;
+    //background: url(assets/img/app/login&register/user-Blur.png) no-repeat;
+  }
+  
+  .pw-Img {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 6px;
+    left: 3px;
+    //background: url(assets/img/app/login&register/pw-Blur.png) no-repeat;
+  }
+  
+  ::-webkit-input-placeholder {
+    font-size: 0.8em;
+    color: #adadad;
+  }
+  
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 0.8em;
+    color: #adadad;
+  }
+  
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 0.8em;
+    color: #adadad;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size: 0.8em;
+    color: #adadad;
+  }
+  
+  .handle {
+    margin: 60px 0;
+  }
+  
+  #login {
+    position: relative;
+    display: block;
+    width: 265px;
+    height: 40px;
+    margin: 0 auto;
+    border: 1px solid #1d68b3;
+    //background: #1d68b3;
+    background: #1d68b3;
+    border-radius: 10px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1em;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  #login {
+    //margin-top: 80px;
+    outline: none;
+    background: #1d68b3;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #fff;
+  }
+  
+  .line {
+    width: 265px;
+    border-bottom: 1px solid #c9c9c9;
+  }
+  
+  #usInput:focus ~ .line, #pwInput:focus ~ .line {
+    border-bottom: 1px solid #1d68b3;
+  }
+  
+  #usInput:focus ~ .us-Img {
+    //background: url(assets/img/app/login&register/user-Focus.png) no-repeat;
+  }
+  
+  #pwInput:focus ~ .pw-Img {
+    //background: url(assets/img/app/login&register/pw-Focus.png) no-repeat;
+  }
+  
+  .user-type {
+    width: auto;
+    //height: 60px;
+    height: 20px;
+    margin: 30px 40px;
+    li {
+      list-style: none;
+      float: left;
+      border: 1px solid #adadad;
+      border-radius: 3px;
+      padding: 0 30px;
+      cursor: pointer;
+    }
+    .expert-selected {
+      border: 2px solid #1d68b3;
+    }
+  
+    .doctor-selected {
+      border: 2px solid #1d68b3;
+    }
+    .doctor {
+      margin-left: 15px;
+    }
+  
+  }
+  
+  .login-background {
+    width: 1400px;
+  }
+  

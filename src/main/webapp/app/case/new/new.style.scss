@@ -1,0 +1,42 @@
+.case-history-info{
+    width: 1000px;
+    margin: 40px auto;
+    padding: 20px 10px;
+    background: #eeeeee;
+  
+    .upload-case-history{
+      background: #1d68b3 ;
+      background: #1d68b3;
+      //float: right;
+      position: relative;
+      top: 40px;
+      right: -811px;
+    }
+  
+    .ch-row{
+      margin-bottom: 15px;
+    }
+  
+    textarea{
+      border: 0;
+      border-radius: 4px;
+    }
+  
+    .next-step{
+      text-align: center;
+      padding: 20px 0;
+    }
+  
+    .col-3{
+      flex: 0 0 23%;
+    }
+  }
+  .register-form{
+    padding-bottom: 38px;
+    text-align: center;
+  }
+  .analyze{
+    color:#fff !important;
+    border-radius: 4px !important;
+  }
+  
