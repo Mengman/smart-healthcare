@@ -10,8 +10,8 @@ import { GridOptions } from 'ag-grid/main';
 
 export class CaseListComponent implements OnInit {
     public gridOptions: GridOptions;
-    columnDefs;
-    rowData;
+    public columnDefs;
+    public rowData;
 
     constructor() {
         this.columnDefs = [

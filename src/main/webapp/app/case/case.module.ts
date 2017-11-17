@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgUploaderModule } from 'ngx-uploader';
 
 import { AgGridModule } from 'ag-grid-angular';
 
@@ -21,7 +20,6 @@ import {
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
-        NgUploaderModule,
         AgGridModule.withComponents([CellBtnComponent]),
         RouterModule.forRoot(caseStates, { useHash: true })
     ],
