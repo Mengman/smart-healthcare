@@ -62,7 +62,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"patientName\":\"胡歌\",\n    \"sex\":\"男\"\n}\n"
+					"raw": "{\n    \"patientName\":\"杨欣\",\n    \"sex\":\"男\"\n}\n"
 				},
 				"url": {
 					"raw": "{{base_url}}/api/patient",
@@ -78,7 +78,7 @@
 			},
 			"response": [
 				{
-					"id": "c2318e8b-23fb-4023-a346-aab6f7f5f3c0",
+					"id": "0d588a19-f12c-402d-99ac-e41834268425",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -110,77 +110,76 @@
 					"status": "Created",
 					"code": 201,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
 					"header": [
 						{
 							"key": "Cache-Control",
 							"value": "no-cache, no-store, max-age=0, must-revalidate",
 							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+							"description": ""
 						},
 						{
 							"key": "Connection",
 							"value": "keep-alive",
 							"name": "Connection",
-							"description": "Options that are desired for the connection"
+							"description": ""
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json;charset=UTF-8",
 							"name": "Content-Type",
-							"description": "The mime type of this content"
+							"description": ""
 						},
 						{
 							"key": "Date",
 							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
 							"name": "Date",
-							"description": "The date and time that the message was sent"
+							"description": ""
 						},
 						{
 							"key": "Expires",
 							"value": "0",
 							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
+							"description": ""
 						},
 						{
 							"key": "Location",
 							"value": "/api/patient/",
 							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
+							"description": ""
 						},
 						{
 							"key": "Pragma",
 							"value": "no-cache",
 							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+							"description": ""
 						},
 						{
 							"key": "Transfer-Encoding",
 							"value": "chunked",
 							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+							"description": ""
 						},
 						{
 							"key": "X-Application-Context",
 							"value": "smarthealthcare:swagger,dev:8080",
 							"name": "X-Application-Context",
-							"description": "Custom header"
+							"description": ""
 						},
 						{
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
 							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							"description": ""
 						},
 						{
 							"key": "X-XSS-Protection",
 							"value": "1; mode=block",
 							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
+							"description": ""
 						}
 					],
 					"cookie": [],
-					"responseTime": 17551,
+					"responseTime": "17551",
 					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
 				}
 			]
@@ -217,7 +216,7 @@
 			},
 			"response": [
 				{
-					"id": "16743ad4-a4bb-499f-b73a-5a6576852875",
+					"id": "e42c8012-ae86-4bf7-b2a1-1365646b052c",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -233,113 +232,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"king\",\r\n    \"sex\":\"男\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Location",
-							"value": "/api/patient/",
-							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 17551,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "d985817d-1fe6-4921-aa6d-7056e50c5e59",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"patientId\": 1,\r\n  \"xrayId\": 2\r\n}"
+							"raw": "{\r\n  \"patientId\": 1,\r\n  \"xrayId\": 1\r\n}"
 						},
 						"url": {
 							"raw": "{{base_url}}/api/task",
@@ -377,7 +270,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Tue, 14 Nov 2017 14:15:40 GMT",
+							"value": "Sat, 18 Nov 2017 15:45:43 GMT",
 							"name": "Date",
 							"description": "The date and time that the message was sent"
 						},
@@ -401,7 +294,7 @@
 						},
 						{
 							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
+							"value": "smarthealthcare:dev:8080",
 							"name": "X-Application-Context",
 							"description": "Custom header"
 						},
@@ -419,8 +312,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 869,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"patientId\" : 1,\r\n    \"xrayId\" : 2,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  }\r\n}"
+					"responseTime": 33189,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-18T15:45:43.050Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-18T15:45:43.050Z\",\r\n    \"id\" : 1,\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"id\" : 1,\r\n      \"name\" : null,\r\n      \"sex\" : \"男\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null\r\n    },\r\n    \"xrayId\" : 1,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  }\r\n}"
 				}
 			]
 		},
@@ -445,7 +338,7 @@
 							"key": "file",
 							"description": "",
 							"type": "file",
-							"src": "demo.pub"
+							"src": "YangXin.docx"
 						}
 					]
 				},
@@ -463,7 +356,7 @@
 			},
 			"response": [
 				{
-					"id": "77481540-a671-43d2-949e-f95677d26594",
+					"id": "b4af479a-e98e-4070-bd59-4b7fe4b6d8fd",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -495,7 +388,6 @@
 					"status": "Created",
 					"code": 201,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
 					"header": [
 						{
 							"key": "Cache-Control",
@@ -565,121 +457,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 17551,
+					"responseTime": "17551",
 					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "c82bb719-ad65-4d34-b580-930db0dd0583",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"disabled": false
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}",
-								"disabled": false
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"description": "",
-									"type": "file",
-									"src": {
-										"0": {}
-									}
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/api/files",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"files"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 14 Nov 2017 13:35:13 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 1060,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"originalName\" : \"000064a4(2).dcm\",\r\n    \"fileName\" : \"34f58d79-06f5-46b9-bc3b-75d29dca4c52\",\r\n    \"fileRelativePath\" : \"34f58d79-06f5-46b9-bc3b-75d29dca4c52\"\r\n  }\r\n}"
 				}
 			]
 		},
@@ -715,113 +494,7 @@
 			},
 			"response": [
 				{
-					"id": "0c7e796e-f6e6-4545-8abb-18f2ef20a8cc",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"king\",\r\n    \"sex\":\"男\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Location",
-							"value": "/api/patient/",
-							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 17551,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "9fb205b9-8171-49b9-b672-bcaa8b4790a3",
+					"id": "fea7a475-c941-4279-b12e-2181dd83233e",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -853,71 +526,70 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
 					"header": [
 						{
 							"key": "Cache-Control",
 							"value": "no-cache, no-store, max-age=0, must-revalidate",
 							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+							"description": ""
 						},
 						{
 							"key": "Connection",
 							"value": "keep-alive",
 							"name": "Connection",
-							"description": "Options that are desired for the connection"
+							"description": ""
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json;charset=UTF-8",
 							"name": "Content-Type",
-							"description": "The mime type of this content"
+							"description": ""
 						},
 						{
 							"key": "Date",
 							"value": "Tue, 14 Nov 2017 07:21:34 GMT",
 							"name": "Date",
-							"description": "The date and time that the message was sent"
+							"description": ""
 						},
 						{
 							"key": "Expires",
 							"value": "0",
 							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
+							"description": ""
 						},
 						{
 							"key": "Pragma",
 							"value": "no-cache",
 							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+							"description": ""
 						},
 						{
 							"key": "Transfer-Encoding",
 							"value": "chunked",
 							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+							"description": ""
 						},
 						{
 							"key": "X-Application-Context",
 							"value": "smarthealthcare:swagger,dev:8080",
 							"name": "X-Application-Context",
-							"description": "Custom header"
+							"description": ""
 						},
 						{
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
 							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							"description": ""
 						},
 						{
 							"key": "X-XSS-Protection",
 							"value": "1; mode=block",
 							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
+							"description": ""
 						}
 					],
 					"cookie": [],
-					"responseTime": 1262,
+					"responseTime": "1262",
 					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : [ {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  } ]\r\n}"
 				}
 			]
@@ -954,224 +626,20 @@
 			},
 			"response": [
 				{
-					"id": "3f100b8f-6df6-473d-8ce9-b86f549c1544",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"king\",\r\n    \"sex\":\"男\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Location",
-							"value": "/api/patient/",
-							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 17551,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "10dd124b-fdc0-4451-8343-9ad3e43c276d",
+					"id": "47c90bce-0d86-40ca-a07c-af42a87618a4",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": false
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"description\": \"string\",\r\n  \"members\": [\r\n    {\r\n      \"activated\": true,\r\n      \"authorities\": [\r\n        \"string\"\r\n      ],\r\n      \"createdBy\": \"string\",\r\n      \"createdDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"email\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"id\": 1,\r\n      \"imageUrl\": \"string\",\r\n      \"langKey\": \"string\",\r\n      \"lastModifiedBy\": \"string\",\r\n      \"lastModifiedDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"lastName\": \"string\",\r\n      \"login\": \"string\"\r\n    }\r\n  ],\r\n  \"name\": \"myProject\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 14 Nov 2017 07:21:34 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 1262,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : [ {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  } ]\r\n}"
-				},
-				{
-					"id": "f6d15467-a7f8-4d16-ac2d-357f24d6d342",
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
+								"value": "Bearer {{Authorization}}",
+								"disabled": false
 							}
 						],
 						"body": {
@@ -1214,7 +682,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Tue, 14 Nov 2017 14:16:28 GMT",
+							"value": "Sat, 18 Nov 2017 16:34:17 GMT",
 							"name": "Date",
 							"description": "The date and time that the message was sent"
 						},
@@ -1238,7 +706,7 @@
 						},
 						{
 							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
+							"value": "smarthealthcare:dev:8080",
 							"name": "X-Application-Context",
 							"description": "Custom header"
 						},
@@ -1256,8 +724,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 239,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : [ {\r\n    \"id\" : 1,\r\n    \"patientId\" : 1,\r\n    \"xrayId\" : 2,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  } ]\r\n}"
+					"responseTime": 110,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : [ {\r\n    \"id\" : 1,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n    \"patient\" : {\r\n      \"id\" : 1,\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"name\" : null,\r\n      \"sex\" : \"男\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null\r\n    },\r\n    \"xrayId\" : 1,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  } ]\r\n}"
 				}
 			]
 		},
@@ -1294,124 +762,20 @@
 			},
 			"response": [
 				{
-					"id": "1a40d0e2-ad47-4ded-af82-9689f7b0a089",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"king\",\r\n    \"sex\":\"男\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Location",
-							"value": "/api/patient/",
-							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 17551,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "85b7c2f2-cf19-4fce-93c1-a1c92294c554",
+					"id": "d9e59155-8176-430e-b0bd-8d04a4f997fc",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": false
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
+								"value": "Bearer {{Authorization}}",
+								"disabled": false
 							}
 						],
 						"body": {
@@ -1455,7 +819,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Tue, 14 Nov 2017 07:25:18 GMT",
+							"value": "Sat, 18 Nov 2017 16:33:50 GMT",
 							"name": "Date",
 							"description": "The date and time that the message was sent"
 						},
@@ -1479,7 +843,7 @@
 						},
 						{
 							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
+							"value": "smarthealthcare:dev:8080",
 							"name": "X-Application-Context",
 							"description": "Custom header"
 						},
@@ -1497,8 +861,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 840,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
+					"responseTime": 29893,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n    \"name\" : null,\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null,\r\n    \"tasks\" : [ {\r\n      \"id\" : 1,\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"patient\" : 1,\r\n      \"xrayId\" : 1,\r\n      \"analysisResult\" : null,\r\n      \"analysisStatus\" : 0,\r\n      \"diagnosisResult\" : null,\r\n      \"diagnosisComment\" : null\r\n    } ]\r\n  }\r\n}"
 				}
 			]
 		},
@@ -1535,225 +899,20 @@
 			},
 			"response": [
 				{
-					"id": "d256e7e8-f5e4-4322-a078-6036d9ffe095",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"king\",\r\n    \"sex\":\"男\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Location",
-							"value": "/api/patient/",
-							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 17551,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "2feefa2e-cab6-4c6e-a0b5-f2d0be3d995c",
+					"id": "be84a914-4aac-43dd-a3f5-090c20cf09d2",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": false
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"description\": \"string\",\r\n  \"members\": [\r\n    {\r\n      \"activated\": true,\r\n      \"authorities\": [\r\n        \"string\"\r\n      ],\r\n      \"createdBy\": \"string\",\r\n      \"createdDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"email\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"id\": 1,\r\n      \"imageUrl\": \"string\",\r\n      \"langKey\": \"string\",\r\n      \"lastModifiedBy\": \"string\",\r\n      \"lastModifiedDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"lastName\": \"string\",\r\n      \"login\": \"string\"\r\n    }\r\n  ],\r\n  \"name\": \"myProject\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient/1",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient",
-								"1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 14 Nov 2017 07:25:18 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 840,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "4888afd0-af57-4a68-934b-64ec2f4be34f",
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
+								"value": "Bearer {{Authorization}}",
+								"disabled": false
 							}
 						],
 						"body": {
@@ -1797,7 +956,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Tue, 14 Nov 2017 14:21:36 GMT",
+							"value": "Sat, 18 Nov 2017 16:34:04 GMT",
 							"name": "Date",
 							"description": "The date and time that the message was sent"
 						},
@@ -1821,7 +980,7 @@
 						},
 						{
 							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
+							"value": "smarthealthcare:dev:8080",
 							"name": "X-Application-Context",
 							"description": "Custom header"
 						},
@@ -1839,8 +998,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 1165,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-13T16:00:00Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-13T16:00:00Z\",\r\n    \"id\" : 1,\r\n    \"patientId\" : 1,\r\n    \"xrayId\" : 2,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  }\r\n}"
+					"responseTime": 80,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n    \"patient\" : {\r\n      \"id\" : 1,\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-11-17T16:00:00Z\",\r\n      \"name\" : null,\r\n      \"sex\" : \"男\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null\r\n    },\r\n    \"xrayId\" : 1,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  }\r\n}"
 				}
 			]
 		},
@@ -1876,7 +1035,7 @@
 			},
 			"response": [
 				{
-					"id": "9a269898-0cfe-46ed-9517-1d3e58f47162",
+					"id": "d7c23bdf-53a6-4479-997f-3c456abac34d",
 					"name": "200",
 					"originalRequest": {
 						"method": "PUT",
@@ -1908,71 +1067,70 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
 					"header": [
 						{
 							"key": "Cache-Control",
 							"value": "no-cache, no-store, max-age=0, must-revalidate",
 							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+							"description": ""
 						},
 						{
 							"key": "Connection",
 							"value": "keep-alive",
 							"name": "Connection",
-							"description": "Options that are desired for the connection"
+							"description": ""
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json;charset=UTF-8",
 							"name": "Content-Type",
-							"description": "The mime type of this content"
+							"description": ""
 						},
 						{
 							"key": "Date",
 							"value": "Tue, 14 Nov 2017 14:25:37 GMT",
 							"name": "Date",
-							"description": "The date and time that the message was sent"
+							"description": ""
 						},
 						{
 							"key": "Expires",
 							"value": "0",
 							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
+							"description": ""
 						},
 						{
 							"key": "Pragma",
 							"value": "no-cache",
 							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+							"description": ""
 						},
 						{
 							"key": "Transfer-Encoding",
 							"value": "chunked",
 							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+							"description": ""
 						},
 						{
 							"key": "X-Application-Context",
 							"value": "smarthealthcare:swagger,dev:8080",
 							"name": "X-Application-Context",
-							"description": "Custom header"
+							"description": ""
 						},
 						{
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
 							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							"description": ""
 						},
 						{
 							"key": "X-XSS-Protection",
 							"value": "1; mode=block",
 							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
+							"description": ""
 						}
 					],
 					"cookie": [],
-					"responseTime": 34106,
+					"responseTime": "34106",
 					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"createdBy\" : null,\r\n    \"createdDate\" : \"2017-11-14T14:25:03.583Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-14T14:25:22.934Z\",\r\n    \"id\" : 1,\r\n    \"patientId\" : 1,\r\n    \"xrayId\" : 2,\r\n    \"analysisResult\" : 0,\r\n    \"analysisStatus\" : 1,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null\r\n  }\r\n}"
 				}
 			]
@@ -1996,228 +1154,21 @@
 					"raw": "{\r\n  \"description\": \"string\",\r\n  \"members\": [\r\n    {\r\n      \"activated\": true,\r\n      \"authorities\": [\r\n        \"string\"\r\n      ],\r\n      \"createdBy\": \"string\",\r\n      \"createdDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"email\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"id\": 1,\r\n      \"imageUrl\": \"string\",\r\n      \"langKey\": \"string\",\r\n      \"lastModifiedBy\": \"string\",\r\n      \"lastModifiedDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"lastName\": \"string\",\r\n      \"login\": \"string\"\r\n    }\r\n  ],\r\n  \"name\": \"myProject\"\r\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/api/files/2",
+					"raw": "{{base_url}}/api/files/1",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
 						"files",
-						"2"
+						"1"
 					]
 				},
 				"description": ""
 			},
 			"response": [
 				{
-					"id": "9dcd9171-bfca-469b-813b-e0921a7f7a9e",
-					"name": "200",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"king\",\r\n    \"sex\":\"男\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 13 Nov 2017 08:32:09 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Location",
-							"value": "/api/patient/",
-							"name": "Location",
-							"description": "Used in redirection, or when a new resource has been created."
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 17551,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "90628a0e-6d7f-4264-941c-a1dd4c31cefe",
-					"name": "200",
-					"originalRequest": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer {{Authorization}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"description\": \"string\",\r\n  \"members\": [\r\n    {\r\n      \"activated\": true,\r\n      \"authorities\": [\r\n        \"string\"\r\n      ],\r\n      \"createdBy\": \"string\",\r\n      \"createdDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"email\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"id\": 1,\r\n      \"imageUrl\": \"string\",\r\n      \"langKey\": \"string\",\r\n      \"lastModifiedBy\": \"string\",\r\n      \"lastModifiedDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"lastName\": \"string\",\r\n      \"login\": \"string\"\r\n    }\r\n  ],\r\n  \"name\": \"myProject\"\r\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/patient/1",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"patient",
-								"1"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
-					"header": [
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, no-store, max-age=0, must-revalidate",
-							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive",
-							"name": "Connection",
-							"description": "Options that are desired for the connection"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json;charset=UTF-8",
-							"name": "Content-Type",
-							"description": "The mime type of this content"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 14 Nov 2017 07:25:18 GMT",
-							"name": "Date",
-							"description": "The date and time that the message was sent"
-						},
-						{
-							"key": "Expires",
-							"value": "0",
-							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
-						},
-						{
-							"key": "Pragma",
-							"value": "no-cache",
-							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked",
-							"name": "Transfer-Encoding",
-							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-						},
-						{
-							"key": "X-Application-Context",
-							"value": "smarthealthcare:swagger,dev:8080",
-							"name": "X-Application-Context",
-							"description": "Custom header"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff",
-							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-						},
-						{
-							"key": "X-XSS-Protection",
-							"value": "1; mode=block",
-							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
-						}
-					],
-					"cookie": [],
-					"responseTime": 840,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 1,\r\n    \"name\" : \"king\",\r\n    \"sex\" : \"男\",\r\n    \"stature\" : null,\r\n    \"weight\" : null,\r\n    \"smoking\" : null,\r\n    \"birthday\" : null,\r\n    \"idcard\" : null,\r\n    \"cellPhone\" : null,\r\n    \"job\" : null,\r\n    \"jobHistory\" : null,\r\n    \"workDuration\" : null,\r\n    \"workType\" : null\r\n  }\r\n}"
-				},
-				{
-					"id": "64412a01-2397-4bcd-9479-26f52d83e5f5",
+					"id": "12478854-c6fa-41d7-80ec-db0b3e3d258e",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -2252,77 +1203,76 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "text",
 					"header": [
 						{
 							"key": "Cache-Control",
 							"value": "no-cache, no-store, max-age=0, must-revalidate",
 							"name": "Cache-Control",
-							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+							"description": ""
 						},
 						{
 							"key": "Connection",
 							"value": "keep-alive",
 							"name": "Connection",
-							"description": "Options that are desired for the connection"
+							"description": ""
 						},
 						{
 							"key": "Content-Disposition",
 							"value": "attachment; filename=\"a04d6565-5b2a-489c-af3b-1e549a88f1a1\"",
 							"name": "Content-Disposition",
-							"description": "An opportunity to raise a \"File Download\" dialogue box for a known MIME type"
+							"description": ""
 						},
 						{
 							"key": "Content-Length",
 							"value": "507",
 							"name": "Content-Length",
-							"description": "The length of the response body in octets (8-bit bytes)"
+							"description": ""
 						},
 						{
 							"key": "Content-Type",
 							"value": "application/json",
 							"name": "Content-Type",
-							"description": "The mime type of this content"
+							"description": ""
 						},
 						{
 							"key": "Date",
 							"value": "Tue, 14 Nov 2017 13:57:28 GMT",
 							"name": "Date",
-							"description": "The date and time that the message was sent"
+							"description": ""
 						},
 						{
 							"key": "Expires",
 							"value": "0",
 							"name": "Expires",
-							"description": "Gives the date/time after which the response is considered stale"
+							"description": ""
 						},
 						{
 							"key": "Pragma",
 							"value": "no-cache",
 							"name": "Pragma",
-							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+							"description": ""
 						},
 						{
 							"key": "X-Application-Context",
 							"value": "smarthealthcare:swagger,dev:8080",
 							"name": "X-Application-Context",
-							"description": "Custom header"
+							"description": ""
 						},
 						{
 							"key": "X-Content-Type-Options",
 							"value": "nosniff",
 							"name": "X-Content-Type-Options",
-							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+							"description": ""
 						},
 						{
 							"key": "X-XSS-Protection",
 							"value": "1; mode=block",
 							"name": "X-XSS-Protection",
-							"description": "Cross-site scripting (XSS) filter"
+							"description": ""
 						}
 					],
 					"cookie": [],
-					"responseTime": 41,
+					"responseTime": "41",
 					"body": "---- BEGIN SSH2 PUBLIC KEY ----\nComment: \"2048-bit RSA, converted by yxin@TABDGCZ5Z3 from OpenSSH\"\nAAAAB3NzaC1yc2EAAAADAQABAAABAQCE9RD0RmrfIA0F+2zIpplTPqFETneFym/D4zbond\ncws3sIbGdmhUUFo0dDnxB3LkcUomCRayyIrJeK8SBo6ko199qfm5Vf7TdNQumHaWEP/KVa\n/U19t2VGdQWJ3y4ozfYeZoo47dgIH0g6tl/uD3cICx2sXMllYSLIhWIaMSo0Z1+qDB3Cmj\n+Wsl2KCyGXpcQdyhECHxY+lQKySYDrZyHko3/IJOg7kJ6XXPRe1MrXkoL48iVWEcrU4ZSX\nLXcYyMD+uytsSAklmHh1VOnZ8io3pGya7HvAYqtpD/s1Ru+ED1YtpO9/IS5Bg9VGY5nerz\npACeKVN5k18pvL8/LFU9o/\n---- END SSH2 PUBLIC KEY ----\n"
 				}
 			]
