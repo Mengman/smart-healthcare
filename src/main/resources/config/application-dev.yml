@@ -156,8 +156,4 @@ jhipster:
 # ===================================================================
 
 application:
-<<<<<<< HEAD
     uploadDir: "tmp/upload"
-=======
-    uploadDir: C:/Users/Xu Ming/Desktop/yangxin/tmp
->>>>>>> 4ac47216ef299b44030c6adeee404d620439a763

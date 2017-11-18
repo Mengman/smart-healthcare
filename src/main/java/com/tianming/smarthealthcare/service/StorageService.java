@@ -4,7 +4,6 @@ import com.tianming.smarthealthcare.config.ApplicationProperties;
 import com.tianming.smarthealthcare.domain.Storage;
 import com.tianming.smarthealthcare.repository.StorageRepository;
 import org.apache.commons.io.FilenameUtils;
-import liquibase.util.file.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,6 @@ public class StorageService {
 
     public Storage store(MultipartFile file) throws IOException{
         String uuid = UUID.randomUUID().toString();
-<<<<<<< HEAD
         String fileExt = FilenameUtils.getExtension(file.getOriginalFilename());
         String newFileName = uuid + "." + fileExt;
         File dir = new File(uploadDir);
@@ -46,12 +44,6 @@ public class StorageService {
         }
         Files.copy(file.getInputStream(), Paths.get(uploadDir, newFileName));
         Storage storage = new Storage(file.getOriginalFilename(), newFileName, newFileName);
-=======
-        String extension = FilenameUtils.getExtension(file.getOriginalFilename());
-        String filename = uuid + "." + extension;
-        Files.copy(file.getInputStream(), Paths.get(uploadDir, filename));
-        Storage storage = new Storage(file.getOriginalFilename(), filename, filename);
->>>>>>> 4ac47216ef299b44030c6adeee404d620439a763
         return storageRepository.save(storage);
     }
 
