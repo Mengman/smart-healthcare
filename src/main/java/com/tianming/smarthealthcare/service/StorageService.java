@@ -3,6 +3,7 @@ package com.tianming.smarthealthcare.service;
 import com.tianming.smarthealthcare.config.ApplicationProperties;
 import com.tianming.smarthealthcare.domain.Storage;
 import com.tianming.smarthealthcare.repository.StorageRepository;
+import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +36,15 @@ public class StorageService {
 
     public Storage store(MultipartFile file) throws IOException{
         String uuid = UUID.randomUUID().toString();
-        Files.copy(file.getInputStream(), Paths.get(uploadDir, uuid));
-        Storage storage = new Storage(file.getOriginalFilename(), uuid, uuid);
+        String fileExt = FilenameUtils.getExtension(file.getOriginalFilename());
+        String newFileName = uuid + "." + fileExt;
+        File dir = new File(uploadDir);
+        if (!dir.exists() && !dir.mkdirs()) {
+            log.error("Can not create file upload dir: " + uploadDir);
+            return null;
+        }
+        Files.copy(file.getInputStream(), Paths.get(uploadDir, newFileName));
+        Storage storage = new Storage(file.getOriginalFilename(), newFileName, newFileName);
         return storageRepository.save(storage);
     }
 

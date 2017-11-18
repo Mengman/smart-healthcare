@@ -35,8 +35,8 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://localhost:3306/physicalexam?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
-        password: yangxin
+        username: exam
+        password: 123456
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -156,4 +156,4 @@ jhipster:
 # ===================================================================
 
 application:
-    uploadDir: "C:/Users/yxin/Desktop/tmp"
+    uploadDir: "tmp/upload"

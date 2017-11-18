@@ -16,7 +16,6 @@ export class CaseNewComponent implements OnInit {
 
     ngOnInit() { }
 
-    public onSubmit() {
-        console.info('form content: \n' + JSON.stringify(this.case));
-    }
+    public onSubmit() {}
+
 }

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgUploaderModule } from 'ngx-uploader';
 
 import { AgGridModule } from 'ag-grid-angular';
 
@@ -8,6 +11,9 @@ import {
     ExamListComponent,
     CellBtnComponent,
     ExamDetailComponent,
+    CaseListComponent,
+    CaseListCellBtnComponent,
+    ExamNewComponent,
     examStates
 } from './';
 
@@ -15,14 +21,21 @@ import {
     imports: [
         AgGridModule,
         CommonModule,
-        AgGridModule.withComponents([CellBtnComponent]),
+        FormsModule,
+        ReactiveFormsModule,
+        NgbModule,
+        NgUploaderModule,
+        AgGridModule.withComponents([CellBtnComponent, CaseListCellBtnComponent]),
         RouterModule.forRoot(examStates, { useHash: true })
     ],
     exports: [],
     declarations: [
         ExamListComponent,
         CellBtnComponent,
-        ExamDetailComponent
+        CaseListComponent,
+        ExamDetailComponent,
+        ExamNewComponent,
+        CaseListCellBtnComponent
     ],
     providers: [],
 })

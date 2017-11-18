@@ -23,7 +23,7 @@ import {
         AgGridModule.withComponents([CellBtnComponent]),
         RouterModule.forRoot(caseStates, { useHash: true })
     ],
-    exports: [],
+    exports: [CaseListComponent],
     declarations: [
         CaseNewComponent,
         CaseDetailComponent,
