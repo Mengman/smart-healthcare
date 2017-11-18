@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { UserRouteAccessService } from '../../shared';
 
 import { CaseNewComponent } from './new.component';
 
@@ -7,5 +8,6 @@ export const caseNewRoute: Route = {
     component: CaseNewComponent,
     data: {
         pageTitle: 'global.menu.case.new'
-    }
+    },
+    canActivate: [UserRouteAccessService]
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { JhiLanguageService } from 'ng-jhipster';
+import { Router } from '@angular/router';
 
 import { Principal } from '../auth/principal.service';
 import { AuthServerProvider } from '../auth/auth-jwt.service';
@@ -10,7 +11,8 @@ export class LoginService {
     constructor(
         private languageService: JhiLanguageService,
         private principal: Principal,
-        private authServerProvider: AuthServerProvider
+        private authServerProvider: AuthServerProvider,
+        private router: Router,
     ) {}
 
     login(credentials, callback?) {
@@ -23,6 +25,7 @@ export class LoginService {
                     // the language selected by the user during his registration
                     if (account !== null) {
                         this.languageService.changeLanguage(account.langKey);
+                        this.router.navigateByUrl('/')
                     }
                     resolve(data);
                 });

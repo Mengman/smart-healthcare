@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { UserRouteAccessService } from '../../shared';
 
 import { ExamListComponent } from './list.component';
 
@@ -7,5 +8,6 @@ export const listRoute: Route = {
     component: ExamListComponent,
     data: {
         pageTitle: 'global.menu.exam.list'
-    }
+    },
+    canActivate: [UserRouteAccessService]
 }

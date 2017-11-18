@@ -1,186 +1,184 @@
-<div class="card jh-card">
-    <div class="actual-content">
-        <div class="actual-content-title">
+<div class="actual-content">
+    <div class="actual-content-title">
 
-            <div class="case-history-info">
-                <form #caseForm="ngForm" (ngSubmit)="onSubmit()">
-                    <div class="container">
-                        <div>
-                            <div class="register-form">
-                                <span style="font-size: 1.75rem;">粉尘作业人员信息登记表</span>
-                            </div>
-                            <div class="row ">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">姓名</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.name" name="name" type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">性别</label>
-                                        <div class="col-8">
-                                            <select [(ngModel)]="case.gender" name="gender" class="form-control">
-                                                <option value="" selected>请选择性别</option>
-                                                <option value="男">男</option>
-                                                <option value="女">女</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">身高</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.stature" name="stature" type="text" class="form-control" placeholder="请输入身高" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row ">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">体重</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.weight" name="weight" type="text" class="form-control" placeholder="请输入体重" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row" style="height: 38px;">
-                                        <label class="col-3 col-form-label">出生日期</label>
-                                        <div class="col-9 input-group">
-                                            <input class="form-control" placeholder="yyyy-mm-dd" name="birthday" [(ngModel)]="case.birthday" ngbDatepicker #d="ngbDatepicker">
-                                            <button class="input-group-addon" (click)="d.toggle()" type="button">
-                                                <img src="../../../content/images/icon/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">年龄</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.age" name="age" type="text" class="form-control" placeholder="请输入年龄">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row ">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">身份证</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.pid" name="pid" type="text" class="form-control" placeholder="请输入身份证号" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">电话</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.tel" name="tel" type="text" class="form-control" placeholder="请输入电话" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">工种</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.job" name="job" type="text" class="form-control" placeholder="请输入工种" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row ">
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">工龄</label>
-                                        <div class="col-8">
-                                            <input [(ngModel)]="case.dustAge" name="dustAge" type="text" class="form-control" placeholder="请输入工龄" aria-describedby="sizing-addon1">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">粉尘性质</label>
-                                        <div class="col-8">
-                                            <select [(ngModel)]="case.dustType" name="dustType" class="form-control">
-                                                <option value="" selected>请选择粉尘性质</option>
-                                                <option value="矽尘">矽尘</option>
-                                                <option value="煤工粉尘">煤工粉尘</option>
-                                                <option value="石墨粉尘">石墨粉尘</option>
-                                                <option value="炭黑粉尘">炭黑粉尘</option>
-                                                <option value="石棉尘">石棉尘</option>
-                                                <option value="滑石粉尘">滑石粉尘</option>
-                                                <option value="水泥粉尘">水泥粉尘</option>
-                                                <option value="云母粉尘">云母粉尘</option>
-                                                <option value="陶工粉尘">陶工粉尘</option>
-                                                <option value="铝尘">铝尘</option>
-                                                <option value="电焊工粉尘">电焊工粉尘</option>
-                                                <option value="铸工粉尘">铸工粉尘</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">并发症</label>
-                                        <div class="col-8">
-                                            <select [(ngModel)]="case.complication" name="complication" class="form-control">
-                                                <option value="" selected>请选择并发症</option>
-                                                <option value="无">无</option>
-                                                <option value="肺内感染">肺内感染</option>
-                                                <option value="肺癌">肺癌</option>
-                                                <option value="胸膜间皮瘤">胸膜间皮瘤</option>
-                                                <option value="自发性气胸">自发性气胸</option>
-                                                <option value="肺结核">肺结核</option>
-                                                <option value="慢性肺源性心脏病">慢性肺源性心脏病</option>
-                                                <option value="慢性阻塞性肺疾病">慢性阻塞性肺疾病</option>
-                                                <option value="支气管扩张">支气管扩张</option>
-                                                <option value="支气管哮喘">支气管哮喘</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-3 col-form-label">是否吸烟</label>
-                                        <div class="col-8">
-                                            <select [(ngModel)]="case.smoke" name="smoke" class="form-control">
-                                                <option value="0">否</option>
-                                                <option value="1">是</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12">
-                                    <textarea [(ngModel)]="case.jobHistory" name="jobHistory" class="form-control" type="text" placeholder="请输入患者的职业史" rows="3"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row" style="margin-top: 2em;">
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary analyze">保存</button>
-                                </div>
-                            </div>
-
+        <div class="case-history-info">
+            <form #caseForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="container">
+                    <div>
+                        <div class="register-form">
+                            <span style="font-size: 1.75rem;">粉尘作业人员信息登记表</span>
                         </div>
+                        <div class="row ">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">姓名</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.name" name="name" type="text" class="form-control" placeholder="请输入姓名" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">性别</label>
+                                    <div class="col-8">
+                                        <select [(ngModel)]="case.gender" name="gender" class="form-control">
+                                            <option value="" selected>请选择性别</option>
+                                            <option value="男">男</option>
+                                            <option value="女">女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">身高</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.stature" name="stature" type="text" class="form-control" placeholder="请输入身高" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">体重</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.weight" name="weight" type="text" class="form-control" placeholder="请输入体重" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row" style="height: 38px;">
+                                    <label class="col-3 col-form-label">出生日期</label>
+                                    <div class="col-9 input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" name="birthday" [(ngModel)]="case.birthday" ngbDatepicker #d="ngbDatepicker">
+                                        <button class="input-group-addon" (click)="d.toggle()" type="button">
+                                            <img src="../../../content/images/icon/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">年龄</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.age" name="age" type="text" class="form-control" placeholder="请输入年龄">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">身份证</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.pid" name="pid" type="text" class="form-control" placeholder="请输入身份证号" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">电话</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.tel" name="tel" type="text" class="form-control" placeholder="请输入电话" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">工种</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.job" name="job" type="text" class="form-control" placeholder="请输入工种" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">工龄</label>
+                                    <div class="col-8">
+                                        <input [(ngModel)]="case.dustAge" name="dustAge" type="text" class="form-control" placeholder="请输入工龄" aria-describedby="sizing-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">粉尘性质</label>
+                                    <div class="col-8">
+                                        <select [(ngModel)]="case.dustType" name="dustType" class="form-control">
+                                            <option value="" selected>请选择粉尘性质</option>
+                                            <option value="矽尘">矽尘</option>
+                                            <option value="煤工粉尘">煤工粉尘</option>
+                                            <option value="石墨粉尘">石墨粉尘</option>
+                                            <option value="炭黑粉尘">炭黑粉尘</option>
+                                            <option value="石棉尘">石棉尘</option>
+                                            <option value="滑石粉尘">滑石粉尘</option>
+                                            <option value="水泥粉尘">水泥粉尘</option>
+                                            <option value="云母粉尘">云母粉尘</option>
+                                            <option value="陶工粉尘">陶工粉尘</option>
+                                            <option value="铝尘">铝尘</option>
+                                            <option value="电焊工粉尘">电焊工粉尘</option>
+                                            <option value="铸工粉尘">铸工粉尘</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">并发症</label>
+                                    <div class="col-8">
+                                        <select [(ngModel)]="case.complication" name="complication" class="form-control">
+                                            <option value="" selected>请选择并发症</option>
+                                            <option value="无">无</option>
+                                            <option value="肺内感染">肺内感染</option>
+                                            <option value="肺癌">肺癌</option>
+                                            <option value="胸膜间皮瘤">胸膜间皮瘤</option>
+                                            <option value="自发性气胸">自发性气胸</option>
+                                            <option value="肺结核">肺结核</option>
+                                            <option value="慢性肺源性心脏病">慢性肺源性心脏病</option>
+                                            <option value="慢性阻塞性肺疾病">慢性阻塞性肺疾病</option>
+                                            <option value="支气管扩张">支气管扩张</option>
+                                            <option value="支气管哮喘">支气管哮喘</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">是否吸烟</label>
+                                    <div class="col-8">
+                                        <select [(ngModel)]="case.smoke" name="smoke" class="form-control">
+                                            <option value="0">否</option>
+                                            <option value="1">是</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <textarea [(ngModel)]="case.jobHistory" name="jobHistory" class="form-control" type="text" placeholder="请输入患者的职业史" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top: 2em;">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary analyze">保存</button>
+                            </div>
+                        </div>
+
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

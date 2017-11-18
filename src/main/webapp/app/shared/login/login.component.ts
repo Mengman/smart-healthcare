@@ -48,9 +48,13 @@ export class JhiLoginModalComponent implements AfterViewInit {
             username: this.username,
             password: this.password,
             rememberMe: this.rememberMe
-        }).then(() => {
+        }).then((data) => {
+            console.log('login success!!!')
             this.authenticationError = false;
             this.activeModal.dismiss('login success');
+
+            this.router.navigateByUrl('/');
+
             if (this.router.url === '/register' || (/^\/activate\//.test(this.router.url)) ||
                 (/^\/reset\//.test(this.router.url))) {
                 this.router.navigate(['']);
