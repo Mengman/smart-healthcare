@@ -11,7 +11,8 @@
                 "detail": "病例详情"
             },
             "exam": {
-                "list": "分析结果列表"
+                "list": "分析结果列表",
+                "detail": "分析结果"
             },
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {

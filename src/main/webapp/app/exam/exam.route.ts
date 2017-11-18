@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { listRoute } from './';
+import { listRoute, detailRoute } from './';
 
 const EXAM_ROUTES = [
-    listRoute
+    listRoute,
+    detailRoute
 ]
 
 export const examStates: Routes = [{

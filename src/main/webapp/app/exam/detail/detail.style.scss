@@ -1,0 +1,103 @@
+.actual-content-title {
+    text-align: center;
+}
+
+.patient-info {
+    border-top:1px solid #eeeeee;
+    margin-top: 30px;
+    .container{
+      margin-top: 40px;
+    }
+    .row {
+      margin: 10px 0;
+    }
+  
+    .basic-info{
+      .name{
+        text-decoration:underline;
+        text-decoration-color: #5bc0de;
+      }
+      .basic-info-detail{
+        margin-top: 20px;
+    }
+      .row{
+        border-bottom: 1px solid #eeeeee;
+      }
+    }
+  
+    .diagnosis {
+      height: 80px;
+      margin-bottom: 20px;
+    }
+  
+    .expert-diagnosis {
+      border: 1px solid #adadad;
+      margin-top: 20px;
+      height: 100px;
+      .col-1{
+        width: 80px;
+      }
+    }
+    .expert-advice {
+      border: 1px solid #adadad;
+      //height: 100px;
+    }
+    .submitInfo{
+      text-align: center;
+      margin: 20px;
+    }
+  }
+  
+  .dicom-fullscreen{
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right: 0;
+    overflow: hidden;
+    //background: #000;
+    color:#fff;
+    .back{
+      position: absolute;
+      left:0;
+      top:0;
+      color: #fff;
+      z-index: 1
+    }
+    .dcm-detail{
+      position: absolute;
+      right: 90px;
+      top:50px;
+      z-index: 1;
+      font-size: 18px;
+    }
+  }
+  
+  .review-full-btn{
+    text-align: right;
+    color: #ffffff;
+    position: absolute;
+    bottom: 1px;
+    right: 20px;
+  }
+  
+  .review-btn{
+    background: #5bc0de;
+  }
+  
+  .cornerstone-enabled-image {
+  
+    /* prevent text selection from occurring when dragging the mouse on the div */
+    /* http://stackoverflow.com/questions/826782/css-rule-to-disable-text-selection-highlighting */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  
+    /* force the cursor to always be the default arrow.  This prevents it from changing to an ibar when it is
+       over HTML based text overlays (four corners */
+    cursor:default;
+  }
+  

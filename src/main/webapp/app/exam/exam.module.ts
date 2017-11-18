@@ -7,6 +7,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import {
     ExamListComponent,
     CellBtnComponent,
+    ExamDetailComponent,
     examStates
 } from './';
 
@@ -20,7 +21,8 @@ import {
     exports: [],
     declarations: [
         ExamListComponent,
-        CellBtnComponent
+        CellBtnComponent,
+        ExamDetailComponent
     ],
     providers: [],
 })
