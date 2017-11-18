@@ -27,6 +27,8 @@ public class PatientService {
     }
 
     public Patient getPatient(Long patientId) {
-        return patientRepository.findOne(patientId);
+        Patient patient = patientRepository.findOne(patientId);
+        patient.getTasks();
+        return patient;
     }
 }

@@ -5,7 +5,9 @@ import com.tianming.smarthealthcare.domain.AnalysisTask;
 import com.tianming.smarthealthcare.domain.Storage;
 import com.tianming.smarthealthcare.security.SecurityUtils;
 import com.tianming.smarthealthcare.service.AnalysisTaskService;
+import com.tianming.smarthealthcare.service.NoSuchPatientException;
 import com.tianming.smarthealthcare.service.StorageService;
+import com.tianming.smarthealthcare.web.rest.vm.AnalysisTaskVM;
 import com.tianming.smarthealthcare.web.rest.vm.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,9 +32,9 @@ public class AnalysisTaskResource {
 
     @PostMapping("/task")
     @Timed
-    public ResponseEntity<Result> createTask(@RequestBody AnalysisTask analysisTask){
-        log.debug("REST request to create analysis task : {}", analysisTask);
-        AnalysisTask savedAnalysisTask = analysisTaskService.create(analysisTask);
+    public ResponseEntity<Result> createTask(@RequestBody AnalysisTaskVM analysisTaskVM) throws NoSuchPatientException {
+        log.debug("REST request to create analysis task : {}", analysisTaskVM);
+        AnalysisTask savedAnalysisTask = analysisTaskService.create(analysisTaskVM);
         return ResponseEntity.ok(new Result(0, "success", savedAnalysisTask));
     }
 

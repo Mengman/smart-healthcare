@@ -1,31 +1,16 @@
-package com.tianming.smarthealthcare.domain;
+package com.tianming.smarthealthcare.web.rest.vm;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
-import javax.persistence.*;
-import java.io.Serializable;
-
-@Entity
-@JsonIdentityInfo(
-    generator = ObjectIdGenerators.PropertyGenerator.class,
-    property = "id")
-public class AnalysisTask extends AbstractAuditingEntity implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AnalysisTaskVM{
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "patientId")
-    private Patient patient;
+    private Long patientId;
     private Long xrayId;
     private Integer analysisResult; //0,1,2,3
     private Integer analysisStatus = 0; //0-analyzing, 1-finished
     private Integer diagnosisResult; //0,1,2,3
     private String diagnosisComment;
 
-    public AnalysisTask() {
+    public AnalysisTaskVM() {
     }
 
     public Long getId() {
@@ -76,11 +61,11 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
         this.diagnosisComment = diagnosisComment;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Long getPatientId() {
+        return patientId;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setPatientId(Long patientId) {
+        this.patientId = patientId;
     }
 }

@@ -1,15 +1,18 @@
 package com.tianming.smarthealthcare.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class,
+    property = "id")
 public class Patient extends AbstractAuditingEntity implements Serializable {
 
     @Id
@@ -29,6 +32,10 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
     private String jobHistory;
     private Integer workDuration;
     private String workType;
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OrderBy("createdDate desc")
+    private Set<AnalysisTask> tasks;
 
     public Patient() {
     }
@@ -135,5 +142,13 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
 
     public void setWorkType(String workType) {
         this.workType = workType;
+    }
+
+    public Set<AnalysisTask> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<AnalysisTask> tasks) {
+        this.tasks = tasks;
     }
 }
