@@ -7,6 +7,8 @@ import { NgUploaderModule } from 'ngx-uploader';
 
 import { AgGridModule } from 'ag-grid-angular';
 
+import { SmarthealthcareSharedModule } from '../shared';
+
 import {
     ExamListComponent,
     CellBtnComponent,

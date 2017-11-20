@@ -4,7 +4,8 @@ import { AgRendererComponent } from 'ag-grid-angular';
 
 @Component({
     selector: 'jhi-cell-btn',
-    template: `<span><button class="btn btn-info" (click)="viewCaseDetail()">查看详情</button></span>`
+    template: `<button class="btn btn-info btn-table" (click)="viewCaseDetail()">查看详情</button>`,
+    styles: ['.btn-table { position: absolute; top: 50%; margin-top: -19px;}']
 })
 
 export class CellBtnComponent implements AgRendererComponent  {

@@ -36,13 +36,15 @@ export class CaseListComponent implements OnInit {
             columnDefs: this.columnDefs,
             context: {
                 componentParent: this
-            }
+            },
+            rowHeight: 50
         };
      }
 
     public onGridReady(params) {
         this.gridApi = params.api;
         this.gridColumnApi = params.columnApi;
+        params.api.sizeColumnsToFit();
 
         this.caseListService.getCase()
         .then((data) => {

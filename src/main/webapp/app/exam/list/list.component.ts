@@ -38,7 +38,8 @@ export class ExamListComponent implements OnInit {
             columnDefs: this.columnDefs,
             context: {
                 componentParent: this
-            }
+            },
+            rowHeight: 50
         };
      }
 

@@ -39,10 +39,10 @@ export class CaseListComponent implements OnInit {
             columnDefs: this.columnDefs,
             context: {
                 componentParent: this
-            }
+            },
+            rowHeight: 50
         };
      }
 
-    ngOnInit() {
-     }
+    ngOnInit() {}
 }
