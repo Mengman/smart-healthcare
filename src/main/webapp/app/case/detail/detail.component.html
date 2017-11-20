@@ -8,11 +8,11 @@
     <div class="sick">
         <div class="sick-people-info">
             <div class="container">
-                <div class="row ch-row">
-                    <div class="col">姓名：</div>
-                    <div class="col">性别：</div>
-                    <div class="col">工龄：</div>
-                    <div class="col">粉尘性质：</div>
+                <div class="row ch-row" *ngIf="case">
+                    <div class="col">姓名：{{case.name}}</div>
+                    <div class="col">性别：{{case.sex}}</div>
+                    <div class="col">工龄：{{case.workDuration}}</div>
+                    <div class="col">粉尘性质：{{case.workType}}</div>
                 </div>
                 <div class="row ch-row">
                     <div class="col-2">扼要病情:</div>
@@ -48,29 +48,29 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="basic-info">
+                            <div class="basic-info"  *ngIf="case">
                                 <h3>
-                                    <span class="name"></span>的诊断书</h3>
+                                    <span class="name">{{case.name}}</span>的诊断书</h3>
                                 <div class="basic-info-detail">
                                     <div class="row margin-row">
                                         <div class="col-3">姓名</div>
-                                        <div class="col-9"></div>
+                                        <div class="col-9">{{case.name}}</div>
                                     </div>
                                     <div class="row margin-row">
                                         <div class="col-3">性别</div>
-                                        <div class="col-9"></div>
+                                        <div class="col-9">{{case.sex}}</div>
                                     </div>
                                     <div class="row margin-row">
                                         <div class="col-3">出生日期</div>
-                                        <div class="col-9"></div>
+                                        <div class="col-9">{{case.birthday}}</div>
                                     </div>
                                     <div class="row margin-row">
                                         <div class="col-3">工龄</div>
-                                        <div class="col-9"></div>
+                                        <div class="col-9">{{case.workDuration}}</div>
                                     </div>
                                     <div class="row margin-row">
                                         <div class="col-3">粉尘性质</div>
-                                        <div class="col-9"></div>
+                                        <div class="col-9">{{case.workType}}</div>
                                     </div>
                                     <div class="row margin-row">
                                         <div class="col-3">分析建议</div>

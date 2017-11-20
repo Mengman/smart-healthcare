@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+
+import 'rxjs/add/operator/switchMap';
+
+import { CaseListItem } from '../model/case-list-item';
+import { CaseDetailService } from './detail.service';
 
 @Component({
     selector: 'jhi-case-detail',
@@ -6,7 +12,17 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['detail.style.scss']
 })
 export class CaseDetailComponent implements OnInit {
-    constructor() { }
+    public case: CaseListItem;
 
-    ngOnInit() { }
+    constructor(
+        private route: ActivatedRoute,
+        private caseDetailService: CaseDetailService
+
+    ) { }
+
+    ngOnInit() {
+        this.route.paramMap.switchMap(
+            (params: ParamMap) => this.caseDetailService.getCase(params.get('id'))
+        ).subscribe((data) => this.case = data );
+    }
 }

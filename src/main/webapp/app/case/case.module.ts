@@ -1,25 +1,29 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AgGridModule } from 'ag-grid-angular';
+
+import { SmarthealthcareSharedModule } from '../shared';
 
 import {
     CaseListComponent,
     CellBtnComponent,
     CaseDetailComponent,
     CaseNewComponent,
+    CaseNewService,
+    CaseListService,
+    CaseDetailService,
     caseStates
  } from './';
 
 @NgModule({
     imports: [
-        CommonModule,
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
+        SmarthealthcareSharedModule,
         AgGridModule.withComponents([CellBtnComponent]),
         RouterModule.forRoot(caseStates, { useHash: true })
     ],
@@ -30,6 +34,10 @@ import {
         CaseListComponent,
         CellBtnComponent
     ],
-    providers: [],
+    providers: [
+        CaseNewService,
+        CaseListService,
+        CaseDetailService
+    ],
 })
 export class SmarthealthcareCaseModule { }

@@ -9,5 +9,5 @@ export const detailRoute: Route = {
     data: {
         pageTitle: 'global.menu.case.detail'
     },
-    canActivate: [UserRouteAccessService]
+    // canActivate: [UserRouteAccessService]
 }

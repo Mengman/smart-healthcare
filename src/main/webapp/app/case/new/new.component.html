@@ -21,7 +21,7 @@
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label">性别</label>
                                     <div class="col-8">
-                                        <select [(ngModel)]="case.gender" name="gender" class="form-control">
+                                        <select [(ngModel)]="case.sex" name="sex" class="form-control">
                                             <option value="" selected>请选择性别</option>
                                             <option value="男">男</option>
                                             <option value="女">女</option>
@@ -52,7 +52,7 @@
                                 <div class="form-group row" style="height: 38px;">
                                     <label class="col-3 col-form-label">出生日期</label>
                                     <div class="col-9 input-group">
-                                        <input class="form-control" placeholder="yyyy-mm-dd" name="birthday" [(ngModel)]="case.birthday" ngbDatepicker #d="ngbDatepicker">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" name="birthday" [(ngModel)]="birthday" ngbDatepicker #d="ngbDatepicker">
                                         <button class="input-group-addon" (click)="d.toggle()" type="button">
                                             <img src="../../../content/images/icon/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
                                         </button>
@@ -74,7 +74,7 @@
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label">身份证</label>
                                     <div class="col-8">
-                                        <input [(ngModel)]="case.pid" name="pid" type="text" class="form-control" placeholder="请输入身份证号" aria-describedby="sizing-addon1">
+                                        <input [(ngModel)]="case.idcard" name="idcard" type="text" class="form-control" placeholder="请输入身份证号" aria-describedby="sizing-addon1">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label">电话</label>
                                     <div class="col-8">
-                                        <input [(ngModel)]="case.tel" name="tel" type="text" class="form-control" placeholder="请输入电话" aria-describedby="sizing-addon1">
+                                        <input [(ngModel)]="case.cellPhone" name="cellPhone" type="text" class="form-control" placeholder="请输入电话" aria-describedby="sizing-addon1">
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label">工龄</label>
                                     <div class="col-8">
-                                        <input [(ngModel)]="case.dustAge" name="dustAge" type="text" class="form-control" placeholder="请输入工龄" aria-describedby="sizing-addon1">
+                                        <input [(ngModel)]="case.workDuration" name="workDuration" type="text" class="form-control" placeholder="请输入工龄" aria-describedby="sizing-addon1">
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label">粉尘性质</label>
                                     <div class="col-8">
-                                        <select [(ngModel)]="case.dustType" name="dustType" class="form-control">
+                                        <select [(ngModel)]="case.workType" name="workType" class="form-control">
                                             <option value="" selected>请选择粉尘性质</option>
                                             <option value="矽尘">矽尘</option>
                                             <option value="煤工粉尘">煤工粉尘</option>
@@ -155,7 +155,7 @@
                                 <div class="form-group row">
                                     <label class="col-3 col-form-label">是否吸烟</label>
                                     <div class="col-8">
-                                        <select [(ngModel)]="case.smoke" name="smoke" class="form-control">
+                                        <select [(ngModel)]="case.smoking" name="smoking" class="form-control">
                                             <option value="0">否</option>
                                             <option value="1">是</option>
                                         </select>
