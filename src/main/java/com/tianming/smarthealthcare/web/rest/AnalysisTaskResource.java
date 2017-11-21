@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 @RestController
@@ -32,7 +33,7 @@ public class AnalysisTaskResource {
 
     @PostMapping("/task")
     @Timed
-    public ResponseEntity<Result> createTask(@RequestBody AnalysisTaskVM analysisTaskVM) throws NoSuchPatientException {
+    public ResponseEntity<Result> createTask(@RequestBody AnalysisTaskVM analysisTaskVM) throws NoSuchPatientException, NoSuchFileException {
         log.debug("REST request to create analysis task : {}", analysisTaskVM);
         AnalysisTask savedAnalysisTask = analysisTaskService.create(analysisTaskVM);
         return ResponseEntity.ok(new Result(0, "success", savedAnalysisTask));
