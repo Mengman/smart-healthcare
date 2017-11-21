@@ -17,6 +17,7 @@ eureka:
     instance:
         prefer-ip-address: true
     client:
+        enabled: false # By default, the JHipster Registry is not used in the "dev" profile
         service-url:
             defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
 
@@ -28,9 +29,9 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/smarthealthcare?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
-        password:
+        url: jdbc:mysql://localhost:3306/physicalexam?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: exam
+        password: 123456
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -65,7 +66,7 @@ spring:
           max-request-size: 50MB
 
 liquibase:
-    contexts: prod
+    contexts: dev
 
 # ===================================================================
 # To enable SSL, generate a certificate using:
