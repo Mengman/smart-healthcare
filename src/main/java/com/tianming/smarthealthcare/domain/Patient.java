@@ -37,6 +37,11 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
     @OrderBy("createdDate desc")
     private Set<AnalysisTask> tasks;
 
+    @OneToMany(mappedBy = "patient",cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+//    @JoinColumn(name="patient_id")
+    @OrderBy("startDate desc")
+    private Set<MedicalHistory> medicalHistory;
+
     public Patient() {
     }
 
@@ -150,5 +155,13 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
 
     public void setTasks(Set<AnalysisTask> tasks) {
         this.tasks = tasks;
+    }
+
+    public Set<MedicalHistory> getMedicalHistory() {
+        return medicalHistory;
+    }
+
+    public void setMedicalHistory(Set<MedicalHistory> medicalHistory) {
+        this.medicalHistory = medicalHistory;
     }
 }

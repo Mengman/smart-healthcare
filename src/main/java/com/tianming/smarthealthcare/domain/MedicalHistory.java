@@ -12,13 +12,14 @@ public class MedicalHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long patientId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Patient patient;
     private String description;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date startTime;
+    private Date startDate;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date endTime;
+    private Date endDate;
 
     public MedicalHistory() {
     }
@@ -31,14 +32,6 @@ public class MedicalHistory {
         this.id = id;
     }
 
-    public Long getPatientId() {
-        return patientId;
-    }
-
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -47,19 +40,27 @@ public class MedicalHistory {
         this.description = description;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getEndTime() {
-        return endTime;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }

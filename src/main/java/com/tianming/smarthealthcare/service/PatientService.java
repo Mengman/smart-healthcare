@@ -1,5 +1,6 @@
 package com.tianming.smarthealthcare.service;
 
+import com.tianming.smarthealthcare.domain.MedicalHistory;
 import com.tianming.smarthealthcare.domain.Patient;
 import com.tianming.smarthealthcare.repository.PatientRepository;
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -19,6 +21,10 @@ public class PatientService {
     private PatientRepository patientRepository;
 
     public Patient createPatient(Patient patient) {
+        Set<MedicalHistory> medicalHistories = patient.getMedicalHistory();
+        if (null != medicalHistories) {
+            medicalHistories.forEach(medicalHistory -> medicalHistory.setPatient(patient));
+        }
         return patientRepository.save(patient);
     }
 
