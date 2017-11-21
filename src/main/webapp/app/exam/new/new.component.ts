@@ -1,18 +1,25 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions, NgUploaderService } from 'ngx-uploader';
 
 import { ExamForm } from '../model/exam-form';
+import { CaseListItem } from '../../case/model/case-list-item';
+
+import { ExamNewService } from './new.service';
+
 @Component({
     selector: 'jhi-exam-new',
     templateUrl: 'new.component.html',
     styleUrls: ['new.style.scss']
 })
 export class ExamNewComponent implements OnInit {
+    public case: CaseListItem;
+
     public examForm: ExamForm;
     public step = 'firstStep';
     public uploadOptions: UploaderOptions;
-    
+
     public testReport: UploadFile;
     public testReportUploadInput: EventEmitter<UploadInput>;
 
@@ -22,17 +29,27 @@ export class ExamNewComponent implements OnInit {
     public lungFunction: UploadFile;
     public lungFunctionUploadInput: EventEmitter<UploadInput>;
 
-
-    constructor() {}
+    constructor(
+        private route: ActivatedRoute,
+        private examNewService: ExamNewService
+    ) {}
 
     ngOnInit() {
         this.examForm = new ExamForm();
         this.testReportUploadInput = new EventEmitter<UploadInput>();
         this.xRayUploadInput = new EventEmitter<UploadInput>();
         this.lungFunctionUploadInput = new EventEmitter<UploadInput>();
+
+        this.route.paramMap.switchMap(
+            (params: ParamMap) => this.examNewService.getCase(params.get('id'))
+        ).subscribe((data) => {
+            this.case = data;
+            this.examForm.patientId = this.case.id;
+        } );
     }
 
      public onSubmit() {
+        this.examNewService.saveTask(this.examForm);
      }
 
      public onUploadOutput(
@@ -41,9 +58,9 @@ export class ExamNewComponent implements OnInit {
          name: string
         ): void {
 
-         if(output.type === 'addedToQueue' || output.type ==  'uploading') {
+         if ( output.type === 'addedToQueue' || output.type ===  'uploading') {
 
-            switch(name) {
+            switch (name) {
                 case 'testReport':
                 this.testReport = output.file;
                 break;
@@ -57,27 +74,24 @@ export class ExamNewComponent implements OnInit {
 
          } else if ( output.type === 'done' ) {
 
-            let resp = output.file.response;
+            const resp = output.file.response;
             if (resp.msg === 'success') {
 
-                switch(name) {
+                switch (name) {
                     case 'testReport':
-                    this.examForm.testReport = resp.data.id;
+                    // this.examForm.testReport = resp.data.id;
                     break;
                     case 'xRay':
-                    this.examForm.xRay = resp.data.id;
+                    this.examForm.xrayId = resp.data.id;
                     break;
                     case 'lungFunction':
-                    this.examForm.lungFunction = resp.data.id;
+                    // this.examForm.lungFunction = resp.data.id;
                     break;
                 }
-               
             }
-            console.info(JSON.stringify(this.examForm));
-            
          } else if ( output.type === 'allAddedToQueue' ) {
             let bindingFile: UploadFile;
-            switch(name) {
+            switch (name) {
                 case 'testReport':
                     bindingFile = this.testReport;
                     break;
@@ -91,12 +105,12 @@ export class ExamNewComponent implements OnInit {
 
              const event: UploadInput = {
                 type: 'uploadFile',
-                url: 'http://localhost:9000/api/files',
+                url: '/api/files',
                 method: 'POST',
                 file: bindingFile,
                 fileIndex: bindingFile.fileIndex
            };
-   
+
            bindingEvent.emit(event);
          }
 

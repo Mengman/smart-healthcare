@@ -5,7 +5,7 @@
             <img src="../../../content/images/underline.png" alt="">
         </div>
     </div>
-    <div class="patient-info">
+    <div class="patient-info" *ngIf="task">
         <div class="container">
             <div class="row">
                 <!-- <div class="col">
@@ -30,7 +30,7 @@
                 <div class="col-6">
                     <div class="basic-info">
                         <h3>
-                            <span class="name">{{examResult.name}}</span>的诊断书</h3>
+                            <span class="name">{{task.patient.name}}</span>的诊断书</h3>
                         <div class="basic-info-detail">
                             <div class="row">
                                 <div class="col-3">姓名</div>
@@ -38,33 +38,37 @@
                             </div>
                             <div class=row>
                                 <div class="col-3">性别</div>
-                                <div class="col-9">{{examResult.gender}}</div>
+                                <div class="col-9">{{task.patient.sex}}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">出生日期</div>
-                                <div class="col-9">{{examResult.birthday}}</div>
+                                <div class="col-9">{{task.patient.birthday}}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">病例号</div>
-                                <div class="col-9">{{examResult.id}}</div>
+                                <div class="col-9">{{task.patient.id}}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">工龄</div>
-                                <div class="col-9">{{examResult.dustAge}}</div>
+                                <div class="col-9">{{task.patient.workDuration}}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">粉尘性质</div>
-                                <div class="col-9">{{examResult.dustType}}</div>
+                                <div class="col-9">{{task.patient.workType}}</div>
                             </div>
-                            <div class="row" *ngIf="patientMDInfo">
+                            <!-- <div class="row">
                                 <div class="col-3">病史</div>
-                                <!-- <div class="col-9" *ngFor="let medicalHistory of examResult.medicalHistories">
+                                <div class="col-9" *ngFor="let medicalHistory of examResult.medicalHistories">
                                         {{medicalHistory.description}}&nbsp;&nbsp;&nbsp;{{medicalHistory.startTime}}-{{medicalHistory.endTime}}
-                                    </div> -->
+                                    </div>
+                            </div> -->
+                            <div class="row" *ngIf="task.analysisStatus === 0">
+                                <div class="col-3">分析状态</div>
+                                <div class="col-9">分析中</div>
                             </div>
-                            <div class="row">
-                                <div class="col-3">分析建议</div>
-                                <!-- <div class="col-9">{{patientMDInfo.analysisResult}}</div> -->
+                            <div class="row" *ngIf="analysisResult">
+                                <div class="col-3">分析结果</div>
+                                <div class="col-9">{{analysisResult}}</div>
                             </div>
                         </div>
                     </div>

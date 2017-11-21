@@ -87,7 +87,7 @@
         <spring-cloud.version>Dalston.SR4</spring-cloud.version>
         <springfox.version>2.7.0</springfox.version>
         <validation-api.version>1.1.0.Final</validation-api.version>
-        <yarn.version>v1.2.1</yarn.version>
+        <yarn.version>v1.3.2</yarn.version>
     </properties>
 
     <dependencyManagement>

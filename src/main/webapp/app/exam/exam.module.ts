@@ -16,6 +16,10 @@ import {
     CaseListComponent,
     CaseListCellBtnComponent,
     ExamNewComponent,
+    ExamCaseListService,
+    ExamNewService,
+    ExamListService,
+    ExamTaskDetailService,
     examStates
 } from './';
 
@@ -27,6 +31,7 @@ import {
         ReactiveFormsModule,
         NgbModule,
         NgUploaderModule,
+        SmarthealthcareSharedModule,
         AgGridModule.withComponents([CellBtnComponent, CaseListCellBtnComponent]),
         RouterModule.forRoot(examStates, { useHash: true })
     ],
@@ -39,6 +44,6 @@ import {
         ExamNewComponent,
         CaseListCellBtnComponent
     ],
-    providers: [],
+    providers: [ExamCaseListService, ExamNewService, ExamListService, ExamTaskDetailService],
 })
 export class SmarthealthcareExamModule { }

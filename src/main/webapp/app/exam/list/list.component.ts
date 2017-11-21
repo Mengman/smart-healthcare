@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GridOptions } from 'ag-grid/main';
 
 import { CellBtnComponent } from './cellbtn/cellbtn.component';
+import { ExamListService } from './list.service';
 
 @Component({
     selector: 'jhi-exam-list',
@@ -14,34 +15,35 @@ export class ExamListComponent implements OnInit {
     public columnDefs;
     public rowData;
 
-    constructor() {
+    constructor(
+        private examListService: ExamListService
+    ) {}
+
+    ngOnInit() {
         this.columnDefs = [
-            {headerName: '医生', field: 'doctorName'},
             {headerName: '病人名称', field: 'patientName'},
-            {headerName: '病人身份证号', field: 'patientId'},
-            {headerName: '分析状态', field: 'examStatus'},
-            {headerName: '分析建议', field: 'examDesc'},
-            {headerName: '诊断结果', field: 'examResult'},
+            {headerName: '病人身份证号', field: 'patientIdcard'},
+            {headerName: '分析状态', field: 'analysisStatus'},
+            {headerName: '诊断结果', field: 'diagnosisResult'},
+            {headerName: '分析建议', field: 'diagnosisComment'},
             {headerName: '操作', field: 'id', cellRendererFramework: CellBtnComponent}
         ]
 
-        this.rowData = [
-            {id: '1', doctorName: '张医生', patientName: '李四', patientId: '13258745698547452', examStatus: '分析中', examDesc: '', examResult: '尘肺3期'},
-            {id: '2', doctorName: '张医生', patientName: '李四', patientId: '13258745698547452', examStatus: '分析中', examDesc: '', examResult: '尘肺3期'},
-            {id: '3', doctorName: '张医生', patientName: '李四', patientId: '13258745698547452', examStatus: '分析中', examDesc: '', examResult: '尘肺3期'},
-            {id: '4', doctorName: '张医生', patientName: '李四', patientId: '13258745698547452', examStatus: '分析中', examDesc: '', examResult: '尘肺3期'},
-            {id: '5', doctorName: '张医生', patientName: '李四', patientId: '13258745698547452', examStatus: '分析中', examDesc: '', examResult: '尘肺3期'}
-        ]
-
         this.gridOptions =  <GridOptions>{
-            rowData: this.rowData,
             columnDefs: this.columnDefs,
             context: {
                 componentParent: this
             },
             rowHeight: 50
         };
-     }
+    }
 
-    ngOnInit() { }
+    public onGridReady(params) {
+        params.api.sizeColumnsToFit();
+
+        this.examListService.getTask()
+        .then((data) => {
+            params.api.setRowData(data)
+        } );
+    }
 }
