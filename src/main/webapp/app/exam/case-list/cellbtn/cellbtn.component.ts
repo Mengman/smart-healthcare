@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AgRendererComponent } from 'ag-grid-angular';
 
 @Component({
@@ -9,7 +10,7 @@ import { AgRendererComponent } from 'ag-grid-angular';
 
 export class CaseListCellBtnComponent implements AgRendererComponent  {
     private params;
-    constructor() { }
+    constructor(private router: Router) { }
 
     agInit(params: any): void {
         this.params = params;
@@ -20,6 +21,6 @@ export class CaseListCellBtnComponent implements AgRendererComponent  {
     }
 
     viewCaseDetail() {
-        console.log(JSON.stringify(this.params.data));
+        this.router.navigateByUrl('/exam/task/create/' + this.params.data.id);
     }
 }

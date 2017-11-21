@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CaseListCellBtnComponent } from './cellbtn/cellbtn.component';
 import { GridOptions } from 'ag-grid/main';
 
+import { ExamCaseListService } from './list.service';
+
 @Component({
     selector: 'jhi-case-list',
     templateUrl: 'list.component.html',
@@ -12,37 +14,39 @@ export class CaseListComponent implements OnInit {
     public gridOptions: GridOptions;
     public columnDefs;
     public rowData;
+    public gridApi;
+    public gridColumnApi;
 
-    constructor() {
+    constructor(private caseListService: ExamCaseListService) {}
+
+    ngOnInit() {
         this.columnDefs = [
             {headerName: 'ID', field: 'id'},
             {headerName: '名称', field: 'name'},
-            {headerName: '性别', field: 'gender'},
-            {headerName: '联系电话', field: 'phone'},
-            {headerName: '接尘工龄', field: 'exposeAge'},
-            {headerName: '粉尘性质', field: 'type'},
-            {headerName: '就医时间', field: 'visitTime'},
+            {headerName: '性别', field: 'sex'},
+            {headerName: '联系电话', field: 'cellPhone'},
+            {headerName: '接尘工龄', field: 'workDuration'},
+            {headerName: '粉尘性质', field: 'workType'},
             {headerName: '操作', field: 'id', cellRendererFramework: CaseListCellBtnComponent}
         ];
 
-        this.rowData = [
-            {id: '1', name: '张三', gender: '男', phone: '1326874574', exposeAge: 2, type: '石墨尘肺', visitTime: '2017-09-24 13:22:22'},
-            {id: '2', name: '李四', gender: '男', phone: '1326874574', exposeAge: 2, type: '石墨尘肺', visitTime: '2017-09-24 13:22:22'},
-            {id: '3', name: '王五', gender: '男', phone: '1326874574', exposeAge: 2, type: '石墨尘肺', visitTime: '2017-09-24 13:22:22'},
-            {id: '4', name: '刘文', gender: '男', phone: '1326874574', exposeAge: 2, type: '石墨尘肺', visitTime: '2017-09-24 13:22:22'},
-            {id: '5', name: '张达', gender: '男', phone: '1326874574', exposeAge: 2, type: '石墨尘肺', visitTime: '2017-09-24 13:22:22'},
-            {id: '6', name: '刘六', gender: '男', phone: '1326874574', exposeAge: 2, type: '石墨尘肺', visitTime: '2017-09-24 13:22:22'}
-        ];
-
         this.gridOptions = <GridOptions>{
-            rowData: this.rowData,
             columnDefs: this.columnDefs,
             context: {
                 componentParent: this
             },
             rowHeight: 50
         };
-     }
+    }
 
-    ngOnInit() {}
+    public onGridReady(params) {
+        this.gridApi = params.api;
+        this.gridColumnApi = params.columnApi;
+        params.api.sizeColumnsToFit();
+
+        this.caseListService.getCase()
+        .then((data) => {
+            params.api.setRowData(data)
+        } );
+    }
 }

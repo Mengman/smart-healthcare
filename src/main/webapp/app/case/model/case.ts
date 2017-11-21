@@ -1,5 +1,5 @@
 export class Case {
-    public id: string;
+    public id: number;
     public name: string;
     public sex: string;
     public stature: string;

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import { CaseListItem } from '../model/case-list-item';
+import { CaseListItem } from '../../case/model/case-list-item';
 
 @Injectable()
-export class CaseListService {
+export class ExamCaseListService {
 
     constructor(private http: Http) { }
 

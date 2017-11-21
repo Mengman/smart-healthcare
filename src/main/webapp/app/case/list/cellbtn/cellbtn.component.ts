@@ -21,7 +21,6 @@ export class CellBtnComponent implements AgRendererComponent  {
     }
 
     viewCaseDetail() {
-        console.log(JSON.stringify(this.params.data));
         this.router.navigateByUrl('/case/' + this.params.data.id);
     }
 }
