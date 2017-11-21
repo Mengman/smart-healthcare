@@ -32,9 +32,11 @@ public class UploadFileResource {
 
     @GetMapping("/files/{fileId}")
     @ResponseBody
-    public ResponseEntity<Resource> getFile(@PathVariable Long fileId) {
+    public ResponseEntity<Resource> getFile(@PathVariable Long fileId) throws IOException {
         Resource file = storageService.loadAsResource(fileId);
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
-            "attachment; filename=\"" + file.getFilename() + "\"").body(file);
+            "attachment; filename=\"" + file.getFilename() + "\"")
+            .contentLength(file.contentLength())
+            .body(file);
     }
 }
