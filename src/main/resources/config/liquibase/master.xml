@@ -8,5 +8,6 @@
     <include file="config/liquibase/changelog/201711101010_added_entity_patient.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201711101010_added_entity_analysis_task.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201711101010_added_entity_file.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201711211545_added_entity_demo.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
