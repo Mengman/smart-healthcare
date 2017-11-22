@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions, NgUploaderService } from 'ngx-uploader';
 
@@ -16,6 +16,9 @@ import { ExamNewService } from './new.service';
 export class ExamNewComponent implements OnInit {
     public case: CaseListItem;
 
+    public submited = false;
+    public analysisStatus = 'analysising';
+
     public examForm: ExamForm;
     public step = 'firstStep';
     public uploadOptions: UploaderOptions;
@@ -31,6 +34,7 @@ export class ExamNewComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private examNewService: ExamNewService
     ) {}
 
@@ -49,8 +53,20 @@ export class ExamNewComponent implements OnInit {
     }
 
      public onSubmit() {
+        this.startAnalysis();
         this.examNewService.saveTask(this.examForm);
      }
+
+     private startAnalysis() {
+         this.submited = true;
+        setTimeout(() => {
+          this.analysisStatus = 'drawing';
+          setTimeout(() => {
+            this.submited = false;
+            this.router.navigateByUrl('/exam');
+          }, 10000);
+        }, 20000);
+      }
 
      public onUploadOutput(
          output: UploadOutput,

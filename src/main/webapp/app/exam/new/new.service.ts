@@ -25,7 +25,7 @@ export class ExamNewService {
         .toPromise()
         .then((resp) => {
             if (resp.json().code === 0) {
-                this.router.navigateByUrl('/exam');
+                // this.router.navigateByUrl('/exam');
             }
         })
     }
