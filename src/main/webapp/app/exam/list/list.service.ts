@@ -33,23 +33,27 @@ export class ExamListService {
         }
 
         if (task.analysisResult) {
+            item.analysisResult = this.convertNumberResult2Words(task.analysisResult)
+        }
 
-            switch (task.analysisResult) {
-                case 0:
-                    item.diagnosisResult = '无尘肺';
-                    break;
-                case 1:
-                    item.diagnosisResult = '尘肺一期';
-                    break;
-                case 2:
-                    item.diagnosisResult = '尘肺二期';
-                    break;
-                case 3:
-                    item.diagnosisResult = '尘肺三期';
-
-            }
+        if (task.diagnosisResult) {
+            item.diagnosisResult = this.convertNumberResult2Words(task.diagnosisResult);
         }
         return item;
+    }
+
+    private convertNumberResult2Words(result: number): string {
+        switch (result) {
+            case 0:
+                return '无尘肺';
+        case 1:
+                return '尘肺一期';
+        case 2:
+                return '尘肺二期';
+        case 3:
+                return '尘肺三期';
+        }
+        return null;
     }
 
 }
