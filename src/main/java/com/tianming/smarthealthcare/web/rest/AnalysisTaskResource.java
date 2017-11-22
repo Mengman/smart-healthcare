@@ -2,23 +2,18 @@ package com.tianming.smarthealthcare.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.tianming.smarthealthcare.domain.AnalysisTask;
-import com.tianming.smarthealthcare.domain.Storage;
 import com.tianming.smarthealthcare.security.SecurityUtils;
 import com.tianming.smarthealthcare.service.AnalysisTaskService;
 import com.tianming.smarthealthcare.service.NoSuchPatientException;
-import com.tianming.smarthealthcare.service.StorageService;
 import com.tianming.smarthealthcare.web.rest.vm.AnalysisTaskVM;
+import com.tianming.smarthealthcare.web.rest.vm.DiagnoseTaskVM;
 import com.tianming.smarthealthcare.web.rest.vm.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.util.List;
 
@@ -41,9 +36,9 @@ public class AnalysisTaskResource {
 
     @PutMapping("/task")
     @Timed
-    public ResponseEntity<Result> modifyTask(@RequestBody AnalysisTask analysisTask){
-        log.debug("REST request to modify analysis task : {}", analysisTask);
-        AnalysisTask savedAnalysisTask = analysisTaskService.modify(analysisTask);
+    public ResponseEntity<Result> modifyTask(@RequestBody DiagnoseTaskVM diagnoseTaskVM){
+        log.debug("REST request to modify analysis task : {}", diagnoseTaskVM);
+        AnalysisTask savedAnalysisTask = analysisTaskService.modify(diagnoseTaskVM);
         return ResponseEntity.ok(new Result(0, "success", savedAnalysisTask));
     }
 

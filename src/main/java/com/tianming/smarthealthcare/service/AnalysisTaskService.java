@@ -9,6 +9,7 @@ import com.tianming.smarthealthcare.repository.DemoRepository;
 import com.tianming.smarthealthcare.repository.PatientRepository;
 import com.tianming.smarthealthcare.repository.StorageRepository;
 import com.tianming.smarthealthcare.web.rest.vm.AnalysisTaskVM;
+import com.tianming.smarthealthcare.web.rest.vm.DiagnoseTaskVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -58,7 +59,10 @@ public class AnalysisTaskService {
         return analysisTaskRepository.save(analysisTask);
     }
 
-    public AnalysisTask modify(AnalysisTask analysisTask) {
+    public AnalysisTask modify(DiagnoseTaskVM diagnoseTaskVM) {
+        AnalysisTask analysisTask = analysisTaskRepository.findOne(diagnoseTaskVM.getId());
+        analysisTask.setDiagnosisResult(diagnoseTaskVM.getDiagnosisResult());
+        analysisTask.setDiagnosisComment(diagnoseTaskVM.getDiagnosisComment());
         return analysisTaskRepository.save(analysisTask);
     }
 

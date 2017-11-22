@@ -29,7 +29,7 @@ public class PatientService {
     }
 
     public List<Patient> getPatients(String username) {
-        return patientRepository.findByCreatedBy(username);
+        return patientRepository.findByCreatedByOrderByCreatedDateDesc(username);
     }
 
     public Patient getPatient(Long patientId) {
