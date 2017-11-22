@@ -75,24 +75,29 @@
             </div>
             <div class="row">
                 <div class="form-group">
-                    <label for="">诊断结果</label>
-                    <select name="" id="" class="form-control" >
+                    <label for="diagnosisResult">诊断结果</label>
+                    <select [(ngModel)]="diagnosis.diagnosisResult"  name="diagnosisResult" id="diagnosisResult" class="form-control" >
                         <option value=""></option>
-                        <option value="">无尘肺</option>
-                        <option value="">尘肺一期</option>
-                        <option value="">尘肺二期</option>
-                        <option value="">尘肺三期</option>
+                        <option value="0">无尘肺</option>
+                        <option value="1">尘肺一期</option>
+                        <option value="2">尘肺二期</option>
+                        <option value="3">尘肺三期</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group" style="width: 100%;">
-                    <label for="">诊断建议</label>
-                    <textarea class="form-control" name="" id="" rows="10"></textarea>
+                    <label for="diagnosisComment">诊断建议</label>
+                    <textarea [(ngModel)]="diagnosis.diagnosisComment" class="form-control" name="diagnosisComment" id="diagnosisComment" rows="10"></textarea>
                 </div>
             </div>
             <div class="row">
-                <div class="col" style="text-align:center; margin-bottom: 100px;"><button class="btn btn-primary">提交</button></div>
+                <div class="col" style="height: 60px;">
+                    <ngb-alert *ngIf="showSubmitAlert" [type]="'success'" (close)="showSubmitAlert = false">提交成功</ngb-alert>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align:center; margin-bottom: 100px;"><button (click)="saveDiagnosis()" class="btn btn-primary">提交</button></div>
             </div>
         </div>
     </div>

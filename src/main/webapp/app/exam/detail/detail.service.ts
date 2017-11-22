@@ -14,4 +14,10 @@ export class ExamTaskDetailService {
         .toPromise()
         .then((resp) => resp.json().data as AnalysisTask);
     }
+
+    public saveDiagnosis(diagnosis: AnalysisTask): Promise<boolean> {
+        return this.http.put('/api/task', diagnosis)
+        .toPromise()
+        .then((resp) => resp.json().code === 0);
+    }
 }

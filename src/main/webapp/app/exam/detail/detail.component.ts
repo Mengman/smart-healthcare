@@ -25,6 +25,8 @@ export class ExamDetailComponent implements OnInit {
     public imageData: any;
     public fullScreenBtn = false;
     public imgLoading = true;
+    public showSubmitAlert = false;
+    public diagnosis: AnalysisTask = new AnalysisTask();
 
     constructor(
         private route: ActivatedRoute,
@@ -41,9 +43,15 @@ export class ExamDetailComponent implements OnInit {
             if (!this.task.xrayId) {
               this.imgLoading = false;
             }
+            this.diagnosis.id = data.id;
             this.analysisResultConvert(data);
             this.initImage(this.task.xrayId);
         });
+    }
+
+    public saveDiagnosis() {
+      this.taskDetailService.saveDiagnosis(this.diagnosis)
+      .then((isSuccess) => this.showSubmitAlert = isSuccess);
     }
 
     private analysisResultConvert(task: AnalysisTask) {
