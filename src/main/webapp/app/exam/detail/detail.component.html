@@ -33,7 +33,7 @@
                         <div class="basic-info-detail">
                             <div class="row">
                                 <div class="col-3">姓名</div>
-                                <div class="col-9">小明</div>
+                                <div class="col-9">{{task.patient.name}}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">性别</div>
@@ -72,6 +72,27 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="">诊断结果</label>
+                    <select name="" id="" class="form-control" >
+                        <option value=""></option>
+                        <option value="">无尘肺</option>
+                        <option value="">尘肺一期</option>
+                        <option value="">尘肺二期</option>
+                        <option value="">尘肺三期</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group" style="width: 100%;">
+                    <label for="">诊断建议</label>
+                    <textarea class="form-control" name="" id="" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align:center; margin-bottom: 100px;"><button class="btn btn-primary">提交</button></div>
             </div>
         </div>
     </div>
