@@ -10,9 +10,9 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@JsonIdentityInfo(
-    generator = ObjectIdGenerators.PropertyGenerator.class,
-    property = "id")
+//@JsonIdentityInfo(
+//    generator = ObjectIdGenerators.PropertyGenerator.class,
+//    property = "id")
 public class Patient extends AbstractAuditingEntity implements Serializable {
 
     @Id
@@ -33,6 +33,7 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
     private Integer workDuration;
     private String workType;
 
+    // todo: 后续获取对应任务列表， 现在由于onetomany , manytoone出现问题。
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("createdDate desc")
     private Set<AnalysisTask> tasks;
