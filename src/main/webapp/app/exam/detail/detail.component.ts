@@ -24,6 +24,7 @@ export class ExamDetailComponent implements OnInit {
     public imageList = [];
     public imageData: any;
     public fullScreenBtn = false;
+    public imgLoading = true;
 
     constructor(
         private route: ActivatedRoute,
@@ -32,12 +33,16 @@ export class ExamDetailComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.initImage('im1.dcm')
+
         this.route.paramMap.switchMap(
             (params: ParamMap) => this.taskDetailService.getTask(params.get('id'))
         ).subscribe((data) => {
             this.task = data;
+            if (!this.task.xrayId) {
+              this.imgLoading = false;
+            }
             this.analysisResultConvert(data);
+            this.initImage(this.task.xrayId);
         });
     }
 
@@ -90,11 +95,11 @@ export class ExamDetailComponent implements OnInit {
         console.log('this.dcmEle: ' + JSON.stringify(this.dcmEle))
         cornerstone.enable(this.dcmEle.nativeElement);
 
-        this.cornerstoneService.fetchDicomImage(`/data/` + fileName)
+        this.cornerstoneService.fetchDicomImage(`/api/files/` + fileName)
           .subscribe((res) => {
             this.imageData = res;
             if (this.imageData) {
-
+              this.imgLoading = false;
               if (!this.imageList.filter((img) => img.imageId === this.imageData.imageId).length) {
                 this.imageList.push(this.imageData);
               }
@@ -113,7 +118,7 @@ export class ExamDetailComponent implements OnInit {
         setTimeout(() => {
           cornerstone.enable(this.fullDcmEle.nativeElement);
 
-          this.cornerstoneService.fetchDicomImage(`/data/im1.dcm`)
+          this.cornerstoneService.fetchDicomImage(`/api/files/` + this.task.xrayId)
             .subscribe((res) => {
               this.imageData = res;
               if (this.imageData) {
