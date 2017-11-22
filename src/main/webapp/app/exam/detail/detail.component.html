@@ -5,29 +5,27 @@
             <img src="../../../content/images/underline.png" alt="">
         </div>
     </div>
-    <div class="patient-info" *ngIf="task">
+    <div class="patient-info">
         <div class="container">
             <div class="row">
-                <!-- <div class="col">
-                <div class="x-ray">
-                  <div id="dicomWrapper2"
-                       class='disable-selection noIbar cornerstone-enabled-image'
-                       unselectable='on'
-                       onselectstart='return false;'
-                       onmousedown='return false;'>
-      
-                    <div #dcmEle id="dicomImage2"
-                         style="height: 500px;">
-                    </div>
-                  </div>
-                  <div class="review-full-btn">
-                    <a class="btn" (click)="reviewFullScreen()"><i class="fa fa-search-plus fa-3x" aria-hidden="true"></i></a>
-                  </div>
-                </div>
-              </div> -->
-
-
                 <div class="col-6">
+                    <div class="x-ray">
+                        <div id="dicomWrapper2" class='disable-selection noIbar cornerstone-enabled-image' unselectable='on' onselectstart='return false;'
+                            onmousedown='return false;'>
+
+                            <div id="dicomImage2" style="height: 500px;" #dcmEle>
+                            </div>
+                        </div>
+                        <div class="review-full-btn">
+                            <a class="btn" (click)="reviewFullScreen()">
+                                <i class="fa fa-search-plus fa-3x" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-6"  *ngIf="task">
                     <div class="basic-info">
                         <h3>
                             <span class="name">{{task.patient.name}}</span>的诊断书</h3>
@@ -75,5 +73,55 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+
+<div class="dicom-fullscreen" *ngIf="fullScreenBtn">
+    <div class="back">
+        <a class="btn " (click)="backDetail()">
+            <i class="fa fa-undo" aria-hidden="true"></i>返回详情</a>
+        <div class="detail-desc">
+            <span>Rows: </span>
+            <span id="rows"></span>
+            <br>
+            <span>Columns: </span>
+            <span id="columns"></span>
+            <br>
+        </div>
+    </div>
+    <div id="dicomWrapper" class='disable-selection noIbar' unselectable='on' onselectstart='return false;' onmousedown='return false;'>
+        <div #fullDcmEle id="dicomImage" style="position:absolute; top:0; bottom: 0;left:0;right:0;">
+        </div>
+    </div>
+    <div class="dcm-detail">
+        <button type="button" (click)="wwWl()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+            title="" data-original-title="窗宽窗位">
+            <span class="fa fa-sun-o"></span>
+        </button>
+        <button type="button" (click)="inverseColor()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+            data-placement="bottom" title="" data-original-title="反色">
+            <span class="fa fa-adjust"></span>
+        </button>
+        <button type="button" (click)="zoom()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+            title="" data-original-title="放缩">
+            <span class="fa fa-search"></span>
+        </button>
+        <button type="button" (click)="pan()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+            title="" data-original-title="平移">
+            <span class="fa fa-arrows"></span>
+        </button>
+        <button type="button" disabled (click)="scroll()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+            data-placement="bottom" title="" data-original-title="浏览">
+            <span class="fa fa-bars"></span>
+        </button>
+        <button type="button" disabled (click)="play()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+            data-placement="bottom" title="" data-original-title="播放">
+            <span class="fa fa-play"></span>
+        </button>
+        <button type="button" disabled (click)="stop()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+            data-placement="bottom" title="" data-original-title="停止">
+            <span class="fa fa-stop"></span>
+        </button>
     </div>
 </div>

@@ -16,4 +16,6 @@ export * from './new/new.component';
 export * from './new/new.service';
 export * from './new/new.route';
 
+export * from './cornerstone.service';
+export * from './cornerstone.directive';
 export * from './exam.route';

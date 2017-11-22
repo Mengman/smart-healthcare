@@ -20,6 +20,7 @@ import {
     ExamNewService,
     ExamListService,
     ExamTaskDetailService,
+    CornerstoneService,
     examStates
 } from './';
 
@@ -42,8 +43,8 @@ import {
         CaseListComponent,
         ExamDetailComponent,
         ExamNewComponent,
-        CaseListCellBtnComponent
+        CaseListCellBtnComponent,
     ],
-    providers: [ExamCaseListService, ExamNewService, ExamListService, ExamTaskDetailService],
+    providers: [ExamCaseListService, ExamNewService, ExamListService, ExamTaskDetailService, CornerstoneService],
 })
 export class SmarthealthcareExamModule { }
