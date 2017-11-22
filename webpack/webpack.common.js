@@ -97,7 +97,16 @@ module.exports = (options) => {
                 { from: './src/main/webapp/manifest.webapp', to: 'manifest.webapp' },
                 // { from: './src/main/webapp/sw.js', to: 'sw.js' },
                 // jhipster-needle-add-assets-to-webpack - JHipster will add/remove third-party resources in this array
-                { from: './src/main/webapp/robots.txt', to: 'robots.txt' }
+                { from: './src/main/webapp/robots.txt', to: 'robots.txt' },
+                { from: './src/main/webapp/content/data/im1.dcm', to: 'data/im1.dcm' },
+                { from: './node_modules/jquery/dist/jquery.min.js', to: 'jquery/jquery.min.js' },
+                { from: './node_modules/cornerstone-core/dist/cornerstone.js', to: 'cornerstone/cornerstone.js' },
+                { from: './node_modules/cornerstone-math/dist/cornerstoneMath.js', to: 'cornerstone/cornerstoneMath.js' },
+                { from: './node_modules/cornerstone-tools/dist/cornerstoneTools.js', to: 'cornerstone/cornerstoneTools.js' },
+                { from: './node_modules/dicom-parser/dist/dicomParser.js', to: 'cornerstone/dicomParser.js' },
+                { from: './src/main/webapp/content/lib/cornerstone/cornerstoneWADOImageLoader.js', to: 'cornerstone/cornerstoneWADOImageLoader.js' },
+                { from: './src/main/webapp/content/lib/cornerstone/cornerstoneWADOImageLoaderCodecs.js', to: 'cornerstone/cornerstoneWADOImageLoaderCodecs.js' },
+                { from: './src/main/webapp/content/lib/cornerstone/cornerstoneWADOImageLoaderWebWorker.js', to: 'cornerstone/cornerstoneWADOImageLoaderWebWorker.js' },
             ]),
             new webpack.ProvidePlugin({
                 $: "jquery",

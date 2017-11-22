@@ -22,5 +22,8 @@
     ],
     "exclude": [
         "src/main/webapp/app/app.main-aot.ts"
+    ],
+    "types": [
+        "jquery"
     ]
 }
