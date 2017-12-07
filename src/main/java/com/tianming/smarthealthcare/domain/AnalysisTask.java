@@ -24,6 +24,7 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
     private Integer analysisStatus = 0; //0-analyzing, 1-finished
     private Integer diagnosisResult; //0,1,2,3
     private String diagnosisComment;
+    private Double positiveFraction;
 
     public AnalysisTask() {
     }
@@ -82,5 +83,13 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
 
     public void setPatient(Patient patient) {
         this.patient = patient;
+    }
+
+    public Double getPositiveFraction() {
+        return positiveFraction;
+    }
+
+    public void setPositiveFraction(Double positiveFraction) {
+        this.positiveFraction = positiveFraction;
     }
 }
