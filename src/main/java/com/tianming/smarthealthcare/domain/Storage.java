@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "file")
+@Table(name = "file_storage")
 public class Storage {
 
     @Id
