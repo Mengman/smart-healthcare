@@ -2,6 +2,7 @@ package com.tianming.smarthealthcare.domain;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.tianming.smarthealthcare.enums.AnalysisStatus;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -20,9 +21,9 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
     @JoinColumn(name = "patientId")
     private Patient patient;
     private Long xrayId;
-    private Integer analysisResult; //0,1,2,3
-    private Integer analysisStatus = 0; //0-analyzing, 1-finished
-    private Integer diagnosisResult; //0,1,2,3
+    private Integer analysisResult; // enum analysis result
+    private Integer analysisStatus = AnalysisStatus.ANALYSING.getStatusCode();
+    private Integer diagnosisResult; // enum analysis result
     private String diagnosisComment;
     private Double positiveFraction;
 
