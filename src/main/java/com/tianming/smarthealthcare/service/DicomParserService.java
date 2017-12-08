@@ -63,6 +63,7 @@ public class DicomParserService {
         Patient patient = new Patient();
         patient.setName(attributes.getString(Tag.PatientName));
         patient.setSex(attributes.getString(Tag.PatientSex));
+        patient.setPatientId(attributes.getString(Tag.PatientID));
         String birthDateStr = attributes.getString(Tag.PatientBirthDate); //yyyyMMdd
         try {
             patient.setBirthday(StringUtils.isEmpty(birthDateStr) ? null : dimcomDateFormatter.parse(birthDateStr));

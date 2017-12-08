@@ -78,7 +78,7 @@
 			},
 			"response": [
 				{
-					"id": "bd5218da-4778-4439-a7d2-d20a59fa314a",
+					"id": "3175fdb7-e9dd-46a7-9457-06f7d139f8a8",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -213,7 +213,7 @@
 			},
 			"response": [
 				{
-					"id": "954f2742-e1f2-4d8f-a54d-b00bcb8432ad",
+					"id": "d4c9e23e-cef5-43b0-a202-5afea1498d74",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -352,7 +352,7 @@
 			},
 			"response": [
 				{
-					"id": "5de08f3f-6864-4395-ba2b-7b86adc359ea",
+					"id": "5a1644ee-3b89-4d50-ad84-c259e8700c34",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -497,7 +497,7 @@
 			},
 			"response": [
 				{
-					"id": "347010bc-83fb-48bf-8d21-b3802b31c2f3",
+					"id": "b0234775-185b-4467-bea4-3e5c8b16fbff",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -560,7 +560,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Fri, 08 Dec 2017 06:32:16 GMT",
+							"value": "Fri, 08 Dec 2017 08:07:45 GMT",
 							"name": "Date",
 							"description": "The date and time that the message was sent"
 						},
@@ -602,8 +602,8 @@
 						}
 					],
 					"cookie": [],
-					"responseTime": 46608,
-					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 9,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-12-08T06:31:38.833Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-12-08T06:31:38.833Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-12-08T06:31:38.816Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-12-08T06:31:38.816Z\",\r\n      \"id\" : 7,\r\n      \"name\" : \"yang^shi^kui\",\r\n      \"sex\" : \"M\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : null\r\n    },\r\n    \"xrayId\" : 11,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }\r\n}"
+					"responseTime": 161,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 11,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-12-08T08:07:45.547Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-12-08T08:07:45.547Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-12-08T08:07:45.544Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-12-08T08:07:45.544Z\",\r\n      \"id\" : 9,\r\n      \"name\" : \"yang^shi^kui\",\r\n      \"patientId\" : \"00002095\",\r\n      \"sex\" : \"M\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : null\r\n    },\r\n    \"xrayId\" : 14,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }\r\n}"
 				}
 			]
 		},
@@ -639,7 +639,7 @@
 			},
 			"response": [
 				{
-					"id": "df707d73-0240-447c-ae0c-1f21e06952cb",
+					"id": "20c2669a-0a0e-49d5-bb25-7c4436edd978",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -771,7 +771,7 @@
 			},
 			"response": [
 				{
-					"id": "25c221f2-cec6-4cb8-95e7-ef4e8d00d739",
+					"id": "c289bc67-52bd-4d3e-9849-6b0979240143",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -906,7 +906,7 @@
 			},
 			"response": [
 				{
-					"id": "480a6e0b-0958-437a-9b63-7f997bdd2413",
+					"id": "0dbd38d3-51ee-46b7-927d-f6dfc0898664",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -1043,7 +1043,7 @@
 			},
 			"response": [
 				{
-					"id": "7843ee3f-8b93-4e40-871f-1620c3d5eeba",
+					"id": "9c13119e-e030-432e-8a9b-5bf6bb5e2390",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -1178,7 +1178,7 @@
 			},
 			"response": [
 				{
-					"id": "59e3f922-115b-40a3-b05d-0b4b1c4a688a",
+					"id": "a026934e-cd3e-4837-9bea-447f86525cd1",
 					"name": "200",
 					"originalRequest": {
 						"method": "PUT",

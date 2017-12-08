@@ -20,6 +20,7 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
     private Long id;
 
     private String name;
+    private String patientId;
     private String sex;
     private String stature;
     private String weight;//体重
@@ -164,5 +165,13 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
 
     public void setMedicalHistory(Set<MedicalHistory> medicalHistory) {
         this.medicalHistory = medicalHistory;
+    }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
     }
 }

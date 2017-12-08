@@ -13,5 +13,6 @@
     <include file="config/liquibase/changelog/201711222307_modified_entity_patient_task.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201712071030_modified_entity_file.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201712071030_modified_entity_analysis_task.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201712081550_modified_entity_patient.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
