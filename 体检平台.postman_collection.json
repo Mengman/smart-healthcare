@@ -78,7 +78,7 @@
 			},
 			"response": [
 				{
-					"id": "f14beed6-23a6-4685-b8e3-1ac8bd3109d9",
+					"id": "bd5218da-4778-4439-a7d2-d20a59fa314a",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -213,7 +213,7 @@
 			},
 			"response": [
 				{
-					"id": "9be3743c-6d04-457f-bbf8-4a3091172a74",
+					"id": "954f2742-e1f2-4d8f-a54d-b00bcb8432ad",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -352,7 +352,7 @@
 			},
 			"response": [
 				{
-					"id": "d2382116-b74b-41ed-9603-4e7fb0a785a5",
+					"id": "5de08f3f-6864-4395-ba2b-7b86adc359ea",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -459,6 +459,155 @@
 			]
 		},
 		{
+			"name": "上传dicom并解析",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Authorization}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"description": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/dicomParse",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"dicomParse"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "347010bc-83fb-48bf-8d21-b3802b31c2f3",
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "",
+									"type": "file",
+									"src": {
+										"0": {}
+									}
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/dicomParse",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"dicomParse"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Dec 2017 06:32:16 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "0",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "smarthealthcare:dev:8080",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 46608,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : {\r\n    \"id\" : 9,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-12-08T06:31:38.833Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-12-08T06:31:38.833Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-12-08T06:31:38.816Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-12-08T06:31:38.816Z\",\r\n      \"id\" : 7,\r\n      \"name\" : \"yang^shi^kui\",\r\n      \"sex\" : \"M\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : null\r\n    },\r\n    \"xrayId\" : 11,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }\r\n}"
+				}
+			]
+		},
+		{
 			"name": "病例列表",
 			"request": {
 				"method": "GET",
@@ -490,7 +639,7 @@
 			},
 			"response": [
 				{
-					"id": "e501bcb4-663c-4dfb-bed5-fc21256ddd52",
+					"id": "df707d73-0240-447c-ae0c-1f21e06952cb",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -622,7 +771,7 @@
 			},
 			"response": [
 				{
-					"id": "e9565c1f-509c-4586-a2a4-f385d5691cc9",
+					"id": "25c221f2-cec6-4cb8-95e7-ef4e8d00d739",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -757,7 +906,7 @@
 			},
 			"response": [
 				{
-					"id": "c2fcbb7b-46d1-47f9-8cd9-9e5706f06424",
+					"id": "480a6e0b-0958-437a-9b63-7f997bdd2413",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -894,7 +1043,7 @@
 			},
 			"response": [
 				{
-					"id": "d6dba786-c910-4a9b-b039-d0ce774dbc01",
+					"id": "7843ee3f-8b93-4e40-871f-1620c3d5eeba",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -1029,7 +1178,7 @@
 			},
 			"response": [
 				{
-					"id": "a5ea1b86-26e3-43b2-bbb5-da1dfc8ef5f0",
+					"id": "59e3f922-115b-40a3-b05d-0b4b1c4a688a",
 					"name": "200",
 					"originalRequest": {
 						"method": "PUT",
