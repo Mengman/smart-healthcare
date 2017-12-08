@@ -73,4 +73,11 @@ public class AnalysisTaskService {
     public AnalysisTask getTask(Long taskId) {
         return analysisTaskRepository.findOne(taskId);
     }
+
+    public AnalysisTask createTask(Storage storage, Patient patient) {
+        AnalysisTask analysisTask = new AnalysisTask();
+        analysisTask.setPatient(patient);
+        analysisTask.setXrayId(storage.getId());
+        return analysisTaskRepository.save(analysisTask);
+    }
 }

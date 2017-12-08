@@ -1,6 +1,8 @@
 package com.tianming.smarthealthcare.web.rest;
 
+import com.tianming.smarthealthcare.domain.AnalysisTask;
 import com.tianming.smarthealthcare.domain.Storage;
+import com.tianming.smarthealthcare.service.DicomParserService;
 import com.tianming.smarthealthcare.service.StorageService;
 import com.tianming.smarthealthcare.web.rest.vm.Result;
 import org.slf4j.Logger;
@@ -20,8 +22,14 @@ public class UploadFileResource {
 
     private final Logger log = LoggerFactory.getLogger(UploadFileResource.class);
 
-    @Autowired
     private StorageService storageService;
+    private DicomParserService dicomParserService;
+
+    @Autowired
+    public UploadFileResource(StorageService storageService, DicomParserService dicomParserService) {
+        this.storageService = storageService;
+        this.dicomParserService = dicomParserService;
+    }
 
     @PostMapping("/files")
     public ResponseEntity<Result> handleFileUpload(@RequestParam("file") MultipartFile file) throws IOException{
@@ -38,5 +46,12 @@ public class UploadFileResource {
             "attachment; filename=\"" + file.getFilename() + "\"")
             .contentLength(file.contentLength())
             .body(file);
+    }
+
+    @PostMapping("/dicomParse")
+    public ResponseEntity<Result> handleDicomParse(@RequestParam("file") MultipartFile file) throws IOException{
+        log.debug("REST request to upload file : {}", file.getOriginalFilename());
+        AnalysisTask task = dicomParserService.parseAndSave(file);
+        return ResponseEntity.ok(new Result(0, "success", task));
     }
 }

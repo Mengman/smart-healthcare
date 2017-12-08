@@ -37,4 +37,8 @@ public class PatientService {
         patient.getTasks();
         return patient;
     }
+
+    public Patient save(Patient patient) {
+        return patientRepository.save(patient);
+    }
 }

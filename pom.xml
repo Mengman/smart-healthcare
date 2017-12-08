@@ -355,7 +355,21 @@
             <artifactId>spring-security-data</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+            <groupId>org.dcm4che</groupId>
+            <artifactId>dcm4che-core</artifactId>
+            <version>5.11.0</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>dicom4che</id>
+            <name>dicom4che Repo</name>
+            <url>http://www.dcm4che.org/maven2/</url>
+        </repository>
+    </repositories>
+
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
