@@ -11,17 +11,23 @@ import com.tianming.smarthealthcare.web.rest.vm.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.SortDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.NoSuchFileException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
 public class AnalysisTaskResource {
 
     private final Logger log = LoggerFactory.getLogger(AnalysisTaskResource.class);
+    private static final int DEFAULT_PAGE_NUMBER = 0;
+    private static final int DEFAULT_PAGE_SIZE = 20;
 
     @Autowired
     private AnalysisTaskService analysisTaskService;
@@ -36,7 +42,7 @@ public class AnalysisTaskResource {
 
     @PutMapping("/task")
     @Timed
-    public ResponseEntity<Result> modifyTask(@RequestBody DiagnoseTaskVM diagnoseTaskVM){
+    public ResponseEntity<Result> modifyTask(@RequestBody DiagnoseTaskVM diagnoseTaskVM) {
         log.debug("REST request to modify analysis task : {}", diagnoseTaskVM);
         AnalysisTask savedAnalysisTask = analysisTaskService.modify(diagnoseTaskVM);
         return ResponseEntity.ok(new Result(0, "success", savedAnalysisTask));
@@ -44,16 +50,19 @@ public class AnalysisTaskResource {
 
     @GetMapping("/task")
     @Timed
-    public ResponseEntity<Result> getTasks(){
+    public ResponseEntity<Result> getTasks(@PageableDefault(page = DEFAULT_PAGE_NUMBER, size = DEFAULT_PAGE_SIZE)
+                                           @SortDefault.SortDefaults({
+                                               @SortDefault(sort = "createdDate", direction = Sort.Direction.DESC)
+                                           }) Pageable pageable) {
         log.debug("REST request to get analysis tasks");
         String username = SecurityUtils.getCurrentUserLogin();
-        List<AnalysisTask> analysisTasks = analysisTaskService.getTasks(username);
-        return ResponseEntity.ok(new Result(0, "success", analysisTasks));
+        Page<AnalysisTask> analysisTasks = analysisTaskService.getTasks(username, pageable);
+        return ResponseEntity.ok(new Result(0, "success", analysisTasks.getContent()));
     }
 
     @GetMapping("/task/{taskId}")
     @Timed
-    public ResponseEntity<Result> getTask(@PathVariable Long taskId){
+    public ResponseEntity<Result> getTask(@PathVariable Long taskId) {
         log.debug("REST request to get analysis task : {}", taskId);
         AnalysisTask analysisTask = analysisTaskService.getTask(taskId);
         return ResponseEntity.ok(new Result(0, "success", analysisTask));

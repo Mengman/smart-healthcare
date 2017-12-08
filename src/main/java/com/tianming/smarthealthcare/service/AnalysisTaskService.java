@@ -13,6 +13,8 @@ import com.tianming.smarthealthcare.web.rest.vm.DiagnoseTaskVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,8 +68,8 @@ public class AnalysisTaskService {
         return analysisTaskRepository.save(analysisTask);
     }
 
-    public List<AnalysisTask> getTasks(String username) {
-        return analysisTaskRepository.findByCreatedByOrderByCreatedDateDesc(username);
+    public Page<AnalysisTask> getTasks(String username, Pageable pageable) {
+        return analysisTaskRepository.findByCreatedBy(username, pageable);
     }
 
     public AnalysisTask getTask(Long taskId) {
