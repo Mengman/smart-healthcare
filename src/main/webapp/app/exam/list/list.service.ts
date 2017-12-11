@@ -8,6 +8,8 @@ import { takeLast } from 'rxjs/operator/takeLast';
 
 @Injectable()
 export class ExamListService {
+    public sortingOrder = ['desc', 'asc', null];
+
     constructor(private http: Http) { }
 
     getTask(): Promise<AnalysisTaskListItem[]> {
@@ -26,6 +28,7 @@ export class ExamListService {
         item.patientName = task.patient.name;
         item.patientIdcard = task.patient.idcard;
         item.diagnosisComment = task.diagnosisComment;
+        item.positiveFraction = task.positiveFraction;
         if (task.analysisStatus === 0) {
             item.analysisStatus = '分析中';
         } else {

@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 
-import { listRoute, detailRoute, caseListRoute, newExamTaskRoute } from './';
+import { listRoute, detailRoute, batchUploadRoute, caseListRoute, newExamTaskRoute } from './';
 
 const EXAM_ROUTES = [
     listRoute,
     detailRoute,
     caseListRoute,
+    batchUploadRoute,
     newExamTaskRoute
 ]
 

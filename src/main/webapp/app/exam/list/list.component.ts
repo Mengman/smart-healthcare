@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GridOptions } from 'ag-grid/main';
-
 import { CellBtnComponent } from './cellbtn/cellbtn.component';
 import { ExamListService } from './list.service';
 
@@ -14,6 +13,17 @@ export class ExamListComponent implements OnInit {
     public gridOptions: GridOptions;
     public columnDefs;
     public rowData;
+    public localeText = {
+        page: ' ',
+        more: '更多',
+        to: '-',
+        of: '/',
+        next: '下一页',
+        last: '末页',
+        first: '首页',
+        previous: '上一页',
+        loadingOoo: '加载中...',
+    };
 
     constructor(
         private examListService: ExamListService
@@ -26,7 +36,8 @@ export class ExamListComponent implements OnInit {
             {headerName: '分析状态', field: 'analysisStatus'},
             {headerName: '分析结果', field: 'analysisResult'},
             {headerName: '诊断结果', field: 'diagnosisResult'},
-            {headerName: '操作', field: 'id', cellRendererFramework: CellBtnComponent}
+            {headerName: '阳性概率', field: 'positiveFraction', unSortIcon: true},
+            {headerName: '操作', field: 'id', cellRendererFramework: CellBtnComponent, suppressSorting: true}
         ]
 
         this.gridOptions =  <GridOptions>{

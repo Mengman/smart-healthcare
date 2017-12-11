@@ -1,0 +1,26 @@
+<div class="row justify-content-md-center">
+    <div class="col-sm-12 col-md-12 content-center">
+        <span class="btn btn-primary btn-file btn-lg">
+            选择x光片
+            <input type="file" ngFileSelect [options]="uploadOptions" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput"
+                multiple>
+        </span>
+
+        <button type="button" class="btn btn-primary btn-lg pull-right" routerLink='/exam/task/selectcase'>返回列表</button>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-sm-10 col-md-10">
+        <ul class="upload-progress-list">
+            <li class="upload-progress-item" *ngFor="let file of files">
+                <span class="file-name">{{file.name}}</span>
+                <div class="progress">
+                    <div [ngStyle]="{'width': file.progress.data.percentage + '%'}" class="progress-bar" [ngClass]="{'progress-bar-animated progress-bar-striped': checkProgress(file)}"
+                        role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                        {{file.progress.data.percentage}}%
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -5,6 +5,15 @@
 </div>
 <div class="row">
     <div class="col">
-        <ag-grid-angular class="ag-material" style="width: 100%; height: 900px;" [gridOptions]="gridOptions" (gridReady)="onGridReady($event)" enableColResize></ag-grid-angular>
+        <ag-grid-angular class="ag-material" style="width: 100%; height: 900px;" 
+        [gridOptions]="gridOptions" 
+        [enableSorting]="true" 
+        [animateRows]="true" 
+        [sortingOrder]="sortingOrder"
+        [paginationAutoPageSize]="true"
+        [pagination]="true"
+        [localeText]="localeText"
+        (gridReady)="onGridReady($event)" 
+         enableColResize></ag-grid-angular>
     </div>
 </div>
