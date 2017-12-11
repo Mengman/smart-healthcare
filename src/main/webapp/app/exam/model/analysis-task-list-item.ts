@@ -6,4 +6,5 @@ export class AnalysisTaskListItem {
     public analysisResult: string;
     public diagnosisResult: string;
     public diagnosisComment: string;
+    public positiveFraction: number;
 }

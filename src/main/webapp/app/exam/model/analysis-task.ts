@@ -8,4 +8,5 @@ export class AnalysisTask {
     public analysisStatus: number;
     public diagnosisResult: number;
     public diagnosisComment: string;
+    public positiveFraction: number;
 }
