@@ -21,6 +21,7 @@ import {
     ExamListService,
     ExamTaskDetailService,
     CornerstoneService,
+    BatchUploadComponent,
     examStates
 } from './';
 
@@ -44,6 +45,7 @@ import {
         ExamDetailComponent,
         ExamNewComponent,
         CaseListCellBtnComponent,
+        BatchUploadComponent
     ],
     providers: [ExamCaseListService, ExamNewService, ExamListService, ExamTaskDetailService, CornerstoneService],
 })
