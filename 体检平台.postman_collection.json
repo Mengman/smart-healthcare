@@ -78,7 +78,7 @@
 			},
 			"response": [
 				{
-					"id": "574b5553-17c6-4e0f-990d-08cb3d233b23",
+					"id": "e09fff77-4de3-4b8c-a09e-b0838979869a",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -213,7 +213,7 @@
 			},
 			"response": [
 				{
-					"id": "1b353431-e9c8-496d-ac2b-508942145a27",
+					"id": "5799efee-0d6c-4bb2-bf4f-14557c02f94c",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -352,7 +352,7 @@
 			},
 			"response": [
 				{
-					"id": "af65afe3-f674-4612-acf3-222aa941d415",
+					"id": "a6ee74eb-ca37-41a4-848a-83324f8b2276",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -497,7 +497,7 @@
 			},
 			"response": [
 				{
-					"id": "688ed455-f17d-49de-b646-0f623be02d5a",
+					"id": "1f198a07-123a-480c-a187-4a1124b708f6",
 					"name": "200",
 					"originalRequest": {
 						"method": "POST",
@@ -639,7 +639,7 @@
 			},
 			"response": [
 				{
-					"id": "b4e10a47-1bb2-42b5-9aa2-155fb8ca669e",
+					"id": "05eeb484-3b8d-44c5-98d7-22219ad8a5bb",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -740,7 +740,7 @@
 			]
 		},
 		{
-			"name": "分析任务列表",
+			"name": "分析任务列表（分页排序）",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -788,7 +788,7 @@
 			},
 			"response": [
 				{
-					"id": "ce1f8947-e443-4a9e-b313-8b6f6edb5464",
+					"id": "0a17c5de-5806-45b7-a586-04e5111a7508",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -907,6 +907,139 @@
 			]
 		},
 		{
+			"name": "分析任务列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{Authorization}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"string\",\r\n  \"members\": [\r\n    {\r\n      \"activated\": true,\r\n      \"authorities\": [\r\n        \"string\"\r\n      ],\r\n      \"createdBy\": \"string\",\r\n      \"createdDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"email\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"id\": 1,\r\n      \"imageUrl\": \"string\",\r\n      \"langKey\": \"string\",\r\n      \"lastModifiedBy\": \"string\",\r\n      \"lastModifiedDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"lastName\": \"string\",\r\n      \"login\": \"string\"\r\n    }\r\n  ],\r\n  \"name\": \"myProject\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/allTask",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"allTask"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "d9d00365-62f9-49c6-a190-bd217c50557b",
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Authorization}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"string\",\r\n  \"members\": [\r\n    {\r\n      \"activated\": true,\r\n      \"authorities\": [\r\n        \"string\"\r\n      ],\r\n      \"createdBy\": \"string\",\r\n      \"createdDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"email\": \"string\",\r\n      \"firstName\": \"string\",\r\n      \"id\": 1,\r\n      \"imageUrl\": \"string\",\r\n      \"langKey\": \"string\",\r\n      \"lastModifiedBy\": \"string\",\r\n      \"lastModifiedDate\": \"2017-08-11T06:01:39.173Z\",\r\n      \"lastName\": \"string\",\r\n      \"login\": \"string\"\r\n    }\r\n  ],\r\n  \"name\": \"myProject\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/allTask",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"allTask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Dec 2017 13:55:11 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "0",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache",
+							"name": "Pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "X-Application-Context",
+							"value": "smarthealthcare:dev:8080",
+							"name": "X-Application-Context",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"name": "X-Content-Type-Options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 548,
+					"body": "{\r\n  \"code\" : 0,\r\n  \"msg\" : \"success\",\r\n  \"data\" : [ {\r\n    \"id\" : 11,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-12-08T08:07:45Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-12-08T08:07:45Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-12-08T08:07:45Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-12-08T08:07:45Z\",\r\n      \"id\" : 9,\r\n      \"name\" : \"yang^shi^kui\",\r\n      \"patientId\" : \"00002095\",\r\n      \"sex\" : \"M\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : [ ]\r\n    },\r\n    \"xrayId\" : 14,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }, {\r\n    \"id\" : 10,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-12-08T08:06:18Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-12-08T08:06:18Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-12-08T08:06:18Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-12-08T08:06:18Z\",\r\n      \"id\" : 8,\r\n      \"name\" : \"yang^shi^kui\",\r\n      \"patientId\" : \"00002095\",\r\n      \"sex\" : \"M\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : [ ]\r\n    },\r\n    \"xrayId\" : 13,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }, {\r\n    \"id\" : 9,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-12-08T06:31:38Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-12-08T06:31:38Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"admin\",\r\n      \"createdDate\" : \"2017-12-08T06:31:38Z\",\r\n      \"lastModifiedBy\" : \"admin\",\r\n      \"lastModifiedDate\" : \"2017-12-08T06:31:38Z\",\r\n      \"id\" : 7,\r\n      \"name\" : \"yang^shi^kui\",\r\n      \"patientId\" : null,\r\n      \"sex\" : \"M\",\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : null,\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : [ ]\r\n    },\r\n    \"xrayId\" : 11,\r\n    \"analysisResult\" : null,\r\n    \"analysisStatus\" : 0,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }, {\r\n    \"id\" : 7,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-22T17:37:46Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-22T17:37:46Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"user\",\r\n      \"createdDate\" : \"2017-11-21T16:00:00Z\",\r\n      \"lastModifiedBy\" : \"user\",\r\n      \"lastModifiedDate\" : \"2017-11-21T16:00:00Z\",\r\n      \"id\" : 1,\r\n      \"name\" : \"杨欣\",\r\n      \"patientId\" : null,\r\n      \"sex\" : null,\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : \"test\",\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : [ ]\r\n    },\r\n    \"xrayId\" : 1,\r\n    \"analysisResult\" : 2,\r\n    \"analysisStatus\" : 1,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  }, {\r\n    \"id\" : 6,\r\n    \"createdBy\" : \"admin\",\r\n    \"createdDate\" : \"2017-11-22T17:37:45Z\",\r\n    \"lastModifiedBy\" : \"admin\",\r\n    \"lastModifiedDate\" : \"2017-11-22T17:37:45Z\",\r\n    \"patient\" : {\r\n      \"createdBy\" : \"user\",\r\n      \"createdDate\" : \"2017-11-21T16:00:00Z\",\r\n      \"lastModifiedBy\" : \"user\",\r\n      \"lastModifiedDate\" : \"2017-11-21T16:00:00Z\",\r\n      \"id\" : 1,\r\n      \"name\" : \"杨欣\",\r\n      \"patientId\" : null,\r\n      \"sex\" : null,\r\n      \"stature\" : null,\r\n      \"weight\" : null,\r\n      \"smoking\" : null,\r\n      \"birthday\" : null,\r\n      \"idcard\" : null,\r\n      \"cellPhone\" : null,\r\n      \"job\" : null,\r\n      \"jobHistory\" : \"test\",\r\n      \"workDuration\" : null,\r\n      \"workType\" : null,\r\n      \"tasks\" : null,\r\n      \"medicalHistory\" : [ ]\r\n    },\r\n    \"xrayId\" : 1,\r\n    \"analysisResult\" : 2,\r\n    \"analysisStatus\" : 1,\r\n    \"diagnosisResult\" : null,\r\n    \"diagnosisComment\" : null,\r\n    \"positiveFraction\" : null\r\n  } ]\r\n}"
+				}
+			]
+		},
+		{
 			"name": "病例信息",
 			"request": {
 				"method": "GET",
@@ -939,7 +1072,7 @@
 			},
 			"response": [
 				{
-					"id": "e75afbec-4d58-4611-906a-bab93546d034",
+					"id": "662e1eea-b0d0-42a6-a132-f93916f94e92",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -1076,7 +1209,7 @@
 			},
 			"response": [
 				{
-					"id": "7b1943dc-30ef-4e62-b7a8-2595b5f19abb",
+					"id": "327fd81a-83b8-4793-9b86-d3a5c42dfc17",
 					"name": "200",
 					"originalRequest": {
 						"method": "GET",
@@ -1211,7 +1344,7 @@
 			},
 			"response": [
 				{
-					"id": "40ddf051-5bca-4d92-9c08-de62e24b2f32",
+					"id": "94747feb-709f-43ef-a05d-1751e1bd7460",
 					"name": "200",
 					"originalRequest": {
 						"method": "PUT",

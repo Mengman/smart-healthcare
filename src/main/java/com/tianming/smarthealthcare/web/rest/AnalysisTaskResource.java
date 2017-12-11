@@ -20,6 +20,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.NoSuchFileException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -58,6 +59,15 @@ public class AnalysisTaskResource {
         String username = SecurityUtils.getCurrentUserLogin();
         Page<AnalysisTask> analysisTasks = analysisTaskService.getTasks(username, pageable);
         return ResponseEntity.ok(new Result(0, "success", analysisTasks.getContent()));
+    }
+
+    @GetMapping("/allTask")
+    @Timed
+    public ResponseEntity<Result> getTasks() {
+        log.debug("REST request to get analysis tasks");
+        String username = SecurityUtils.getCurrentUserLogin();
+        List<AnalysisTask> analysisTasks = analysisTaskService.getAllTasks(username);
+        return ResponseEntity.ok(new Result(0, "success", analysisTasks));
     }
 
     @GetMapping("/task/{taskId}")

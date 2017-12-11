@@ -82,4 +82,8 @@ public class AnalysisTaskService {
         analysisTask.setXrayId(storage.getId());
         return analysisTaskRepository.save(analysisTask);
     }
+
+    public List<AnalysisTask> getAllTasks(String username) {
+        return analysisTaskRepository.findByCreatedByOrderByCreatedDateDesc(username);
+    }
 }
