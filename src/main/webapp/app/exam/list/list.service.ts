@@ -13,7 +13,7 @@ export class ExamListService {
     constructor(private http: Http) { }
 
     getTask(): Promise<AnalysisTaskListItem[]> {
-        return this.http.get('/api/task').toPromise()
+        return this.http.get('/api/allTask').toPromise()
         .then((resp) => {
             const analysisTasks =  resp.json().data as AnalysisTask[];
             const items: AnalysisTaskListItem[] = [];
