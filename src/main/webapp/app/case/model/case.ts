@@ -1,5 +1,6 @@
 export class Case {
     public id: number;
+    public patientId: string;
     public name: string;
     public sex: string;
     public stature: string;

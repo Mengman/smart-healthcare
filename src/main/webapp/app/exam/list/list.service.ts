@@ -25,6 +25,17 @@ export class ExamListService {
     private convertAnalysisTask2ListItem(task: AnalysisTask):  AnalysisTaskListItem {
         const item = new AnalysisTaskListItem();
         item.id = task.id;
+        item.patientId = task.patient.patientId;
+
+        if (task.patient.sex === 'M') {
+            item.sex = '男';
+        } else if (task.patient.sex === 'F') {
+            item.sex = '女';
+        } else {
+            item.sex = '未知';
+        }
+
+        item.birthday = task.patient.birthday;
         item.patientName = task.patient.name;
         item.patientIdcard = task.patient.idcard;
         item.diagnosisComment = task.diagnosisComment;

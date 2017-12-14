@@ -2,6 +2,9 @@ export class AnalysisTaskListItem {
     public id: number;
     public patientName: string;
     public patientIdcard: string;
+    public patientId: string;
+    public sex: string;
+    public birthday: string;
     public analysisStatus: string;
     public analysisResult: string;
     public diagnosisResult: string;

@@ -31,8 +31,10 @@ export class ExamListComponent implements OnInit {
 
     ngOnInit() {
         this.columnDefs = [
-            {headerName: '病人名称', field: 'patientName'},
-            {headerName: '病人身份证号', field: 'patientIdcard'},
+            {headerName: '编号', field: 'patientId'},
+            {headerName: '名称', field: 'patientName'},
+            {headerName: '性别', field: 'sex'},
+            {headerName: '出生日期', field: 'birthday'},
             {headerName: '分析状态', field: 'analysisStatus'},
             {headerName: '分析结果', field: 'analysisResult'},
             {headerName: '诊断结果', field: 'diagnosisResult'},
