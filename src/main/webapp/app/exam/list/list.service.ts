@@ -46,13 +46,10 @@ export class ExamListService {
             item.analysisStatus = '完成';
         }
 
-        if (task.analysisResult) {
-            item.analysisResult = this.convertNumberResult2Words(task.analysisResult)
-        }
+        item.analysisResult = this.convertNumberResult2Words(task.analysisResult);
 
-        if (task.diagnosisResult) {
-            item.diagnosisResult = this.convertNumberResult2Words(task.diagnosisResult);
-        }
+        item.diagnosisResult = this.convertNumberResult2Words(task.diagnosisResult);
+
         return item;
     }
 
