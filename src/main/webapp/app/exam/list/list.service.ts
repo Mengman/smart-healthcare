@@ -49,12 +49,14 @@ export class ExamListService {
         switch (result) {
             case 0:
                 return '无尘肺';
-        case 1:
+            case 1:
                 return '尘肺一期';
-        case 2:
+            case 2:
                 return '尘肺二期';
-        case 3:
+            case 3:
                 return '尘肺三期';
+            case 10:
+                return '阳性'
         }
         return null;
     }
