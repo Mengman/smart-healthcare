@@ -64,12 +64,16 @@ public class DicomParserService {
         patient.setName(attributes.getString(Tag.PatientName));
         patient.setSex(attributes.getString(Tag.PatientSex));
         patient.setPatientId(attributes.getString(Tag.PatientID));
+        patient.setImageDate(attributes.getString(Tag.ContentDate));
+        patient.setInstitutionName(attributes.getString(Tag.InstitutionName));
+        patient.setSopInstanceUid(attributes.getString(Tag.SOPInstanceUID));
         String birthDateStr = attributes.getString(Tag.PatientBirthDate); //yyyyMMdd
         try {
             patient.setBirthday(StringUtils.isEmpty(birthDateStr) ? null : dimcomDateFormatter.parse(birthDateStr));
         } catch (ParseException e){
             log.error("fail to parse dicom birthday!");
         }
+
         return patient;
     }
 }

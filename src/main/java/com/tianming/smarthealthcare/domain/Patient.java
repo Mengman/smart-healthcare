@@ -34,7 +34,11 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
     private Integer workDuration;
     private String workType;
 
-    // todo: 后续获取对应任务列表， 现在由于onetomany , manytoone出现问题。
+    //dicom parameters
+    private String sopInstanceUid;
+    private String imageDate;
+    private String institutionName;
+
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @OrderBy("createdDate desc")
     private Set<AnalysisTask> tasks;
@@ -173,5 +177,29 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
 
     public void setPatientId(String patientId) {
         this.patientId = patientId;
+    }
+
+    public String getImageDate() {
+        return imageDate;
+    }
+
+    public void setImageDate(String imageDate) {
+        this.imageDate = imageDate;
+    }
+
+    public String getInstitutionName() {
+        return institutionName;
+    }
+
+    public void setInstitutionName(String institutionName) {
+        this.institutionName = institutionName;
+    }
+
+    public String getSopInstanceUid() {
+        return sopInstanceUid;
+    }
+
+    public void setSopInstanceUid(String sopInstanceUid) {
+        this.sopInstanceUid = sopInstanceUid;
     }
 }
