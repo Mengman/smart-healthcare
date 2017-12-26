@@ -10,4 +10,8 @@ export class AnalysisTaskListItem {
     public diagnosisResult: string;
     public diagnosisComment: string;
     public positiveFraction: number;
+    public sopInstanceUid: string;
+    public institutionName: string;
+    public imageDate: string;
+    public createdDate: string;
 }

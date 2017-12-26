@@ -24,6 +24,12 @@ export class ExamListComponent implements OnInit {
         previous: '上一页',
         loadingOoo: '加载中...',
     };
+    private gridApi;
+    private exportConfig = {
+        // allColumns: false,
+        columnKeys: ['sopInstanceUid', 'institutionName', 'imageDate', 'patientId', 'patientName', 'sex', 'birthday',
+        'analysisStatus', 'analysisResult', 'diagnosisResult', 'positiveFraction', 'createdDate']
+    }
 
     constructor(
         private examListService: ExamListService
@@ -31,7 +37,10 @@ export class ExamListComponent implements OnInit {
 
     ngOnInit() {
         this.columnDefs = [
-            {headerName: '编号', field: 'patientId'},
+            {headerName: 'ID', field: 'sopInstanceUid'},
+            {headerName: '医院', field: 'institutionName'},
+            {headerName: '胸片拍摄时间', field: 'imageDate', type: 'dateColumn'},
+            {headerName: '病人编号', field: 'patientId'},
             {headerName: '名称', field: 'patientName'},
             {headerName: '性别', field: 'sex'},
             {headerName: '出生日期', field: 'birthday'},
@@ -39,6 +48,7 @@ export class ExamListComponent implements OnInit {
             {headerName: '分析结果', field: 'analysisResult'},
             {headerName: '诊断结果', field: 'diagnosisResult'},
             {headerName: '阳性概率', field: 'positiveFraction', unSortIcon: true},
+            {headerName: '任务创建时间', field: 'createdDate', type: 'dateColumn'},
             {headerName: '操作', field: 'id', cellRendererFramework: CellBtnComponent, suppressSorting: true}
         ]
 
@@ -51,7 +61,12 @@ export class ExamListComponent implements OnInit {
         };
     }
 
+    public exportCvs() {
+        this.gridApi.exportDataAsCsv(this.exportConfig);
+    }
+
     public onGridReady(params) {
+        this.gridApi = params.api;
         params.api.sizeColumnsToFit();
 
         this.examListService.getTask()

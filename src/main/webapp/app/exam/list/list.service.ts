@@ -40,6 +40,17 @@ export class ExamListService {
         item.patientIdcard = task.patient.idcard;
         item.diagnosisComment = task.diagnosisComment;
         item.positiveFraction = task.positiveFraction;
+        item.sopInstanceUid = task.patient.sopInstanceUid;
+        item.institutionName = task.patient.institutionName;
+
+        if (task.patient.imageDate) {
+            item.imageDate = this.date2String(new Date(task.patient.imageDate));
+        }
+
+        if (task.createdDate) {
+            item.createdDate = this.date2String(new Date(task.createdDate));
+        }
+
         if (task.analysisStatus === 0) {
             item.analysisStatus = '分析中';
         } else {
@@ -67,6 +78,17 @@ export class ExamListService {
                 return '阳性'
         }
         return null;
+    }
+
+    private date2String(date: Date): string {
+        let str = date.getFullYear() + '-' + this.paddingTime(date.getMonth()) + '-' + this.paddingTime(date.getDate()) + ' ';
+
+        str += this.paddingTime(date.getHours()) + ':' + this.paddingTime(date.getMinutes()) + ':' + this.paddingTime(date.getSeconds());
+        return str;
+    }
+
+    private paddingTime(num: number): string {
+        return num < 10 ? '0' + num : num + '';
     }
 
 }

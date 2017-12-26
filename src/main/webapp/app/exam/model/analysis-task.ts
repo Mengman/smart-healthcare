@@ -9,4 +9,5 @@ export class AnalysisTask {
     public diagnosisResult: number;
     public diagnosisComment: string;
     public positiveFraction: number;
+    public createdDate: string;
 }

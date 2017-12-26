@@ -16,4 +16,7 @@ export class Case {
     public medicalHistory: string;
     public workDuration: string;
     public workType: string;
+    public sopInstanceUid: string;
+    public imageDate: string;
+    public institutionName: string;
 }
