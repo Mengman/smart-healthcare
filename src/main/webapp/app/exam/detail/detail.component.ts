@@ -44,6 +44,8 @@ export class ExamDetailComponent implements OnInit {
               this.imgLoading = false;
             }
             this.diagnosis.id = data.id;
+            this.diagnosis.diagnosisResult = data.diagnosisResult;
+            this.diagnosis.diagnosisComment = data.diagnosisComment;
             this.analysisResultConvert(data);
             this.initImage(this.task.xrayId);
         });
