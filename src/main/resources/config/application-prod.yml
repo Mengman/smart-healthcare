@@ -144,4 +144,9 @@ jhipster:
 # ===================================================================
 
 application:
-    uploadDir: "/usr/local/smarthealth/files"
+   uploadDir: ${uploadDir}
+#    uploadDir: "/usr/local/smarthealth/files"
+
+logging:
+  path: logs
+  level: debug
