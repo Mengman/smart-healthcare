@@ -41,4 +41,8 @@ public class PatientService {
     public Patient save(Patient patient) {
         return patientRepository.save(patient);
     }
+
+    public List<Patient> getPatients() {
+        return patientRepository.findAllByOrderByCreatedDateDesc();
+    }
 }

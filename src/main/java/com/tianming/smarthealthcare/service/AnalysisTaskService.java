@@ -86,4 +86,8 @@ public class AnalysisTaskService {
     public List<AnalysisTask> getAllTasks(String username) {
         return analysisTaskRepository.findByCreatedByOrderByCreatedDateDesc(username);
     }
+
+    public List<AnalysisTask> getAllTasks() {
+        return analysisTaskRepository.findAllByOrderByCreatedDateDesc();
+    }
 }

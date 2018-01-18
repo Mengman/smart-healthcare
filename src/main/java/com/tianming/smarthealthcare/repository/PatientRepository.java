@@ -17,4 +17,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     List<Patient> findByCreatedByOrderByCreatedDate(String username);
 
     List<Patient> findByCreatedByOrderByCreatedDateDesc(String username);
+
+    List<Patient> findAllByOrderByCreatedDateDesc();
+
 }

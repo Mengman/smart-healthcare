@@ -14,4 +14,7 @@ public interface AnalysisTaskRepository extends JpaRepository<AnalysisTask, Long
     Page<AnalysisTask> findByCreatedBy(String username, Pageable pageable);
 
     List<AnalysisTask> findByCreatedByOrderByCreatedDateDesc(String username);
+
+    List<AnalysisTask> findAllByOrderByCreatedDateDesc();
+
 }
