@@ -14,6 +14,7 @@ import { SmarthealthcareEntityModule } from './entities/entity.module';
 import { SmarthealthcareCaseModule } from './case/case.module';
 import { SmarthealthcareLoginModule } from './login/login.module';
 import { SmarthealthcareExamModule } from './exam/exam.module';
+import { SmarthealthcareChartsModule } from './charts/charts.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -45,7 +46,8 @@ import {
         SmarthealthcareAccountModule,
         SmarthealthcareEntityModule,
         SmarthealthcareCaseModule,
-        SmarthealthcareExamModule
+        SmarthealthcareExamModule,
+        SmarthealthcareChartsModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

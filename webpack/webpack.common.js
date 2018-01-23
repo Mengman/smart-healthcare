@@ -107,6 +107,7 @@ module.exports = (options) => {
                 { from: './src/main/webapp/content/lib/cornerstone/cornerstoneWADOImageLoader.js', to: 'cornerstone/cornerstoneWADOImageLoader.js' },
                 { from: './src/main/webapp/content/lib/cornerstone/cornerstoneWADOImageLoaderCodecs.js', to: 'cornerstone/cornerstoneWADOImageLoaderCodecs.js' },
                 { from: './src/main/webapp/content/lib/cornerstone/cornerstoneWADOImageLoaderWebWorker.js', to: 'cornerstone/cornerstoneWADOImageLoaderWebWorker.js' },
+                { from: './src/main/webapp/content/map/', to: 'map/' },
             ]),
             new webpack.ProvidePlugin({
                 $: "jquery",
