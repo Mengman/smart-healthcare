@@ -78,7 +78,7 @@ export class ExamTimeChartComponent implements OnChanges {
                 textStyle: {
                     color: '#fff'
                 },
-                data: ['阴性', '待确认', '一期', '二期', '三期']
+                data: ['阴性', '疑似', '一期', '二期', '三期']
             },
             toolbox: {
                 feature: {
@@ -130,7 +130,7 @@ export class ExamTimeChartComponent implements OnChanges {
                     data: [120, 132, 101, 134, 90, 230, 210]
                 },
                 {
-                    name: '待确认',
+                    name: '疑似',
                     type: 'line',
                     stack: '总量',
                     areaStyle: {normal: {}},
@@ -154,12 +154,6 @@ export class ExamTimeChartComponent implements OnChanges {
                     name: '三期',
                     type: 'line',
                     stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'top'
-                        }
-                    },
                     areaStyle: {normal: {}},
                     data: [820, 932, 901, 934, 1290, 1330, 1320]
                 }

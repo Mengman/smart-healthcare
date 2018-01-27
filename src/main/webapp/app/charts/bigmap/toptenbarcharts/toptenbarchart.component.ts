@@ -49,7 +49,7 @@ export class TopTenBarChartComponent implements OnChanges {
             },
             legend: {
                 top: '10%',
-                data: ['阴性', '待确认', '一期', '二期', '三期'],
+                data: ['阴性', '疑似', '一期', '二期', '三期'],
                 textStyle: {
                     color: '#fff'
                 }
@@ -70,7 +70,7 @@ export class TopTenBarChartComponent implements OnChanges {
                     barWidth: 20
                 },
                 {
-                    name: '待确认',
+                    name: '疑似',
                     type: 'bar',
                     stack: '总量',
                     barWidth: 20

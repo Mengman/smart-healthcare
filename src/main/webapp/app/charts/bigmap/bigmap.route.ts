@@ -5,6 +5,8 @@ import { BigmapComponent } from './bigmap.component';
 
 export const bigmapRoute: Route = {
     path: 'charts/bigmap',
-    component: BigmapComponent,
-    canActivate: [UserRouteAccessService]
+    data: {
+        pageTitle: 'global.charts.bigmap'
+    },
+    component: BigmapComponent
 }

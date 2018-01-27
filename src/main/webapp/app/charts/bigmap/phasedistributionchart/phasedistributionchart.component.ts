@@ -50,7 +50,7 @@ export class PhaseDistributionChartComponent implements OnChanges {
         if (!this.provinceData.has(this.provinceName)) {
             const chartData = [];
             chartData.push({value: Math.round(total * distribution[0]), name: '阴性'});
-            chartData.push({value: Math.round(total * distribution[1]), name: '待确认'});
+            chartData.push({value: Math.round(total * distribution[1]), name: '疑似'});
             chartData.push({value: Math.round(total * distribution[2]), name: '一期'});
             chartData.push({value: Math.round(total * distribution[3]), name: '二期'});
             chartData.push({value: Math.round(total * distribution[4]), name: '三期'});

@@ -44,6 +44,9 @@
             },
             "language": "语言"
         },
+        "charts": {
+            "bigmap": "预警监控"
+        },
         "form": {
             "username": "账号",
             "username.placeholder": "您的账号",
