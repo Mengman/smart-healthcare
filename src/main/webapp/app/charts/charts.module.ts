@@ -15,6 +15,8 @@ import { MorbidityChartComponent } from './bigmap/morbiditychart/morbiditychart.
 import { WorkingAgeChartComponent } from './bigmap/workingagechart/workingagechart.component';
 import { ExamTimeChartComponent } from './bigmap/examtimelinechart/examtimelinechart.component';
 import { NumberPanelComponent } from './bigmap/numberpanel/numberpanel.component';
+import { MineCorpChartComponent } from './bigmap/minecorpchart/minecorpchart.component';
+import { BigMapService } from './bigmap/bigmap.service';
 
 @NgModule({
     imports: [
@@ -32,8 +34,9 @@ import { NumberPanelComponent } from './bigmap/numberpanel/numberpanel.component
         WorkingAgeChartComponent,
         ExamTimeChartComponent,
         NumberPanelComponent,
+        MineCorpChartComponent,
         BigmapComponent
     ],
-    providers: []
+    providers: [BigMapService]
 })
 export class SmarthealthcareChartsModule {}

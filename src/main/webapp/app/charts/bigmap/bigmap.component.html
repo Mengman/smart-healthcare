@@ -14,14 +14,21 @@
     </div>
     <div class="col-12">
         <div class="row">
-            <div class="col-4" style="height: 500px">
+            <div class="col-6" style="height: 500px">
+                <jhi-mine-corp-chart [provinceName]="phaseChartProvinceName" ></jhi-mine-corp-chart>
+            </div>
+            <div class="col-6" style="height: 500px">
+                <jhi-morbidity-chart></jhi-morbidity-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6" style="height: 500px">
                 <jhi-phase-distribution-chart [provinceName]="phaseChartProvinceName" [data]="phaseChartData"></jhi-phase-distribution-chart>
             </div>
-            <div class="col-4" style="height: 500px">
+            <div class="col-6" style="height: 500px">
                     <jhi-working-age-chart [provinceName]="phaseChartProvinceName" [data]="phaseChartData"></jhi-working-age-chart>
-            </div>
-            <div class="col-4" style="height: 500px">
-                <jhi-morbidity-chart></jhi-morbidity-chart>
             </div>
         </div>
     </div>

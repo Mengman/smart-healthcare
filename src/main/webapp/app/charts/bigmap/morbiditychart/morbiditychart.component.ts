@@ -12,7 +12,7 @@ export class MorbidityChartComponent implements OnInit {
     private chart: ECharts;
     private option: any = {
         title: {
-            text: '医院确诊量',
+            text: '医院体检量',
             textStyle: {
                 color: '#73D0CC',
                 align: 'center',
@@ -22,7 +22,7 @@ export class MorbidityChartComponent implements OnInit {
             x: 'center'
         },
         legend: {
-            data: ['本月确诊', '同比平均', '环比平均'],
+            data: ['本月体检', '同比平均', '环比平均'],
             type: 'plain',
             show: true,
             top: 30,
@@ -32,7 +32,7 @@ export class MorbidityChartComponent implements OnInit {
         },
         xAxis: {type: 'category',  axisLine: {lineStyle: {color: '#44C4EE'}}, splitLine: {show: false},
         data: ['宁夏煤炭', '江西西华山', '同煤集团', '河南煤炭', '乌海煤炭', '贵阳矿物局']},
-        yAxis: {name: '确诊量',  axisLine: {lineStyle: {color: '#44C4EE'}}, type: 'value', splitLine: {show: false}},
+        yAxis: {name: '体检量',  axisLine: {lineStyle: {color: '#44C4EE'}}, type: 'value', splitLine: {show: false}},
         series: [
             {
                 name: '本月确诊',

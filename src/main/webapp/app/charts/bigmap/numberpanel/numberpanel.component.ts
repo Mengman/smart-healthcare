@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BigMapService } from '../bigmap.service';
+import { ExamGatherResult, ExamGatherResultData } from '../model/examgatherresult';
+
 @Component({
     selector: 'jhi-number-panel',
     templateUrl: 'numberpanel.component.html',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NumberPanelComponent implements OnInit {
-    constructor() { }
+    public resultData: ExamGatherResultData = {suspected: 0, confirmed: 0};
 
-    ngOnInit() { }
+    constructor(private bigMapService: BigMapService) { }
+
+    ngOnInit() {
+        this.bigMapService.getExamGatherResult().subscribe((resp) => {
+            if (resp.code === 0) {
+                this.resultData = resp.data;
+            }
+        } );
+    }
 }

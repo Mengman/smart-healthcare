@@ -10,6 +10,7 @@ import com.tianming.smarthealthcare.repository.PatientRepository;
 import com.tianming.smarthealthcare.repository.StorageRepository;
 import com.tianming.smarthealthcare.web.rest.vm.AnalysisTaskVM;
 import com.tianming.smarthealthcare.web.rest.vm.DiagnoseTaskVM;
+import com.tianming.smarthealthcare.web.rest.vm.ExamResultVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.NoSuchFileException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -85,5 +87,32 @@ public class AnalysisTaskService {
 
     public List<AnalysisTask> getAllTasks(String username) {
         return analysisTaskRepository.findByCreatedByOrderByCreatedDateDesc(username);
+    }
+
+    public ExamResultVM countExamResult() {
+        List<AnalysisTask> suspectedCases = analysisTaskRepository.findByAnalysisResultGreaterThan(0);
+        List<AnalysisTask> confirmedCases = analysisTaskRepository.findByDiagnosisResultGreaterThan(0);
+        ExamResultVM examResultVM = new ExamResultVM(
+            suspectedCases == null ? 0 : suspectedCases.size(),
+            confirmedCases == null? 0 : confirmedCases.size()
+        );
+
+        List<Long> suspectedCaseIds = new ArrayList<>();
+
+        if (suspectedCases != null) {
+            for (AnalysisTask suspectedCase : suspectedCases) {
+                suspectedCaseIds.add(suspectedCase.getId());
+            }
+        }
+
+        if (confirmedCases != null) {
+            for (AnalysisTask confirmedCase : confirmedCases) {
+                if (suspectedCaseIds.contains(confirmedCase.getId())) {
+                    examResultVM.setSuspected(examResultVM.getSuspected() - 1);
+                }
+            }
+        }
+
+        return examResultVM;
     }
 }

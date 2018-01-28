@@ -484,7 +484,7 @@ export class MapConstants {
         '浙江': 'zhejiang',
     }
 
-    static readonly province_mine = {
+    static readonly PROVINCE_MINE = {
       '上海': [
           '娄底市冷水江戴家湾煤矿',
           '准格尔旗昶旭煤炭(露天煤矿)',
