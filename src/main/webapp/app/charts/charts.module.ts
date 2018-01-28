@@ -14,6 +14,7 @@ import { PhaseDistributionChartComponent } from './bigmap/phasedistributionchart
 import { MorbidityChartComponent } from './bigmap/morbiditychart/morbiditychart.component';
 import { WorkingAgeChartComponent } from './bigmap/workingagechart/workingagechart.component';
 import { ExamTimeChartComponent } from './bigmap/examtimelinechart/examtimelinechart.component';
+import { NumberPanelComponent } from './bigmap/numberpanel/numberpanel.component';
 
 @NgModule({
     imports: [
@@ -30,6 +31,7 @@ import { ExamTimeChartComponent } from './bigmap/examtimelinechart/examtimelinec
         MorbidityChartComponent,
         WorkingAgeChartComponent,
         ExamTimeChartComponent,
+        NumberPanelComponent,
         BigmapComponent
     ],
     providers: []
