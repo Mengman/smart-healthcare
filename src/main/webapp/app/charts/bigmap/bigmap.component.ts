@@ -133,10 +133,26 @@ export class BigmapComponent implements OnInit {
             }
             this.chinaChart = init(this.chinaChartEle.nativeElement);
             this.chinaChart.on('click', (result) => {
-                this.displayProvinceMap(result.name)
+                let province = result.name;
+                if (MapConstants.PROVINCES.indexOf(province) === -1) {
+                    province = this.findCityProvince(result.name);
+                }
+
+                this.displayProvinceMap(province)
             })
             this.chinaChart.setOption(this.option);
         })
+    }
+
+    private findCityProvince(city: string): string {
+        for (const province in MapConstants.PROVINCE_CITY) {
+            if (MapConstants.PROVINCE_CITY.hasOwnProperty(province)) {
+                if (MapConstants.PROVINCE_CITY[province].indexOf(city) !== -1) {
+                    return MapConstants.NAME_MAP[province];
+                }
+            }
+        }
+        return 'china';
     }
 
     private convertData() {

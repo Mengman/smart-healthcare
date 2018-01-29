@@ -5,27 +5,62 @@ package com.tianming.smarthealthcare.web.rest.vm;
  * Email: yucai.li@hpe.com
  */
 public class ExamResultVM {
-    private int suspected;
-    private int confirmed;
+    private Long totalTask;
+    private Long suspected;
+    private Long confirmed;
 
-    public ExamResultVM(int suspected, int confirmed) {
-        this.suspected = suspected;
-        this.confirmed = confirmed;
+    private Long todayTask;
+    private Long todaySuspected;
+    private Long todayConfirmed;
+
+    public ExamResultVM() {
     }
 
-    public int getSuspected() {
+    public Long getTotalTask() {
+        return totalTask;
+    }
+
+    public void setTotalTask(Long totalTask) {
+        this.totalTask = totalTask;
+    }
+
+    public Long getSuspected() {
         return suspected;
     }
 
-    public void setSuspected(int suspected) {
+    public void setSuspected(Long suspected) {
         this.suspected = suspected;
     }
 
-    public int getConfirmed() {
+    public Long getConfirmed() {
         return confirmed;
     }
 
-    public void setConfirmed(int confirmed) {
+    public void setConfirmed(Long confirmed) {
         this.confirmed = confirmed;
+    }
+
+    public Long getTodayTask() {
+        return todayTask;
+    }
+
+    public void setTodayTask(Long todayTask) {
+        this.todayTask = todayTask;
+    }
+
+    public Long getTodaySuspected() {
+        return todaySuspected;
+    }
+
+    public void setTodaySuspected(Long todaySuspected) {
+        this.todaySuspected = todaySuspected;
+    }
+
+    public Long getTodayConfirmed() {
+        return todayConfirmed;
+    }
+
+    public void setTodayConfirmed(Long todayConfirmed) {
+        this.todayConfirmed = todayConfirmed;
     }
 }

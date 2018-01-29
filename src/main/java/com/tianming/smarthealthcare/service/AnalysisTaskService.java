@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.NoSuchFileException;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -90,28 +90,23 @@ public class AnalysisTaskService {
     }
 
     public ExamResultVM countExamResult() {
-        List<AnalysisTask> suspectedCases = analysisTaskRepository.findByAnalysisResultGreaterThan(0);
-        List<AnalysisTask> confirmedCases = analysisTaskRepository.findByDiagnosisResultGreaterThan(0);
-        ExamResultVM examResultVM = new ExamResultVM(
-            suspectedCases == null ? 0 : suspectedCases.size(),
-            confirmedCases == null? 0 : confirmedCases.size()
-        );
+        Long totalTask = analysisTaskRepository.count();
 
-        List<Long> suspectedCaseIds = new ArrayList<>();
+        Long totalSuspectedCases = analysisTaskRepository.countTotalSuspectedCases();
+        Long totalConfirmedCases = analysisTaskRepository.countTotalConfirmedCases();
+        LocalDateTime startOfToday = LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).withNano(0);
 
-        if (suspectedCases != null) {
-            for (AnalysisTask suspectedCase : suspectedCases) {
-                suspectedCaseIds.add(suspectedCase.getId());
-            }
-        }
+        Long todayTask = analysisTaskRepository.countTaskCreatedDateAfter(startOfToday);
+        Long todaySuspectedCases = analysisTaskRepository.countSuspectedCasesByLastModifiedDateAfter(startOfToday);
+        Long todayConfirmedCases = analysisTaskRepository.countConfirmedCasesByLastModifiedDateAfter(startOfToday);
 
-        if (confirmedCases != null) {
-            for (AnalysisTask confirmedCase : confirmedCases) {
-                if (suspectedCaseIds.contains(confirmedCase.getId())) {
-                    examResultVM.setSuspected(examResultVM.getSuspected() - 1);
-                }
-            }
-        }
+        ExamResultVM examResultVM = new ExamResultVM();
+        examResultVM.setTotalTask(totalTask);
+        examResultVM.setSuspected(totalSuspectedCases);
+        examResultVM.setConfirmed(totalConfirmedCases);
+        examResultVM.setTodayTask(todayTask);
+        examResultVM.setTodaySuspected(todaySuspectedCases);
+        examResultVM.setTodayConfirmed(todayConfirmedCases);
 
         return examResultVM;
     }
