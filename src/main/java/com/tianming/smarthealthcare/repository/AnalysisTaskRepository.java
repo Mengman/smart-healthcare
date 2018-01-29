@@ -1,7 +1,6 @@
 package com.tianming.smarthealthcare.repository;
 
 import com.tianming.smarthealthcare.domain.AnalysisTask;
-import javafx.scene.shape.VLineTo;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
