@@ -64,7 +64,7 @@ public class DicomParserService {
         patient.setName(attributes.getString(Tag.PatientName));
         patient.setSex(attributes.getString(Tag.PatientSex));
         patient.setPatientId(attributes.getString(Tag.PatientID));
-        patient.setImageDate(attributes.getString(Tag.ContentDate));
+        patient.setImageDate(attributes.getString(Tag.StudyDate));
         patient.setInstitutionName(attributes.getString(Tag.InstitutionName));
         patient.setSopInstanceUid(attributes.getString(Tag.SOPInstanceUID));
         String birthDateStr = attributes.getString(Tag.PatientBirthDate); //yyyyMMdd
