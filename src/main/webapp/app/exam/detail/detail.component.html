@@ -122,33 +122,33 @@
         </div>
     </div>
     <div class="dcm-detail">
-        <button type="button" (click)="wwWl()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+        <button type="button" [class.disabled]="dicomBtnStatus.wwWl" (click)="wwWl()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
             title="" data-original-title="窗宽窗位">
             <span class="fa fa-sun-o"></span>
         </button>
-        <button type="button" (click)="inverseColor()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+        <button type="button" [class.disabled]="dicomBtnStatus.inverseColor" (click)="inverseColor()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
             data-placement="bottom" title="" data-original-title="反色">
             <span class="fa fa-adjust"></span>
         </button>
-        <button type="button" (click)="zoom()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+        <button type="button" [class.disabled]="dicomBtnStatus.zoom" (click)="zoom()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
             title="" data-original-title="放缩">
             <span class="fa fa-search"></span>
         </button>
-        <button type="button" (click)="pan()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+        <button type="button" [class.disabled]="dicomBtnStatus.pan" (click)="pan()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
             title="" data-original-title="平移">
             <span class="fa fa-arrows"></span>
         </button>
-        <button type="button" disabled (click)="scroll()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+        <!-- <button type="button" [class.disabled]="dicomBtnStatus.scroll" (click)="scroll()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
             data-placement="bottom" title="" data-original-title="浏览">
             <span class="fa fa-bars"></span>
         </button>
-        <button type="button" disabled (click)="play()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+        <button type="button" [class.disabled]="dicomBtnStatus.play" (click)="play()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
             data-placement="bottom" title="" data-original-title="播放">
             <span class="fa fa-play"></span>
         </button>
-        <button type="button" disabled (click)="stop()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
+        <button type="button" [class.disabled]="dicomBtnStatus.stop" (click)="stop()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
             data-placement="bottom" title="" data-original-title="停止">
             <span class="fa fa-stop"></span>
-        </button>
+        </button> -->
     </div>
 </div>

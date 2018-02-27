@@ -10,6 +10,7 @@ import com.tianming.smarthealthcare.repository.PatientRepository;
 import com.tianming.smarthealthcare.repository.StorageRepository;
 import com.tianming.smarthealthcare.web.rest.vm.AnalysisTaskVM;
 import com.tianming.smarthealthcare.web.rest.vm.DiagnoseTaskVM;
+import com.tianming.smarthealthcare.web.rest.vm.ExamResultVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.NoSuchFileException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -89,5 +91,27 @@ public class AnalysisTaskService {
 
     public List<AnalysisTask> getAllTasks() {
         return analysisTaskRepository.findAllByOrderByCreatedDateDesc();
+    }
+
+    public ExamResultVM countExamResult() {
+        Long totalTask = analysisTaskRepository.count();
+
+        Long totalSuspectedCases = analysisTaskRepository.countTotalSuspectedCases();
+        Long totalConfirmedCases = analysisTaskRepository.countTotalConfirmedCases();
+        LocalDateTime startOfToday = LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).withNano(0);
+
+        Long todayTask = analysisTaskRepository.countTaskCreatedDateAfter(startOfToday);
+        Long todaySuspectedCases = analysisTaskRepository.countSuspectedCasesByLastModifiedDateAfter(startOfToday);
+        Long todayConfirmedCases = analysisTaskRepository.countConfirmedCasesByLastModifiedDateAfter(startOfToday);
+
+        ExamResultVM examResultVM = new ExamResultVM();
+        examResultVM.setTotalTask(totalTask);
+        examResultVM.setSuspected(totalSuspectedCases);
+        examResultVM.setConfirmed(totalConfirmedCases);
+        examResultVM.setTodayTask(todayTask);
+        examResultVM.setTodaySuspected(todaySuspectedCases);
+        examResultVM.setTodayConfirmed(todayConfirmedCases);
+
+        return examResultVM;
     }
 }

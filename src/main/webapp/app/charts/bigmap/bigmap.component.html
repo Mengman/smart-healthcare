@@ -1,0 +1,35 @@
+<div id="main"></div>
+<div class="row" style="background-color: #1D2528; padding: 10px">
+    <div #chinaChart class="col-8" style="height: 1000px" [style.display]="countryDisplay">
+    </div>
+    <div #provinceChart class="col-8" style="height: 1000px" [style.display]="provinceDisplay"></div>
+    <div class="col-4">
+        <div class="row">
+            <div class="col-12" style="height: 500px"><jhi-number-panel></jhi-number-panel></div>
+            <div class="col-12" style="height: 500px" ><jhi-top-ten-bar-chart [cityNames]="topTenCityName" [cityValues]="topTenCityValue" ></jhi-top-ten-bar-chart></div>
+        </div>
+    </div>
+    <div class="col-12"  style="height: 500px">
+        <jhi-exam-time-chart [provinceName]="phaseChartProvinceName"></jhi-exam-time-chart>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6" style="height: 500px">
+                <jhi-mine-corp-chart [provinceName]="phaseChartProvinceName" ></jhi-mine-corp-chart>
+            </div>
+            <div class="col-6" style="height: 500px">
+                <jhi-morbidity-chart></jhi-morbidity-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6" style="height: 500px">
+                <jhi-phase-distribution-chart [provinceName]="phaseChartProvinceName" [data]="phaseChartData"></jhi-phase-distribution-chart>
+            </div>
+            <div class="col-6" style="height: 500px">
+                    <jhi-working-age-chart [provinceName]="phaseChartProvinceName" [data]="phaseChartData"></jhi-working-age-chart>
+            </div>
+        </div>
+    </div>
+</div>

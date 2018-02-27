@@ -1,0 +1,21 @@
+<h1 id="PanelTitle">病情实时汇总</h1>
+<table id="PanelTable">
+    <tr>
+        <td class="td-title">累计体检</td>
+        <td class="td-value">{{resultData.totalTask}}</td>
+        <td class="td-title">当日新增体检</td>
+        <td class="td-value">{{resultData.todayTask}}</td>
+    </tr>
+    <tr>
+        <td class="td-title">累计疑似</td>
+        <td class="td-value">{{resultData.suspected}}</td>
+        <td class="td-title">当日新增疑似</td>
+        <td class="td-value">{{resultData.todaySuspected}}</td>
+    </tr>
+    <tr>
+        <td class="td-title">累计确诊</td>
+        <td class="td-value">{{resultData.confirmed}}</td>
+        <td class="td-title">当日新增确诊</td>
+        <td class="td-value">{{resultData.todayConfirmed}}</td>
+    </tr>
+</table>

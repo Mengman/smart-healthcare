@@ -4,7 +4,8 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
+    <div class="col-12" id="tableTools">
+        <input type="text" id="filterBox" placeholder="输入关键字查询" (input)="onFilterTextBoxChanged($event.target.value)">
         <a id="exportBtn" class="btn btn-primary pull-right" (click)="exportCvs()" style="color: #fff">列表导出</a>
     </div>
     <div class="col-12">
