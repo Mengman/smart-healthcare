@@ -23,6 +23,7 @@ export class ExamListComponent implements OnInit {
         first: '首页',
         previous: '上一页',
         loadingOoo: '加载中...',
+        noRowsToShow: '无数据'
     };
     private gridApi;
     private exportConfig = {
@@ -73,5 +74,9 @@ export class ExamListComponent implements OnInit {
         .then((data) => {
             params.api.setRowData(data)
         } );
+    }
+
+    public onFilterTextBoxChanged(text) {
+        this.gridOptions.api.setQuickFilter(text);
     }
 }
