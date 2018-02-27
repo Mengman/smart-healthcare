@@ -28,6 +28,16 @@ export class ExamDetailComponent implements OnInit {
     public showSubmitAlert = false;
     public diagnosis: AnalysisTask = new AnalysisTask();
 
+    public dicomBtnStatus = {
+      wwWl: true,
+      inverseColor: true,
+      zoom: true,
+      pan: false,
+      scroll: true,
+      play: true,
+      stop: true
+    }
+
     constructor(
         private route: ActivatedRoute,
         private taskDetailService: ExamTaskDetailService,
@@ -204,6 +214,7 @@ export class ExamDetailComponent implements OnInit {
         this.disableAllTools(this.fullDcmEle.nativeElement);
         cornerstoneTools.wwwc.activate(this.fullDcmEle.nativeElement, 1);
         cornerstoneTools.wwwcTouchDrag.activate(this.fullDcmEle.nativeElement);
+        this.dicomBtnStatus.wwWl = false
       }
 
       inverseColor() {
@@ -215,18 +226,21 @@ export class ExamDetailComponent implements OnInit {
           viewport.invert = true;
         }
         cornerstone.setViewport(this.fullDcmEle.nativeElement, viewport);
+        this.dicomBtnStatus.inverseColor = false
       }
 
       zoom() {
         this.disableAllTools(this.fullDcmEle.nativeElement);
         cornerstoneTools.zoom.activate(this.fullDcmEle.nativeElement, 5); // 5 is right mouse button and left mouse button
         cornerstoneTools.zoomTouchDrag.activate(this.fullDcmEle.nativeElement);
+        this.dicomBtnStatus.zoom = false
       }
 
       pan() {
         this.disableAllTools(this.fullDcmEle.nativeElement);
         cornerstoneTools.pan.activate(this.fullDcmEle.nativeElement, 3); // 3 is middle mouse button and left mouse button
         cornerstoneTools.panTouchDrag.activate(this.fullDcmEle.nativeElement);
+        this.dicomBtnStatus.pan = false
       }
 
       scroll() {
@@ -271,6 +285,14 @@ export class ExamDetailComponent implements OnInit {
         cornerstoneTools.zoomTouchDrag.deactivate(element);
         cornerstoneTools.panTouchDrag.deactivate(element);
         cornerstoneTools.stackScrollTouchDrag.deactivate(element);
+
+        this.dicomBtnStatus.inverseColor = true;
+        this.dicomBtnStatus.wwWl = true;
+        this.dicomBtnStatus.zoom = true;
+        this.dicomBtnStatus.pan = true;
+        this.dicomBtnStatus.scroll = true;
+        this.dicomBtnStatus.play = true;
+        this.dicomBtnStatus.stop = true;
     }
 
 }
