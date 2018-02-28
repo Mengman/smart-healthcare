@@ -44,7 +44,7 @@ export class ExamListService {
         item.institutionName = task.patient.institutionName;
 
         if (task.patient.imageDate) {
-            item.imageDate = this.date2String(new Date(task.patient.imageDate));
+            item.imageDate = task.patient.imageDate;
         }
 
         if (task.createdDate) {
