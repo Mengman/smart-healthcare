@@ -5,6 +5,7 @@ import { init, EChartOption, ECharts, registerMap, graphic } from 'echarts';
 import { EchartsDirective } from '../directive/charts.directive';
 
 import { MapConstants } from './constants/map.constants';
+import { BigMapService } from './bigmap.service';
 
 @Component({
     selector: 'jhi-bigmap',
@@ -33,7 +34,7 @@ export class BigmapComponent implements OnInit {
     @ViewChild('provinceChart') provinceChartEle: ElementRef;
     @ViewChild('chinaChart') chinaChartEle: ElementRef;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private bigMapService: BigMapService) {}
 
     private findTopTenData(data: any) {
         let count = 0;
@@ -134,7 +135,8 @@ export class BigmapComponent implements OnInit {
             this.chinaChart = init(this.chinaChartEle.nativeElement);
             this.chinaChart.on('click', (result) => {
                 let province = result.name;
-                if (MapConstants.PROVINCES.indexOf(province) === -1) {
+                const provinceCharactors = this.bigMapService.convertProvincePinYin2Characters(province)
+                if (MapConstants.PROVINCES.indexOf(provinceCharactors) === -1) {
                     province = this.findCityProvince(result.name);
                 }
 
