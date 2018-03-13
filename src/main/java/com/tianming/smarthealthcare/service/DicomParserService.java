@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @Transactional
@@ -43,6 +44,11 @@ public class DicomParserService {
     }
 
     public AnalysisTask parseAndSave(MultipartFile file) throws IOException {
+        // check if exist
+        if (checkFile(file)) {
+//            skip file
+            return new AnalysisTask();
+        }
         // save file
         Storage storage = storageService.store(file);
         // save patient
@@ -50,6 +56,12 @@ public class DicomParserService {
         // save task
         AnalysisTask analysisTask = analysisTaskService.createTask(storage, patient);
         return analysisTask;
+    }
+
+    private boolean checkFile(MultipartFile file) {
+        String fileName = file.getOriginalFilename();
+        List<Storage> list = storageService.findByOriginalName(fileName);
+        return (null != list) && (list.size() > 0);
     }
 
     private Patient createNewPatient(Storage storage) throws IOException {
