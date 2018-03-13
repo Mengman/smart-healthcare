@@ -72,6 +72,9 @@ export class ExamDetailComponent implements OnInit {
                 case 0:
                     this.analysisResult = '无尘肺';
                     break;
+                case 10:
+                    this.analysisResult = '阳性';
+                    break;
                 case 1:
                     this.analysisResult = '尘肺一期';
                     break;
