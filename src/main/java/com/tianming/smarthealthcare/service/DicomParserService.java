@@ -23,8 +23,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import static com.tianming.smarthealthcare.domain.Storage_.fileName;
-
 @Service
 @Transactional
 public class DicomParserService {
