@@ -23,6 +23,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import static com.tianming.smarthealthcare.domain.Storage_.fileName;
+
 @Service
 @Transactional
 public class DicomParserService {
@@ -44,13 +46,16 @@ public class DicomParserService {
     }
 
     public AnalysisTask parseAndSave(MultipartFile file) throws IOException {
-        // check if exist
-        if (checkFile(file)) {
-//            skip file
-            return new AnalysisTask();
-        }
         // save file
         Storage storage = storageService.store(file);
+        // check if exist
+        if (checkFile(storage)) {
+            // delete file
+            storageService.deleteFile(storage);
+            AnalysisTask analysisTask = new AnalysisTask();
+            analysisTask.setDiagnosisComment("instance uid exist!");
+            return analysisTask;
+        }
         // save patient
         Patient patient = createNewPatient(storage);
         // save task
@@ -58,9 +63,12 @@ public class DicomParserService {
         return analysisTask;
     }
 
-    private boolean checkFile(MultipartFile file) {
-        String fileName = file.getOriginalFilename();
-        List<Storage> list = storageService.findByOriginalName(fileName);
+    private boolean checkFile(Storage storage) throws IOException {
+        File file = new File(Paths.get(uploadDir, storage.getFileRelativePath()).toAbsolutePath().toString());
+        DicomInputStream din = new DicomInputStream(file);
+        Attributes attributes = din.readDataset(-1,-1);
+        String uid = attributes.getString(Tag.SOPInstanceUID);
+        List<Patient> list = patientService.findBySopInstanceUid(uid);
         return (null != list) && (list.size() > 0);
     }
 

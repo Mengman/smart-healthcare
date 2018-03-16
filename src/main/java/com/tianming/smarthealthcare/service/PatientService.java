@@ -45,4 +45,8 @@ public class PatientService {
     public List<Patient> getPatients() {
         return patientRepository.findAllByOrderByCreatedDateDesc();
     }
+
+    public List<Patient> findBySopInstanceUid(String uid) {
+        return patientRepository.findBySopInstanceUid(uid);
+    }
 }

@@ -57,4 +57,12 @@ public class StorageService {
     public List<Storage> findByOriginalName(String fileName) {
         return storageRepository.findByOriginalName(fileName);
     }
+
+    public void deleteFile(Storage storage) {
+        // delete file
+        File file = new File(Paths.get(uploadDir, storage.getFileRelativePath()).toAbsolutePath().toString());
+        file.delete();
+        // delete storage
+        storageRepository.delete(storage);
+    }
 }

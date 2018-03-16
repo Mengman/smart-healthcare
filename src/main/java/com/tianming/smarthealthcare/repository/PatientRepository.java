@@ -20,4 +20,5 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     List<Patient> findAllByOrderByCreatedDateDesc();
 
+    List<Patient> findBySopInstanceUid(String uid);
 }
