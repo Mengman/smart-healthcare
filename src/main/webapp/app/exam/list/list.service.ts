@@ -42,13 +42,10 @@ export class ExamListService {
         item.positiveFraction = task.positiveFraction;
         item.sopInstanceUid = task.patient.sopInstanceUid;
         item.institutionName = task.patient.institutionName;
+        item.createdDate = task.createdDate;
 
         if (task.patient.imageDate) {
             item.imageDate = task.patient.imageDate;
-        }
-
-        if (task.createdDate) {
-            item.createdDate = this.date2String(new Date(task.createdDate));
         }
 
         if (task.analysisStatus === 0) {
