@@ -63,7 +63,7 @@ spring:
     http:
         multipart:
           max-file-size: 50MB
-          max-request-size: 500MB
+          max-request-size: 5000MB
 
 liquibase:
     contexts: dev
