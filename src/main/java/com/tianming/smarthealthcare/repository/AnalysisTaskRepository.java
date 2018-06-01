@@ -17,6 +17,8 @@ public interface AnalysisTaskRepository extends JpaRepository<AnalysisTask, Long
 
     List<AnalysisTask> findByCreatedByOrderByCreatedDateDesc(String username);
 
+    List<AnalysisTask> findAllByOrderByCreatedDateDesc();
+
     @Query(value = "SELECT COUNT(id) FROM analysis_task where analysis_result > 0 AND  diagnosis_result is NULL", nativeQuery = true)
     Long countTotalSuspectedCases();
 
