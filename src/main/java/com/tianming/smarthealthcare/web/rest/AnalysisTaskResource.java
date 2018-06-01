@@ -65,9 +65,9 @@ public class AnalysisTaskResource {
     @Timed
     public ResponseEntity<Result> getTasks() {
         log.debug("REST request to get analysis tasks");
-//        String username = SecurityUtils.getCurrentUserLogin();
-//        List<AnalysisTask> analysisTasks = analysisTaskService.getAllTasks(username);
-        List<AnalysisTask> analysisTasks = analysisTaskService.getAllTasks();
+        String username = SecurityUtils.getCurrentUserLogin();
+        List<AnalysisTask> analysisTasks = analysisTaskService.getAllTasks(username);
+//        List<AnalysisTask> analysisTasks = analysisTaskService.getAllTasks();
         return ResponseEntity.ok(new Result(0, "success", analysisTasks));
     }
 

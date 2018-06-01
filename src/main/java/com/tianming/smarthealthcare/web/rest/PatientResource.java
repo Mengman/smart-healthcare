@@ -36,9 +36,9 @@ public class PatientResource {
     @Timed
     public ResponseEntity<Result> getPatients() throws URISyntaxException{
         log.debug("REST request to get Patients");
-//        String username = SecurityUtils.getCurrentUserLogin();
-//        List<Patient> patients = patientService.getPatients(username);
-        List<Patient> patients = patientService.getPatients();
+        String username = SecurityUtils.getCurrentUserLogin();
+        List<Patient> patients = patientService.getPatients(username);
+//        List<Patient> patients = patientService.getPatients();
         return ResponseEntity.ok(new Result(0, "success", patients));
     }
 
