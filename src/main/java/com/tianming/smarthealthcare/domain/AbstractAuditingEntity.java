@@ -2,6 +2,7 @@ package com.tianming.smarthealthcare.domain;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
@@ -30,6 +31,7 @@ public abstract class AbstractAuditingEntity implements Serializable {
 //    @JsonIgnore
     private String createdBy;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @CreatedDate
     @Column(name = "created_date", nullable = false)
 //    @JsonIgnore
@@ -40,6 +42,7 @@ public abstract class AbstractAuditingEntity implements Serializable {
 //    @JsonIgnore
     private String lastModifiedBy;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @LastModifiedDate
     @Column(name = "last_modified_date")
 //    @JsonIgnore

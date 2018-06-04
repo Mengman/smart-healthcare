@@ -41,4 +41,12 @@ public class PatientService {
     public Patient save(Patient patient) {
         return patientRepository.save(patient);
     }
+
+    public List<Patient> getPatients() {
+        return patientRepository.findAllByOrderByCreatedDateDesc();
+    }
+
+    public List<Patient> findBySopInstanceUid(String uid) {
+        return patientRepository.findBySopInstanceUid(uid);
+    }
 }

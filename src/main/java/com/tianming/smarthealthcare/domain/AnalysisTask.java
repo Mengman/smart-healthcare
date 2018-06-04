@@ -23,6 +23,9 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
     private Long xrayId;
     private Integer analysisResult; // enum analysis result
     private Integer analysisStatus = AnalysisStatus.ANALYSING.getStatusCode();
+    private String ctdAnalysisResult; // enum common thorax diseases analysis result
+    private String ctdAnalysisFraction; // enum common thorax diseases analysis result
+    private Integer ctdAnalysisStatus = AnalysisStatus.ANALYSING.getStatusCode(); // enum common thorax diseases analysis status
     private Integer diagnosisResult; // enum analysis result
     private String diagnosisComment;
     private Double positiveFraction;
@@ -92,5 +95,29 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
 
     public void setPositiveFraction(Double positiveFraction) {
         this.positiveFraction = positiveFraction;
+    }
+
+    public String getCtdAnalysisResult() {
+        return ctdAnalysisResult;
+    }
+
+    public void setCtdAnalysisResult(String ctdAnalysisResult) {
+        this.ctdAnalysisResult = ctdAnalysisResult;
+    }
+
+    public Integer getCtdAnalysisStatus() {
+        return ctdAnalysisStatus;
+    }
+
+    public void setCtdAnalysisStatus(Integer ctdAnalysisStatus) {
+        this.ctdAnalysisStatus = ctdAnalysisStatus;
+    }
+
+    public String getCtdAnalysisFraction() {
+        return ctdAnalysisFraction;
+    }
+
+    public void setCtdAnalysisFraction(String ctdAnalysisFraction) {
+        this.ctdAnalysisFraction = ctdAnalysisFraction;
     }
 }

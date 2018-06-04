@@ -37,7 +37,7 @@
                             </div>
                             <div class=row>
                                 <div class="col-3">性别</div>
-                                <div class="col-9">{{task.patient.sex}}</div>
+                                <div class="col-9">{{task.patient.sex == 'M' ? '男' : '女' }}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">出生日期</div>
@@ -45,7 +45,11 @@
                             </div>
                             <div class=row>
                                 <div class="col-3">病例号</div>
-                                <div class="col-9">{{task.patient.id}}</div>
+                                <div class="col-9">{{task.patient.patientId}}</div>
+                            </div>
+                            <div class=row>
+                                <div class="col-3">胸片拍摄时间</div>
+                                <div class="col-9">{{task.patient.imageDate}}</div>
                             </div>
                             <div class=row>
                                 <div class="col-3">工龄</div>
@@ -68,6 +72,10 @@
                             <div class="row" *ngIf="analysisResult">
                                 <div class="col-3">分析结果</div>
                                 <div class="col-9">{{analysisResult}}</div>
+                            </div>
+                            <div class="row" *ngIf="analysisResult">
+                                <div class="col-3">阳性概率</div>
+                                <div class="col-9">{{task.positiveFraction}}</div>
                             </div>
                         </div>
                     </div>

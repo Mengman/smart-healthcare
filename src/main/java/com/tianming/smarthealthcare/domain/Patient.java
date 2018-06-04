@@ -36,7 +36,8 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
 
     //dicom parameters
     private String sopInstanceUid;
-    private String imageDate;
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date imageDate;
     private String institutionName;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -179,11 +180,11 @@ public class Patient extends AbstractAuditingEntity implements Serializable {
         this.patientId = patientId;
     }
 
-    public String getImageDate() {
+    public Date getImageDate() {
         return imageDate;
     }
 
-    public void setImageDate(String imageDate) {
+    public void setImageDate(Date imageDate) {
         this.imageDate = imageDate;
     }
 

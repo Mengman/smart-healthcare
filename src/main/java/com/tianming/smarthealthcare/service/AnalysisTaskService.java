@@ -89,6 +89,10 @@ public class AnalysisTaskService {
         return analysisTaskRepository.findByCreatedByOrderByCreatedDateDesc(username);
     }
 
+    public List<AnalysisTask> getAllTasks() {
+        return analysisTaskRepository.findAllByOrderByCreatedDateDesc();
+    }
+
     public ExamResultVM countExamResult() {
         Long totalTask = analysisTaskRepository.count();
 
