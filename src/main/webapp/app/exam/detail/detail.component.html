@@ -69,13 +69,25 @@
                                 <div class="col-3">分析状态</div>
                                 <div class="col-9">分析中</div>
                             </div>
+                            <div class="row" *ngIf="ctdAnalysisResult">
+                                <div class="col-3">肺部异常筛查结果</div>
+                                <div class="col-9">{{ctdAnalysisResult}}</div>
+                            </div>
                             <div class="row" *ngIf="analysisResult">
-                                <div class="col-3">分析结果</div>
+                                <div class="col-3">尘肺筛查结果</div>
                                 <div class="col-9">{{analysisResult}}</div>
                             </div>
                             <div class="row" *ngIf="analysisResult">
-                                <div class="col-3">阳性概率</div>
+                                <div class="col-3">尘肺阳性概率</div>
                                 <div class="col-9">{{task.positiveFraction}}</div>
+                            </div>
+                            <div class="row" *ngIf="">
+                                <div class="col-3">肺结节筛查结果</div>
+                                <div class="col-9"></div>
+                            </div>
+                            <div class="row" *ngIf="">
+                                <div class="col-3">肺结核筛查结果</div>
+                                <div class="col-9"></div>
                             </div>
                         </div>
                     </div>

@@ -30,6 +30,11 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
     private String diagnosisComment;
     private Double positiveFraction;
 
+    @OneToOne
+    @JoinColumn(name = "abnormalAnalysisId")
+    private AbnormalAnalysis abnormalAnalysis;
+    private Integer abnormalAnalysisStatus = AnalysisStatus.ANALYSING.getStatusCode();
+
     public AnalysisTask() {
     }
 
@@ -119,5 +124,21 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
 
     public void setCtdAnalysisFraction(String ctdAnalysisFraction) {
         this.ctdAnalysisFraction = ctdAnalysisFraction;
+    }
+
+    public AbnormalAnalysis getAbnormalAnalysis() {
+        return abnormalAnalysis;
+    }
+
+    public void setAbnormalAnalysis(AbnormalAnalysis abnormalAnalysis) {
+        this.abnormalAnalysis = abnormalAnalysis;
+    }
+
+    public Integer getAbnormalAnalysisStatus() {
+        return abnormalAnalysisStatus;
+    }
+
+    public void setAbnormalAnalysisStatus(Integer abnormalAnalysisStatus) {
+        this.abnormalAnalysisStatus = abnormalAnalysisStatus;
     }
 }

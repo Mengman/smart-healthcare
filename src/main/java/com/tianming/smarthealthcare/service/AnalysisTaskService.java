@@ -1,13 +1,7 @@
 package com.tianming.smarthealthcare.service;
 
-import com.tianming.smarthealthcare.domain.AnalysisTask;
-import com.tianming.smarthealthcare.domain.Demo;
-import com.tianming.smarthealthcare.domain.Patient;
-import com.tianming.smarthealthcare.domain.Storage;
-import com.tianming.smarthealthcare.repository.AnalysisTaskRepository;
-import com.tianming.smarthealthcare.repository.DemoRepository;
-import com.tianming.smarthealthcare.repository.PatientRepository;
-import com.tianming.smarthealthcare.repository.StorageRepository;
+import com.tianming.smarthealthcare.domain.*;
+import com.tianming.smarthealthcare.repository.*;
 import com.tianming.smarthealthcare.web.rest.vm.AnalysisTaskVM;
 import com.tianming.smarthealthcare.web.rest.vm.DiagnoseTaskVM;
 import com.tianming.smarthealthcare.web.rest.vm.ExamResultVM;
@@ -33,12 +27,17 @@ public class AnalysisTaskService {
     private PatientRepository patientRepository;
     private StorageRepository storageRepository;
     private DemoRepository demoRepository;
+    private AbnormalAnalysisRepository abnormalAnalysisRepository;
 
-    public AnalysisTaskService(AnalysisTaskRepository analysisTaskRepository, PatientRepository patientRepository, StorageRepository storageRepository, DemoRepository demoRepository) {
+    public AnalysisTaskService(AnalysisTaskRepository analysisTaskRepository,
+                               PatientRepository patientRepository,
+                               StorageRepository storageRepository,
+                               DemoRepository demoRepository, AbnormalAnalysisRepository abnormalAnalysisRepository) {
         this.analysisTaskRepository = analysisTaskRepository;
         this.patientRepository = patientRepository;
         this.storageRepository = storageRepository;
         this.demoRepository = demoRepository;
+        this.abnormalAnalysisRepository = abnormalAnalysisRepository;
     }
 
     public AnalysisTask create(AnalysisTaskVM analysisTaskVM) throws NoSuchPatientException, NoSuchFileException {
@@ -79,9 +78,13 @@ public class AnalysisTaskService {
     }
 
     public AnalysisTask createTask(Storage storage, Patient patient) {
+        AbnormalAnalysis abnormalAnalysis = new AbnormalAnalysis();
+        abnormalAnalysisRepository.save(abnormalAnalysis);
+
         AnalysisTask analysisTask = new AnalysisTask();
         analysisTask.setPatient(patient);
         analysisTask.setXrayId(storage.getId());
+        analysisTask.setAbnormalAnalysis(abnormalAnalysis);
         return analysisTaskRepository.save(analysisTask);
     }
 

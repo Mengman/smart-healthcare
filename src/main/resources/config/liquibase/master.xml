@@ -18,4 +18,6 @@
     <include file="config/liquibase/changelog/20180227_added_entity_data_query_log.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20180227_modified_entity_patient.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201806011530_modified_entity_analysis_task.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/201808311638_modified_entity_analysis_task.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/201808311714_add_abnormal_analysis_table.xml" relativeToChangelogFile="false" />
 </databaseChangeLog>

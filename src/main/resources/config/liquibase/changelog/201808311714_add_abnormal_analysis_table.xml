@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="autoIncrement" value="true"/>
+
+    <changeSet id="20180831-2" author="liyucai">
+        <createTable tableName="abnormal_analysis">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="atelectasis" type="double"/>
+            <column name="cardiomegaly" type="double"/>
+            <column name="consolidation" type="double"/>
+            <column name="edema" type="double"/>
+            <column name="effusion" type="double"/>
+            <column name="emphysema" type="double"/>
+            <column name="fibrosis" type="double"/>
+            <column name="hernia" type="double"/>
+            <column name="infiltration" type="double"/>
+            <column name="mass" type="double"/>
+            <column name="nodule" type="double"/>
+            <column name="pleural_thickening" type="double"/>
+            <column name="pneumonia" type="double"/>
+            <column name="pneumothorax" type="double"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
