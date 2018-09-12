@@ -6,8 +6,7 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
     <changeSet id="20180831-1" author="liyucai">
         <addColumn tableName="analysis_task">
-            <column name="abnormal_analysis_id" type="bigint"/>
-            <column name="abnormal_analysis_status" type="integer"/>
+            <column name="ctd_analysis_id" type="bigint"/>
         </addColumn>
     </changeSet>
 

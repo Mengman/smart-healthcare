@@ -9,7 +9,7 @@
     <property name="autoIncrement" value="true"/>
 
     <changeSet id="20180831-2" author="liyucai">
-        <createTable tableName="abnormal_analysis">
+        <createTable tableName="ctd_analysis">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

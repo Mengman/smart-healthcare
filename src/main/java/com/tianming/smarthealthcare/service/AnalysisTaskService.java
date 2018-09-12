@@ -27,17 +27,17 @@ public class AnalysisTaskService {
     private PatientRepository patientRepository;
     private StorageRepository storageRepository;
     private DemoRepository demoRepository;
-    private AbnormalAnalysisRepository abnormalAnalysisRepository;
+    private CtdAnalysisRepository ctdAnalysisRepository;
 
     public AnalysisTaskService(AnalysisTaskRepository analysisTaskRepository,
                                PatientRepository patientRepository,
                                StorageRepository storageRepository,
-                               DemoRepository demoRepository, AbnormalAnalysisRepository abnormalAnalysisRepository) {
+                               DemoRepository demoRepository, CtdAnalysisRepository ctdAnalysisRepository) {
         this.analysisTaskRepository = analysisTaskRepository;
         this.patientRepository = patientRepository;
         this.storageRepository = storageRepository;
         this.demoRepository = demoRepository;
-        this.abnormalAnalysisRepository = abnormalAnalysisRepository;
+        this.ctdAnalysisRepository = ctdAnalysisRepository;
     }
 
     public AnalysisTask create(AnalysisTaskVM analysisTaskVM) throws NoSuchPatientException, NoSuchFileException {
@@ -78,13 +78,13 @@ public class AnalysisTaskService {
     }
 
     public AnalysisTask createTask(Storage storage, Patient patient) {
-        AbnormalAnalysis abnormalAnalysis = new AbnormalAnalysis();
-        abnormalAnalysisRepository.save(abnormalAnalysis);
+        CtdAnalysis ctdAnalysis = new CtdAnalysis();
+        ctdAnalysisRepository.save(ctdAnalysis);
 
         AnalysisTask analysisTask = new AnalysisTask();
         analysisTask.setPatient(patient);
         analysisTask.setXrayId(storage.getId());
-        analysisTask.setAbnormalAnalysis(abnormalAnalysis);
+        analysisTask.setCtdAnalysis(ctdAnalysis);
         return analysisTaskRepository.save(analysisTask);
     }
 

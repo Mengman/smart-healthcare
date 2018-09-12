@@ -10,7 +10,7 @@ import java.io.Serializable;
  * Created by ycli on 31/08/18.
  */
 @Entity
-public class AbnormalAnalysis implements Serializable{
+public class CtdAnalysis implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
