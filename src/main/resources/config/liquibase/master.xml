@@ -20,4 +20,5 @@
     <include file="config/liquibase/changelog/201806011530_modified_entity_analysis_task.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/201808311638_modified_entity_analysis_task.xml" relativeToChangelogFile="false" />
     <include file="config/liquibase/changelog/201808311714_add_ctd_analysis_table.xml" relativeToChangelogFile="false" />
+    <include file="config/liquibase/changelog/201809131500_modify_entity_analysis_task.xml" relativeToChangelogFile="false" />
 </databaseChangeLog>
