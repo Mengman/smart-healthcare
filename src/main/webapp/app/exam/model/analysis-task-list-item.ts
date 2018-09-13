@@ -14,4 +14,9 @@ export class AnalysisTaskListItem {
     public institutionName: string;
     public imageDate: string;
     public createdDate: string;
+    public ctdAnalysisResult: string;
+    public ctdAnalysisStatus: string;
+    // Consolidation or infiltrate 影响
+    public tuberculosis: string;
+    public nodule: string;
 }

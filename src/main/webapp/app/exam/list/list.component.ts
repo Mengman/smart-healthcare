@@ -47,11 +47,12 @@ export class ExamListComponent implements OnInit {
             {headerName: '出生日期', field: 'birthday'},
             {headerName: '分析状态', field: 'analysisStatus'},
             {headerName: '诊断结果', field: 'diagnosisResult'},
+            {headerName: '肺部异常筛查状态', field: 'ctdAnalysisStatus'},
             {headerName: '肺部异常筛查结果', field: 'ctdAnalysisResult'},
             {headerName: '尘肺筛查结果', field: 'analysisResult'},
             {headerName: '尘肺阳性概率', field: 'positiveFraction', unSortIcon: true},
-            {headerName: '肺结节筛查结果', field: ''},
-            {headerName: '肺结核筛查结果', field: ''},
+            {headerName: '肺结节筛查结果', field: 'nodule'},
+            {headerName: '肺结核筛查结果', field: 'tuberculosis'},
             {headerName: '任务创建时间', field: 'createdDate', type: 'dateColumn'},
             {headerName: '操作', field: 'id', cellRendererFramework: CellBtnComponent, suppressSorting: true}
         ]

@@ -57,7 +57,24 @@ export class ExamListService {
         item.analysisResult = this.convertNumberResult2Words(task.analysisResult);
 
         item.diagnosisResult = this.convertNumberResult2Words(task.diagnosisResult);
+        if (task.ctdAnalysisStatus === 0) {
+            item.ctdAnalysisStatus = '分析中';
+        } else {
+            item.ctdAnalysisStatus = '完成';
+            item.ctdAnalysisResult = task.ctdAnalysisResult;
 
+            if (task.ctdAnalysis.infiltration > 0.5 || task.ctdAnalysis.consolidation > 0.5) {
+                item.tuberculosis = '阳性';
+            } else {
+                item.tuberculosis = '阴性';
+            }
+            if (task.ctdAnalysis.nodule > 0.5) {
+                item.nodule = '阳性';
+            } else {
+                item.nodule = '阴性';
+            }
+
+        }
         return item;
     }
 

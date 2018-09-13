@@ -27,6 +27,8 @@ export class ExamDetailComponent implements OnInit {
     public imgLoading = true;
     public showSubmitAlert = false;
     public diagnosis: AnalysisTask = new AnalysisTask();
+    public tuberculosis: string;
+    public nodule: string;
 
     public dicomBtnStatus = {
       wwWl: true,
@@ -58,6 +60,19 @@ export class ExamDetailComponent implements OnInit {
             this.diagnosis.diagnosisComment = data.diagnosisComment;
             this.analysisResultConvert(data);
             this.initImage(this.task.xrayId);
+
+            if (this.task.ctdAnalysisStatus !== 0) {
+                if (this.task.ctdAnalysis.consolidation > 0.5 || this.task.ctdAnalysis.infiltration > 0.5) {
+                    this.tuberculosis = '阳性';
+                } else {
+                    this.tuberculosis = '阴性';
+                }
+                if (this.task.ctdAnalysis.nodule > 0.5) {
+                    this.nodule = '阳性';
+                } else {
+                    this.nodule = '阴性';
+                }
+            }
         });
     }
 
@@ -67,7 +82,7 @@ export class ExamDetailComponent implements OnInit {
     }
 
     private analysisResultConvert(task: AnalysisTask) {
-        if (task.analysisResult) {
+        if (task.analysisResult !== null) {
             switch (task.analysisResult) {
                 case 0:
                     this.analysisResult = '无尘肺';

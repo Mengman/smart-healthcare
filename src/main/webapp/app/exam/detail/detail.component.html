@@ -66,7 +66,11 @@
                                     </div>
                             </div> -->
                             <div class="row" *ngIf="task.analysisStatus === 0">
-                                <div class="col-3">分析状态</div>
+                                <div class="col-3">尘肺分析状态</div>
+                                <div class="col-9">分析中</div>
+                            </div>
+                            <div class="row" *ngIf="task.ctdAnalysisStatus === 0">
+                                <div class="col-3">肺部异常分析状态</div>
                                 <div class="col-9">分析中</div>
                             </div>
                             <div class="row" *ngIf="ctdAnalysisResult">
@@ -81,13 +85,13 @@
                                 <div class="col-3">尘肺阳性概率</div>
                                 <div class="col-9">{{task.positiveFraction}}</div>
                             </div>
-                            <div class="row" *ngIf="">
+                            <div class="row" *ngIf="nodule">
                                 <div class="col-3">肺结节筛查结果</div>
-                                <div class="col-9"></div>
+                                <div class="col-9">{{nodule}}</div>
                             </div>
-                            <div class="row" *ngIf="">
+                            <div class="row" *ngIf="tuberculosis">
                                 <div class="col-3">肺结核筛查结果</div>
-                                <div class="col-9"></div>
+                                <div class="col-9">{{tuberculosis}}</div>
                             </div>
                         </div>
                     </div>
