@@ -13,13 +13,19 @@
                         <div id="dicomWrapper2" class='disable-selection noIbar cornerstone-enabled-image' unselectable='on' onselectstart='return false;'
                             onmousedown='return false;'>
 
-                            <div id="dicomImage2" #dcmEle>
+                            <div id="dicomImage2" #dcmEle [style.display]="heatmapThumbnail ? 'none' : 'block' ">
                                     <i *ngIf="imgLoading" class="fa fa-pulse fa-spinner  fa-3x fa-fw" aria-hidden="true"></i>
                             </div>
+                            <div id="heatmap">
+                                <img *ngIf="heatmapThumbnail" [src]="heatmapUrl" height="500px">
+                            </div>
                         </div>
-                        <div class="review-full-btn">
+                        <div class="thumbnail-btn">
                             <a class="btn" (click)="reviewFullScreen()">
                                 <i class="fa fa-search-plus fa-3x" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn" (click)="toggleHeatmapThumbnail()">
+                                <i class="fa fa-exchange fa-3x" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -142,7 +148,10 @@
         </div>
     </div>
     <div id="dicomWrapper" class='disable-selection noIbar' unselectable='on' onselectstart='return false;' onmousedown='return false;'>
-        <div #fullDcmEle id="dicomImage" style="position:absolute; top:0; bottom: 0;left:0;right:0;">
+        <div #fullDcmEle id="dicomImage" style="position:absolute; top:0; bottom: 0;left:0;right:0;" [style.display]="heatmapFullScreen? 'none' : 'block' ">
+        </div>
+        <div id="heatmapFullScreen" style="position:absolute; top:0; bottom: 0;left:0;right:0;" *ngIf="heatmapFullScreen" style="width: 1875px; text-align: center; background-color: #000">
+            <img [src]="heatmapUrl" alt="" >
         </div>
     </div>
     <div class="dcm-detail">
@@ -162,6 +171,10 @@
             title="" data-original-title="平移">
             <span class="fa fa-arrows"></span>
         </button>
+        <button type="button" (click)="toggleHeatmapFullScreen()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
+                title="" data-original-title="热力图">
+            <span class="fa fa-exchange"></span>
+        </button>
         <!-- <button type="button" [class.disabled]="dicomBtnStatus.scroll" (click)="scroll()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"
             data-placement="bottom" title="" data-original-title="浏览">
             <span class="fa fa-bars"></span>
@@ -175,4 +188,5 @@
             <span class="fa fa-stop"></span>
         </button> -->
     </div>
+
 </div>

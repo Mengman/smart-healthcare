@@ -29,6 +29,9 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
     private Integer diagnosisResult; // enum analysis result
     private String diagnosisComment;
     private Double positiveFraction;
+    private Integer lungsegStatus;
+    private String heatmapPath;
+    private Long heatmapId;
 
     @OneToOne
     @JoinColumn(name = "ctdAnalysisId")
@@ -131,5 +134,29 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
 
     public void setCtdAnalysis(CtdAnalysis ctdAnalysis) {
         this.ctdAnalysis = ctdAnalysis;
+    }
+
+    public Integer getLungsegStatus() {
+        return lungsegStatus;
+    }
+
+    public void setLungsegStatus(Integer lungsegStatus) {
+        this.lungsegStatus = lungsegStatus;
+    }
+
+    public String getHeatmapPath() {
+        return heatmapPath;
+    }
+
+    public void setHeatmapPath(String heatmapPath) {
+        this.heatmapPath = heatmapPath;
+    }
+
+    public Long getHeatmapId() {
+        return heatmapId;
+    }
+
+    public void setHeatmapId(Long heatmapId) {
+        this.heatmapId = heatmapId;
     }
 }

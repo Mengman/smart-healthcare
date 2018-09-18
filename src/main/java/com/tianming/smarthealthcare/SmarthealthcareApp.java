@@ -74,6 +74,7 @@ public class SmarthealthcareApp {
                 "Application '{}' is running! Access URLs:\n\t" +
                 "Local: \t\t{}://localhost:{}\n\t" +
                 "External: \t{}://{}:{}\n\t" +
+                "Upload dir: \t{}\n" +
                 "Profile(s): \t{}\n----------------------------------------------------------",
             env.getProperty("spring.application.name"),
             protocol,
@@ -81,6 +82,7 @@ public class SmarthealthcareApp {
             protocol,
             InetAddress.getLocalHost().getHostAddress(),
             env.getProperty("server.port"),
+            env.getProperty("application.uploadDir"),
             env.getActiveProfiles());
     }
 }

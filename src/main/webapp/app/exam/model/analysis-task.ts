@@ -14,5 +14,6 @@ export class AnalysisTask {
     public createdDate: string;
     public ctdAnalysisResult: string;
     public ctdAnalysisStatus: number;
+    public heatmapId: number;
 
 }

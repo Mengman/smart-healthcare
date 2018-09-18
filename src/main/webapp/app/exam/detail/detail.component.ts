@@ -29,6 +29,9 @@ export class ExamDetailComponent implements OnInit {
     public diagnosis: AnalysisTask = new AnalysisTask();
     public tuberculosis: string;
     public nodule: string;
+    public heatmapThumbnail = false;
+    public heatmapFullScreen = false;
+    public heatmapUrl = '';
 
     public dicomBtnStatus = {
       wwWl: true,
@@ -60,6 +63,7 @@ export class ExamDetailComponent implements OnInit {
             this.diagnosis.diagnosisComment = data.diagnosisComment;
             this.analysisResultConvert(data);
             this.initImage(this.task.xrayId);
+            this.heatmapUrl = `/api/files/`  + this.task.heatmapId;
 
             if (this.task.ctdAnalysisStatus !== 0) {
                 if (this.task.ctdAnalysis.consolidation > 0.5 || this.task.ctdAnalysis.infiltration > 0.5) {
@@ -183,13 +187,13 @@ export class ExamDetailComponent implements OnInit {
         cornerstone.displayImage(ele, imageData);
         console.log(imageData);
         cornerstoneTools.mouseInput.enable(ele);
-        cornerstoneTools.mouseWheelInput.enable(ele);
+        // cornerstoneTools.mouseWheelInput.enable(ele);
 
         // Enable all tools we want to use with this ele
-        cornerstoneTools.wwwc.activate(ele, 1); // ww/wc is the default tool for left mouse button
-        cornerstoneTools.pan.activate(ele, 2); // pan is the default tool for middle mouse button
-        cornerstoneTools.zoom.activate(ele, 4); // zoom is the default tool for right mouse button
-        cornerstoneTools.zoomWheel.activate(ele); // zoom is the default tool for middle mouse wheel
+        // cornerstoneTools.wwwc.activate(ele, 1); // ww/wc is the default tool for left mouse button
+        // cornerstoneTools.pan.activate(ele, 2); // pan is the default tool for middle mouse button
+        // cornerstoneTools.zoom.activate(ele, 4); // zoom is the default tool for right mouse button
+        // cornerstoneTools.zoomWheel.activate(ele); // zoom is the default tool for middle mouse wheel
         cornerstoneTools.addStackStateManager(ele, ['playClip']);
         // cornerstoneTools.addToolState(ele, 'stack',0);
 
@@ -313,4 +317,11 @@ export class ExamDetailComponent implements OnInit {
         this.dicomBtnStatus.stop = true;
     }
 
+    toggleHeatmapThumbnail() {
+        this.heatmapThumbnail = !this.heatmapThumbnail;
+    }
+
+    toggleHeatmapFullScreen() {
+        this.heatmapFullScreen = !this.heatmapFullScreen;
+    }
 }
