@@ -64,6 +64,7 @@ spring:
         multipart:
           max-file-size: 50MB
           max-request-size: 5000MB
+          location: /tmp/undertow
 
 liquibase:
     contexts: dev

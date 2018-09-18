@@ -29,7 +29,7 @@ public class AnalysisTask extends AbstractAuditingEntity implements Serializable
     private Integer diagnosisResult; // enum analysis result
     private String diagnosisComment;
     private Double positiveFraction;
-    private Integer lungsegStatus;
+    private Integer lungsegStatus = 0;
     private String heatmapPath;
     private Long heatmapId;
 
