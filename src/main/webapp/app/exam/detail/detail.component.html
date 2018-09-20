@@ -16,7 +16,7 @@
                             <div id="dicomImage2" #dcmEle [style.display]="heatmapThumbnail ? 'none' : 'block' ">
                                     <i *ngIf="imgLoading" class="fa fa-pulse fa-spinner  fa-3x fa-fw" aria-hidden="true"></i>
                             </div>
-                            <div id="heatmap">
+                            <div id="heatmap" *ngIf="heatmapUrl">
                                 <img *ngIf="heatmapThumbnail" [src]="heatmapUrl" height="500px">
                             </div>
                         </div>
@@ -24,7 +24,7 @@
                             <a class="btn" (click)="reviewFullScreen()">
                                 <i class="fa fa-search-plus fa-3x" aria-hidden="true"></i>
                             </a>
-                            <a class="btn" (click)="toggleHeatmapThumbnail()">
+                            <a class="btn" (click)="toggleHeatmapThumbnail()" *ngIf="heatmapUrl">
                                 <i class="fa fa-exchange fa-3x" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -150,7 +150,7 @@
     <div id="dicomWrapper" class='disable-selection noIbar' unselectable='on' onselectstart='return false;' onmousedown='return false;'>
         <div #fullDcmEle id="dicomImage" style="position:absolute; top:0; bottom: 0;left:0;right:0;" [style.display]="heatmapFullScreen? 'none' : 'block' ">
         </div>
-        <div id="heatmapFullScreen" [style.display]="heatmapFullScreen? 'block' : 'none' " style="width: 100%; text-align: center; background-color: #000; position:absolute; top:0; bottom: 0;left:0;right:0;">
+        <div id="heatmapFullScreen" *ngIf="heatmapUrl" [style.display]="heatmapFullScreen? 'block' : 'none' " style="width: 100%; text-align: center; background-color: #000; position:absolute; top:0; bottom: 0;left:0;right:0;">
             <img [src]="heatmapUrl" alt="" >
         </div>
     </div>
@@ -172,7 +172,7 @@
             <span class="fa fa-arrows"></span>
         </button>
         <button type="button" (click)="toggleHeatmapFullScreen()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip" data-placement="bottom"
-                title="" data-original-title="热力图">
+                title="" data-original-title="热力图" *ngIf="heatmapUrl">
             <span class="fa fa-exchange"></span>
         </button>
         <!-- <button type="button" [class.disabled]="dicomBtnStatus.scroll" (click)="scroll()" class="btn btn-sm btn-default" data-container="body" data-toggle="tooltip"

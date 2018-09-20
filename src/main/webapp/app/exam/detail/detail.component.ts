@@ -31,7 +31,7 @@ export class ExamDetailComponent implements OnInit {
     public nodule: string;
     public heatmapThumbnail = false;
     public heatmapFullScreen = false;
-    public heatmapUrl = '';
+    public heatmapUrl = null;
     public fullScreenLoaded = false;
 
     public dicomBtnStatus = {
@@ -64,7 +64,9 @@ export class ExamDetailComponent implements OnInit {
             this.diagnosis.diagnosisComment = data.diagnosisComment;
             this.analysisResultConvert(data);
             this.initImage(this.task.xrayId);
-            this.heatmapUrl = `/api/files/`  + this.task.heatmapId;
+            if (this.task.analysisResult !== 0) {
+                this.heatmapUrl = `/api/files/`  + this.task.heatmapId;
+            }
 
             if (this.task.ctdAnalysisStatus !== 0) {
                 if (this.task.ctdAnalysis.consolidation > 0.5 || this.task.ctdAnalysis.infiltration > 0.5) {
