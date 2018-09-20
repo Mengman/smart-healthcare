@@ -134,7 +134,7 @@
 </div>
 
 
-<div class="dicom-fullscreen" *ngIf="fullScreenBtn">
+<div class="dicom-fullscreen" [style.display]="fullScreenBtn ? 'block' : 'none'">
     <div class="back">
         <a class="btn " (click)="backDetail()">
             <i class="fa fa-undo" aria-hidden="true"></i>返回详情</a>
@@ -150,7 +150,7 @@
     <div id="dicomWrapper" class='disable-selection noIbar' unselectable='on' onselectstart='return false;' onmousedown='return false;'>
         <div #fullDcmEle id="dicomImage" style="position:absolute; top:0; bottom: 0;left:0;right:0;" [style.display]="heatmapFullScreen? 'none' : 'block' ">
         </div>
-        <div id="heatmapFullScreen" style="position:absolute; top:0; bottom: 0;left:0;right:0;" *ngIf="heatmapFullScreen" style="width: 1875px; text-align: center; background-color: #000">
+        <div id="heatmapFullScreen" [style.display]="heatmapFullScreen? 'block' : 'none' " style="width: 100%; text-align: center; background-color: #000; position:absolute; top:0; bottom: 0;left:0;right:0;">
             <img [src]="heatmapUrl" alt="" >
         </div>
     </div>

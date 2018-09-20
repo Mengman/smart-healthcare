@@ -58,14 +58,17 @@ export class ExamNewComponent implements OnInit {
      }
 
      private startAnalysis() {
-         this.submited = true;
-        setTimeout(() => {
-          this.analysisStatus = 'drawing';
-          setTimeout(() => {
-            this.submited = false;
-            this.router.navigateByUrl('/exam');
-          }, 10000);
-        }, 20000);
+         this.analysisStatus = 'drawing';
+         this.router.navigateByUrl('/exam');
+
+         // this.submited = true;
+        // setTimeout(() => {
+        //   this.analysisStatus = 'drawing';
+        //   setTimeout(() => {
+        //     // this.submited = false;
+        //     this.router.navigateByUrl('/exam');
+        //   }, 10000);
+        // }, 20000);
       }
 
      public onUploadOutput(

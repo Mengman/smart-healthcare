@@ -78,7 +78,7 @@ public class DicomParserService {
         return patientService.save(patient);
     }
 
-    private Patient getPatientFromDicom(Attributes attributes){
+    public Patient getPatientFromDicom(Attributes attributes){
         Patient patient = new Patient();
         patient.setName(attributes.getString(Tag.PatientName));
         patient.setSex(attributes.getString(Tag.PatientSex));

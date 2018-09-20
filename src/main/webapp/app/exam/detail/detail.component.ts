@@ -32,6 +32,7 @@ export class ExamDetailComponent implements OnInit {
     public heatmapThumbnail = false;
     public heatmapFullScreen = false;
     public heatmapUrl = '';
+    public fullScreenLoaded = false;
 
     public dicomBtnStatus = {
       wwWl: true,
@@ -41,7 +42,7 @@ export class ExamDetailComponent implements OnInit {
       scroll: true,
       play: true,
       stop: true
-    }
+    };
 
     constructor(
         private route: ActivatedRoute,
@@ -157,25 +158,30 @@ export class ExamDetailComponent implements OnInit {
 
     reviewFullScreen() {
         this.fullScreenBtn = true;
-        setTimeout(() => {
-          cornerstone.enable(this.fullDcmEle.nativeElement);
 
-          this.cornerstoneService.fetchDicomImage(`/api/files/` + this.task.xrayId)
-            .subscribe((res) => {
-              this.imageData = res;
-              if (this.imageData) {
+        if (!this.fullScreenLoaded) {
+            setTimeout(() => {
+                cornerstone.enable(this.fullDcmEle.nativeElement);
 
-                if (!this.imageList.filter((img) => img.imageId === this.imageData.imageId).length) {
-                  this.imageList.push(this.imageData);
-                }
+                this.cornerstoneService.fetchDicomImage(`/api/files/` + this.task.xrayId)
+                    .subscribe((res) => {
+                        this.imageData = res;
+                        if (this.imageData) {
 
-                if (this.imageData.imageId) {
-                  this.activeDcm(this.fullDcmEle.nativeElement, this.imageData);
-                  this.dcmDescripe();
-                }
-              }
-            });
-        }, 0)
+                            if (!this.imageList.filter((img) => img.imageId === this.imageData.imageId).length) {
+                                this.imageList.push(this.imageData);
+                            }
+
+                            if (this.imageData.imageId) {
+                                this.activeDcm(this.fullDcmEle.nativeElement, this.imageData);
+                                this.dcmDescripe();
+                            }
+                            this.fullScreenLoaded = true;
+                        }
+                    });
+            }, 0)
+        }
+
       }
 
       dcmDescripe() {
@@ -227,9 +233,9 @@ export class ExamDetailComponent implements OnInit {
 
       backDetail() {
         this.fullScreenBtn = false;
-        setTimeout(() => {
-          this.initImage('im1.dcm');
-        }, 0);
+        // setTimeout(() => {
+        //   this.initImage('im1.dcm');
+        // }, 0);
       }
 
       wwWl() {

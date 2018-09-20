@@ -156,4 +156,4 @@ jhipster:
 # ===================================================================
 
 application:
-    uploadDir: "tmp/upload"
+    uploadDir: "/home/ycli/tmp/upload"
