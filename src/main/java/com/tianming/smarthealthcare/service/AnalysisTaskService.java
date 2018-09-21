@@ -101,6 +101,9 @@ public class AnalysisTaskService {
             analysisTask.setAnalysisResult(demoResult.get().getDemoResult());
         }
 
+        CtdAnalysis ctdAnalysis = new CtdAnalysis();
+        ctdAnalysisRepository.save(ctdAnalysis);
+        analysisTask.setCtdAnalysis(ctdAnalysis);
         return analysisTaskRepository.save(analysisTask);
     }
 
