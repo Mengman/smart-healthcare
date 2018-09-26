@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="position: relative">
                 <div class="form-group">
                     <label for="diagnosisResult">诊断结果</label>
                     <select [(ngModel)]="diagnosis.diagnosisResult"  name="diagnosisResult" id="diagnosisResult" class="form-control" >
@@ -118,7 +118,9 @@
                         <option value="3">尘肺三期</option>
                     </select>
                 </div>
-                <a class="btn btn-primary pull-right" style="color: #fff; margin-right: 1em;">专家会诊</a>
+                <div>
+                    <a class="btn btn-primary pull-right" style="color: #fff; margin-right: 1em;position: absolute; bottom: 17px; left: 150px;">专家会诊</a>
+                </div>
             </div>
             <div class="row">
                 <div class="form-group" style="width: 100%;">

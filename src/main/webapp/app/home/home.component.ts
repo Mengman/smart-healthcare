@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     cases: Case[] = [];
+    presetUser = true;
 
     constructor(
         private principal: Principal,
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.principal.identity().then((account) => {
             this.account = account;
+            this.presetUser = this.account.login === 'admin' || this.account.login === 'user'
         });
         this.registerAuthenticationSuccess();
     }

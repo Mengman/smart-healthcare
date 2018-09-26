@@ -2,6 +2,7 @@
     <div class="col-md-12 home-banner">
         <h1 class="display-4">职业性粉尘作业人员智能体检平台</h1>
         <p class="lead">精确客观、高效率，低成本的智能化职业健康体检筛查系统</p>
+        <p class="lead" *ngIf="!presetUser">欢迎访问{{account.firstName}}智能体检平台</p>
     </div>
 </div>
 
