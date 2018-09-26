@@ -274,6 +274,31 @@
 
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-2 control-label">
+                                <p>上传内科常规检查</p>
+                            </div>
+                            <div class="col-10">
+
+                                <span class="btn btn-primary btn-file">
+                                    内科常规检查报告
+                                    <input type="file" ngFileSelect [options]="uploadOptions" (uploadOutput)="onUploadOutput($event, internalMedicineReportUploadInput, 'internalMedicineReport')"
+                                           [uploadInput]="internalMedicineReportUploadInput">
+                                </span>
+
+                                <span class="file-name" *ngIf="internalMedicineReport">{{internalMedicineReport.name}}</span>
+                                <div class="progress" *ngIf="internalMedicineReport && internalMedicineReport.progress">
+
+                                    <div [ngStyle]="{'width': internalMedicineReport.progress.data.percentage + '%'}" class="progress-bar progress-bar-striped progress-bar-animated"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                        {{internalMedicineReport.progress.data.percentage}}%
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="row next-step">
                             <div class="col">
                                 <button type="button" class="btn btn-primary" (click)="step='secondStep'">上一步</button>

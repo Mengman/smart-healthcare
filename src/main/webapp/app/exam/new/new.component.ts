@@ -32,6 +32,9 @@ export class ExamNewComponent implements OnInit {
     public lungFunction: UploadFile;
     public lungFunctionUploadInput: EventEmitter<UploadInput>;
 
+    public internalMedicineReport: UploadFile;
+    public internalMedicineReportUploadInput: EventEmitter<UploadInput>;
+
     constructor(
         private route: ActivatedRoute,
         private router: Router,
@@ -43,6 +46,7 @@ export class ExamNewComponent implements OnInit {
         this.testReportUploadInput = new EventEmitter<UploadInput>();
         this.xRayUploadInput = new EventEmitter<UploadInput>();
         this.lungFunctionUploadInput = new EventEmitter<UploadInput>();
+        this.internalMedicineReportUploadInput = new EventEmitter<UploadInput>();
 
         this.route.paramMap.switchMap(
             (params: ParamMap) => this.examNewService.getCase(params.get('id'))
@@ -89,6 +93,9 @@ export class ExamNewComponent implements OnInit {
                 case 'lungFunction':
                 this.lungFunction = output.file;
                 break;
+                case 'internalMedicineReport':
+                this.internalMedicineReport = output.file;
+                break;
             }
 
          } else if ( output.type === 'done' ) {
@@ -119,6 +126,9 @@ export class ExamNewComponent implements OnInit {
                     break;
                 case 'lungFunction':
                     bindingFile = this.lungFunction;
+                    break;
+                case 'internalMedicineReport':
+                    bindingFile = this.internalMedicineReport;
                     break;
             }
 

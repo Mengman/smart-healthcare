@@ -7,6 +7,7 @@
     <div class="col-12" id="tableTools">
         <input type="text" id="filterBox" placeholder="输入关键字查询" (input)="onFilterTextBoxChanged($event.target.value)">
         <a id="exportBtn" class="btn btn-primary pull-right" (click)="exportCvs()" style="color: #fff">列表导出</a>
+        <a id="transportBtn" class="btn btn-primary pull-right" (click)="transport()" style="color: #fff; margin-right: 1em;">批量回传</a>
     </div>
     <div class="col-12">
         <ag-grid-angular class="ag-material" style="width: 100%; height: 900px;"
@@ -20,3 +21,4 @@
          enableColResize></ag-grid-angular>
     </div>
 </div>
+

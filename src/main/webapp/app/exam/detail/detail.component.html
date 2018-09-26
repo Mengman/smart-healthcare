@@ -1,8 +1,13 @@
 <div class="actual-content">
     <div class="actual-content-title">
-        <div class="actual-title-con">
-            <h2>粉尘作业人员胸部X射线检查结果</h2>
-            <img src="../../../content/images/underline.png" alt="">
+        <div class="actual-title-con row justify-content-md-center">
+            <div class="col-6">
+                <h2>粉尘作业人员胸部X射线智能分析结果</h2>
+                <img src="../../../content/images/underline.png" alt="">
+            </div>
+            <div>
+                <a routerLink="/exam" class="btn btn-primary pull-right" style="color: #fff; margin-right: 1em;">返回列表</a>
+            </div>
         </div>
     </div>
     <div class="patient-info">
@@ -34,8 +39,7 @@
 
                 <div class="col-6"  *ngIf="task">
                     <div class="basic-info">
-                        <h3>
-                            <span class="name">{{task.patient.name}}</span>的诊断书</h3>
+                        <h3><span class="name">{{task.patient.name}}</span>的诊断书</h3>
                         <div class="basic-info-detail">
                             <div class="row">
                                 <div class="col-3">姓名</div>
@@ -114,6 +118,7 @@
                         <option value="3">尘肺三期</option>
                     </select>
                 </div>
+                <a class="btn btn-primary pull-right" style="color: #fff; margin-right: 1em;">专家会诊</a>
             </div>
             <div class="row">
                 <div class="form-group" style="width: 100%;">
@@ -127,7 +132,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col" style="text-align:center; margin-bottom: 100px;"><button (click)="saveDiagnosis()" class="btn btn-primary">提交</button></div>
+                <div class="col" style="text-align:center; margin-bottom: 100px;"><button (click)="saveDiagnosis()" class="btn btn-primary">提交结果</button></div>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GridOptions } from 'ag-grid/main';
 import { CellBtnComponent } from './cellbtn/cellbtn.component';
 import { ExamListService } from './list.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'jhi-exam-list',
@@ -33,7 +34,8 @@ export class ExamListComponent implements OnInit {
     }
 
     constructor(
-        private examListService: ExamListService
+        private examListService: ExamListService,
+        private modalService: NgbModal
     ) {}
 
     ngOnInit() {
@@ -55,7 +57,7 @@ export class ExamListComponent implements OnInit {
             {headerName: '肺结核筛查结果', field: 'tuberculosis'},
             {headerName: '任务创建时间', field: 'createdDate', type: 'dateColumn'},
             {headerName: '操作', field: 'id', cellRendererFramework: CellBtnComponent, suppressSorting: true}
-        ]
+        ];
 
         this.gridOptions =  <GridOptions>{
             columnDefs: this.columnDefs,
@@ -83,4 +85,5 @@ export class ExamListComponent implements OnInit {
     public onFilterTextBoxChanged(text) {
         this.gridOptions.api.setQuickFilter(text);
     }
+
 }
