@@ -46,14 +46,14 @@ public class DicomParserService {
     public AnalysisTask parseAndSave(MultipartFile file) throws IOException {
         // save file
         Storage storage = storageService.store(file);
-        // check if exist
-        if (checkFile(storage)) {
-            // delete file
-            storageService.deleteFile(storage);
-            AnalysisTask analysisTask = new AnalysisTask();
-            analysisTask.setDiagnosisComment("instance uid exist!");
-            return analysisTask;
-        }
+        // check if exist,每一次新建patien，任务
+//        if (checkFile(storage)) {
+//            // delete file
+//            storageService.deleteFile(storage);
+//            AnalysisTask analysisTask = new AnalysisTask();
+//            analysisTask.setDiagnosisComment("instance uid exist!");
+//            return analysisTask;
+//        }
         // save patient
         Patient patient = createNewPatient(storage);
         // save task
