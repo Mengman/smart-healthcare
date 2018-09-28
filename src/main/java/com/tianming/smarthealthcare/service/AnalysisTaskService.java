@@ -92,14 +92,14 @@ public class AnalysisTaskService {
         BeanUtils.copyProperties(analysisTaskVM, analysisTask);
         analysisTask.setPatient(patient.get());
 
-        //get demo result
-        Storage f = file.get();
-        Optional<Demo> demoResult = demoRepository.findByDemoName(f.getOriginalName());
-        if (demoResult.isPresent()) {
-            //demo data
-            analysisTask.setAnalysisStatus(1);
-            analysisTask.setAnalysisResult(demoResult.get().getDemoResult());
-        }
+        //get demo result, 每次新建任务
+//        Storage f = file.get();
+//        Optional<Demo> demoResult = demoRepository.findByDemoName(f.getOriginalName());
+//        if (demoResult.isPresent()) {
+//            //demo data
+//            analysisTask.setAnalysisStatus(1);
+//            analysisTask.setAnalysisResult(demoResult.get().getDemoResult());
+//        }
 
         CtdAnalysis ctdAnalysis = new CtdAnalysis();
         ctdAnalysisRepository.save(ctdAnalysis);
