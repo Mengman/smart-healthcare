@@ -1,15 +1,15 @@
 <div class="actual-content">
     <div class="actual-content-title">
-        <div id="aninmate" *ngIf="submited" [ngSwitch]="analysisStatus">
-            <figure id="analysising" *ngSwitchCase="'analysising'" >
-                <img src="../../../content/images/aninmate/animat-search-color.gif" alt="">
-                <figcaption>智能分析中...</figcaption>
-            </figure>
-            <figure *ngSwitchCase="'drawing'">
-                <img src="../../../content/images/aninmate/animat-linechart-color.gif" alt="">
-                <figcaption>分析结果生成中...</figcaption>
-            </figure>
-        </div>
+        <!--<div id="aninmate" *ngIf="submited" [ngSwitch]="analysisStatus">-->
+            <!--<figure id="analysising" *ngSwitchCase="'analysising'" >-->
+                <!--<img src="../../../content/images/aninmate/animat-search-color.gif" alt="">-->
+                <!--<figcaption>智能分析中...</figcaption>-->
+            <!--</figure>-->
+            <!--<figure *ngSwitchCase="'drawing'">-->
+                <!--<img src="../../../content/images/aninmate/animat-linechart-color.gif" alt="">-->
+                <!--<figcaption>分析结果生成中...</figcaption>-->
+            <!--</figure>-->
+        <!--</div>-->
         <div class="case-history-info"  *ngIf="!submited">
             <form #taskForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="container" [ngSwitch]="step" *ngIf="case">
@@ -351,7 +351,7 @@
                                 <button type="button" class="btn btn-primary" (click)="step='secondStep'">上一步</button>
                             </div>
                             <div class="col">
-                                <button type="submit" class="btn btn-primary analyze">智能分析</button>
+                                <button type="submit" class="btn btn-primary analyze" [disabled]="!examForm.xrayId">智能分析</button>
                             </div>
                         </div>
                     </div>

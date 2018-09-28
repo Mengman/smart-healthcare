@@ -1,3 +1,5 @@
+import {CaseListItem} from '../../case/model/case-list-item';
+
 export class ExamForm {
     public patientId: number;
     public xrayId: number;
@@ -5,4 +7,5 @@ export class ExamForm {
     public analysisStatus: number;
     public diagnosisResult: number;
     public diagnosisComment: string;
+    public patient: CaseListItem;
 }

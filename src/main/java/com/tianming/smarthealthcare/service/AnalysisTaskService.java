@@ -60,7 +60,10 @@ public class AnalysisTaskService {
 
     public AnalysisTask create(AnalysisTaskVM analysisTaskVM) throws NoSuchPatientException, IOException {
         Optional<Patient> patient = patientRepository.findById(analysisTaskVM.getPatientId());
-        if (!patient.isPresent()) {throw new NoSuchPatientException();}
+        Patient patientInfo;
+        patientInfo = patient.orElseGet(Patient::new);
+        BeanUtils.copyProperties(analysisTaskVM.getPatient(), patientInfo);
+
         Optional<Storage> file = storageRepository.findById(analysisTaskVM.getXrayId());
         if (!file.isPresent()) {throw new NoSuchFileException("no such xray file");}
 
@@ -69,7 +72,6 @@ public class AnalysisTaskService {
         Attributes attributes = din.readDataset(-1,-1);
         Patient dicomPatientInfo =  dicomParserService.getPatientFromDicom(attributes);
 
-        Patient patientInfo = patient.get();
         boolean patientUpdated = false;
         if (patientInfo.getSopInstanceUid() == null) {
             patientInfo.setSopInstanceUid(dicomPatientInfo.getSopInstanceUid());
@@ -90,7 +92,7 @@ public class AnalysisTaskService {
 
         AnalysisTask analysisTask = new AnalysisTask();
         BeanUtils.copyProperties(analysisTaskVM, analysisTask);
-        analysisTask.setPatient(patient.get());
+        analysisTask.setPatient(patientInfo);
 
         //get demo result, 每次新建任务
 //        Storage f = file.get();

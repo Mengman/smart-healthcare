@@ -10,4 +10,14 @@ export const newExamTaskRoute: Route = {
         pageTitle: 'global.menu.exam.new'
     },
     canActivate: [UserRouteAccessService]
-}
+};
+
+export const createExamTaskRoute: Route = {
+    path: 'exam/task/new',
+    pathMatch: 'full',
+    component: ExamNewComponent,
+    data: {
+        pageTitle: 'global.menu.exam.new'
+    },
+    canActivate: [UserRouteAccessService]
+};

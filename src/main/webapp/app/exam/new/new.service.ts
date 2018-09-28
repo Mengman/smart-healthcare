@@ -15,9 +15,13 @@ export class ExamNewService {
     ) { }
 
     getCase(id: string): Promise<CaseListItem> {
-        return this.http.get('/api/patient/' + id)
-        .toPromise()
-        .then((resp) => resp.json().data);
+        if (id) {
+            return this.http.get('/api/patient/' + id)
+                .toPromise()
+                .then((resp) => resp.json().data);
+        } else {
+            return Promise.resolve(new CaseListItem());
+        }
     }
 
     public saveTask(examForm: ExamForm) {

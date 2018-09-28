@@ -55,17 +55,19 @@ export class ExamNewComponent implements OnInit {
         this.xRayUploadInput = new EventEmitter<UploadInput>();
         this.lungFunctionUploadInput = new EventEmitter<UploadInput>();
         this.internalMedicineReportUploadInput = new EventEmitter<UploadInput>();
-
         this.route.paramMap.switchMap(
             (params: ParamMap) => this.examNewService.getCase(params.get('id'))
         ).subscribe((data) => {
             this.case = data;
-            this.examForm.patientId = this.case.id;
+            if (data.id) {
+                this.examForm.patientId = this.case.id;
+            }
         } );
     }
 
      public onSubmit() {
         this.startAnalysis();
+        this.examForm.patient = this.case;
         this.examNewService.saveTask(this.examForm);
      }
 

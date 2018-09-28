@@ -1,5 +1,7 @@
 package com.tianming.smarthealthcare.web.rest.vm;
 
+import com.tianming.smarthealthcare.domain.Patient;
+
 public class AnalysisTaskVM{
     private Long id;
 
@@ -9,6 +11,8 @@ public class AnalysisTaskVM{
     private Integer analysisStatus = 0; //0-analyzing, 1-finished
     private Integer diagnosisResult; //0,1,2,3
     private String diagnosisComment;
+
+    private Patient patient;
 
     public AnalysisTaskVM() {
     }
@@ -67,5 +71,13 @@ public class AnalysisTaskVM{
 
     public void setPatientId(Long patientId) {
         this.patientId = patientId;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }
