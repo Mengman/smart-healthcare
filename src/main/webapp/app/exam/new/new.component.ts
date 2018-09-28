@@ -23,8 +23,14 @@ export class ExamNewComponent implements OnInit {
     public step = 'firstStep';
     public uploadOptions: UploaderOptions;
 
-    public testReport: UploadFile;
-    public testReportUploadInput: EventEmitter<UploadInput>;
+    public bloodTestReport: UploadFile;
+    public bloodTestReportUploadInput: EventEmitter<UploadInput>;
+
+    public urineTestReport: UploadFile;
+    public urineTestReportUploadInput: EventEmitter<UploadInput>;
+
+    public liverTestReport: UploadFile;
+    public liverTestReportUploadInput: EventEmitter<UploadInput>;
 
     public xRay: UploadFile;
     public xRayUploadInput: EventEmitter<UploadInput>;
@@ -43,7 +49,9 @@ export class ExamNewComponent implements OnInit {
 
     ngOnInit() {
         this.examForm = new ExamForm();
-        this.testReportUploadInput = new EventEmitter<UploadInput>();
+        this.bloodTestReportUploadInput = new EventEmitter<UploadInput>();
+        this.urineTestReportUploadInput = new EventEmitter<UploadInput>();
+        this.liverTestReportUploadInput = new EventEmitter<UploadInput>();
         this.xRayUploadInput = new EventEmitter<UploadInput>();
         this.lungFunctionUploadInput = new EventEmitter<UploadInput>();
         this.internalMedicineReportUploadInput = new EventEmitter<UploadInput>();
@@ -84,9 +92,15 @@ export class ExamNewComponent implements OnInit {
          if ( output.type === 'addedToQueue' || output.type ===  'uploading') {
 
             switch (name) {
-                case 'testReport':
-                this.testReport = output.file;
+                case 'bloodTestReport':
+                this.bloodTestReport = output.file;
                 break;
+                case 'urineTestReport':
+                    this.urineTestReport = output.file;
+                    break;
+                case 'liverTestReport':
+                    this.liverTestReport = output.file;
+                    break;
                 case 'xRay':
                 this.xRay = output.file;
                 break;
@@ -118,8 +132,14 @@ export class ExamNewComponent implements OnInit {
          } else if ( output.type === 'allAddedToQueue' ) {
             let bindingFile: UploadFile;
             switch (name) {
-                case 'testReport':
-                    bindingFile = this.testReport;
+                case 'bloodTestReport':
+                    bindingFile = this.bloodTestReport;
+                    break;
+                case 'urineTestReport':
+                    bindingFile = this.urineTestReport;
+                    break;
+                case 'liverTestReport':
+                    bindingFile = this.liverTestReport;
                     break;
                 case 'xRay':
                     bindingFile = this.xRay;

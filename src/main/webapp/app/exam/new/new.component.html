@@ -191,28 +191,75 @@
                         <div class="register-form center" style="padding-top: 23px;">
                             <span style="font-size: 1.75rem;">粉尘作业人员临床化验信息</span>
                         </div>
-                        <div class="row">
-                            <label class="col-sm-2 control-label">上传临床化验单</label>
+                        <div class="row upload-component">
+                            <label class="col-sm-2 control-label">上传血常规化验单</label>
                             <div class="col-sm-10">
 
                                 <span class="btn btn-primary btn-file">
                                     选择化验单
-                                    <input type="file" ngFileSelect [options]="uploadOptions" (uploadOutput)="onUploadOutput($event, testReportUploadInput, 'testReport')"
-                                        [uploadInput]="testReportUploadInput">
+                                    <input type="file" ngFileSelect [options]="uploadOptions" (uploadOutput)="onUploadOutput($event, bloodTestReportUploadInput, 'bloodTestReport')"
+                                        [uploadInput]="bloodTestReportUploadInput">
                                 </span>
 
-                                <span class="file-name" *ngIf="testReport">{{testReport.name}}</span>
-                                <div class="progress" *ngIf="testReport && testReport.progress">
+                                <span class="file-name" *ngIf="bloodTestReport">{{bloodTestReport.name}}</span>
+                                <div class="progress" *ngIf="bloodTestReport && bloodTestReport.progress">
 
-                                    <div [ngStyle]="{'width': testReport.progress.data.percentage + '%'}" class="progress-bar progress-bar-striped progress-bar-animated"
+                                    <div [ngStyle]="{'width': bloodTestReport.progress.data.percentage + '%'}" class="progress-bar progress-bar-striped progress-bar-animated"
                                         role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                        {{testReport.progress.data.percentage}}%
+                                        {{bloodTestReport.progress.data.percentage}}%
                                     </div>
 
                                 </div>
 
                             </div>
                         </div>
+
+                        <div class="row upload-component">
+                            <label class="col-sm-2 control-label">上传尿常规化验单</label>
+                            <div class="col-sm-10">
+
+                                <span class="btn btn-primary btn-file">
+                                    选择化验单
+                                    <input type="file" ngFileSelect [options]="uploadOptions" (uploadOutput)="onUploadOutput($event, urineTestReportUploadInput, 'urineTestReport')"
+                                           [uploadInput]="urineTestReportUploadInput">
+                                </span>
+
+                                <span class="file-name" *ngIf="urineTestReport">{{urineTestReport.name}}</span>
+                                <div class="progress" *ngIf="urineTestReport && urineTestReport.progress">
+
+                                    <div [ngStyle]="{'width': urineTestReport.progress.data.percentage + '%'}" class="progress-bar progress-bar-striped progress-bar-animated"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                        {{urineTestReport.progress.data.percentage}}%
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row upload-component">
+                            <label class="col-sm-2 control-label">上传肝功能化验单</label>
+                            <div class="col-sm-10">
+
+                                <span class="btn btn-primary btn-file">
+                                    选择化验单
+                                    <input type="file" ngFileSelect [options]="uploadOptions" (uploadOutput)="onUploadOutput($event, liverTestReportUploadInput, 'liverTestReport')"
+                                           [uploadInput]="liverTestReportUploadInput">
+                                </span>
+
+                                <span class="file-name" *ngIf="liverTestReport">{{liverTestReport.name}}</span>
+                                <div class="progress" *ngIf="liverTestReport && liverTestReport.progress">
+
+                                    <div [ngStyle]="{'width': liverTestReport.progress.data.percentage + '%'}" class="progress-bar progress-bar-striped progress-bar-animated"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                        {{liverTestReport.progress.data.percentage}}%
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
                         <div class="row next-step">
                             <div class="col">
                                 <button type="button" class="btn btn-primary" (click)="step='firstStep'">上一步</button>
@@ -229,7 +276,7 @@
                             <span style="font-size: 1.75rem;">粉尘作业人员专项检查信息（胸部x射线）</span>
                         </div>
                         <div class="form-group row">
-                            <label class="col-2 col-form-label">上传x光片</label>
+                            <label class="col-2 col-form-label">上传X射线摄片</label>
                             <div class="col-10">
 
                                 <span class="btn btn-primary btn-file">
