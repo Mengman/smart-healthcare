@@ -54,4 +54,11 @@ public class UploadFileResource {
         AnalysisTask task = dicomParserService.parseAndSave(file);
         return ResponseEntity.ok(new Result(0, "success", task));
     }
+
+    @PostMapping("/dicomParse/{login}")
+    public ResponseEntity<Result> handleDicomParse(@RequestParam("file") MultipartFile file, @PathVariable("login") String login) throws IOException{
+        log.debug("REST request to upload file : {}", file.getOriginalFilename());
+        AnalysisTask task = dicomParserService.parseAndSave(file, login);
+        return ResponseEntity.ok(new Result(0, "success", task));
+    }
 }

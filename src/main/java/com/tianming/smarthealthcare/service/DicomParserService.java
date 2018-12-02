@@ -10,6 +10,12 @@ import org.dcm4che3.io.DicomInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -20,8 +26,11 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -101,5 +110,22 @@ public class DicomParserService {
 
     private Date getDate(String str) throws ParseException{
         return StringUtils.isEmpty(str) ? null : dimcomDateFormatter.parse(str);
+    }
+
+    public AnalysisTask parseAndSave(MultipartFile file, String login) throws IOException{
+        Collection<? extends GrantedAuthority> authorities =
+            Arrays.stream("ROLE_USER".split(","))
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+        User principal = new User(login, "", authorities);
+        Authentication authentication = new UsernamePasswordAuthenticationToken(principal, "", authorities);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        // save file
+        Storage storage = storageService.store(file);
+        // save patient
+        Patient patient = createNewPatient(storage);
+        // save task
+        AnalysisTask analysisTask = analysisTaskService.createTask(storage, patient);
+        return analysisTask;
     }
 }

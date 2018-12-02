@@ -156,4 +156,4 @@ jhipster:
 # ===================================================================
 
 application:
-    uploadDir: "/home/ycli/tmp/upload"
+    uploadDir: "C:/Users/edwardyangxin/Desktop/workprojs/smart-healthcare/uploadDir"
